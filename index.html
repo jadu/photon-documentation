@@ -1,0 +1,2466 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Photon reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#themes" class="toc-h1 toc-link" data-title="Themes">Themes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#whats-in-a-theme-bundle" class="toc-h2 toc-link" data-title="Whats in a theme bundle?">Whats in a theme bundle?</a>
+                  </li>
+                  <li>
+                    <a href="#registering-a-theme" class="toc-h2 toc-link" data-title="Registering a theme">Registering a theme</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#controllers" class="toc-h1 toc-link" data-title="Controllers">Controllers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#page-controllers" class="toc-h2 toc-link" data-title="Page controllers">Page controllers</a>
+                  </li>
+                  <li>
+                    <a href="#component-controllers" class="toc-h2 toc-link" data-title="Component controllers">Component controllers</a>
+                  </li>
+                  <li>
+                    <a href="#widget-controllers" class="toc-h2 toc-link" data-title="Widget controllers">Widget controllers</a>
+                  </li>
+                  <li>
+                    <a href="#interacting-with-the-request" class="toc-h2 toc-link" data-title="Interacting with the request">Interacting with the request</a>
+                  </li>
+                  <li>
+                    <a href="#returning-a-response" class="toc-h2 toc-link" data-title="Returning a response">Returning a response</a>
+                  </li>
+                  <li>
+                    <a href="#core-page-controller-methods" class="toc-h2 toc-link" data-title="Core Page controller methods">Core Page controller methods</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#routes" class="toc-h1 toc-link" data-title="Routes">Routes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#generating-urls" class="toc-h2 toc-link" data-title="Generating URLs">Generating URLs</a>
+                  </li>
+                  <li>
+                    <a href="#redirecting" class="toc-h2 toc-link" data-title="Redirecting">Redirecting</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#models" class="toc-h1 toc-link" data-title="Models">Models</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#article" class="toc-h2 toc-link" data-title="Article">Article</a>
+                  </li>
+                  <li>
+                    <a href="#form" class="toc-h2 toc-link" data-title="Form">Form</a>
+                  </li>
+                  <li>
+                    <a href="#formcontrol" class="toc-h2 toc-link" data-title="FormControl">FormControl</a>
+                  </li>
+                  <li>
+                    <a href="#formcontroloption" class="toc-h2 toc-link" data-title="FormControlOption">FormControlOption</a>
+                  </li>
+                  <li>
+                    <a href="#link" class="toc-h2 toc-link" data-title="Link">Link</a>
+                  </li>
+                  <li>
+                    <a href="#listing" class="toc-h2 toc-link" data-title="Listing">Listing</a>
+                  </li>
+                  <li>
+                    <a href="#listitem" class="toc-h2 toc-link" data-title="ListItem">ListItem</a>
+                  </li>
+                  <li>
+                    <a href="#meta" class="toc-h2 toc-link" data-title="Meta">Meta</a>
+                  </li>
+                  <li>
+                    <a href="#modular" class="toc-h2 toc-link" data-title="Modular">Modular</a>
+                  </li>
+                  <li>
+                    <a href="#page" class="toc-h2 toc-link" data-title="Page">Page</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#default-theme" class="toc-h1 toc-link" data-title="Default theme">Default theme</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#page-classes" class="toc-h2 toc-link" data-title="Page classes">Page classes</a>
+                  </li>
+                  <li>
+                    <a href="#non-html-response-routes" class="toc-h2 toc-link" data-title="Non-HTML response routes">Non-HTML response routes</a>
+                  </li>
+                  <li>
+                    <a href="#hard-coded-text" class="toc-h2 toc-link" data-title="Hard coded text">Hard coded text</a>
+                  </li>
+                  <li>
+                    <a href="#layouts" class="toc-h2 toc-link" data-title="Layouts">Layouts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#acceptance-criteria" class="toc-h1 toc-link" data-title="Acceptance criteria">Acceptance criteria</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#publishing" class="toc-h2 toc-link" data-title="Publishing">Publishing</a>
+                  </li>
+                  <li>
+                    <a href="#myaccount" class="toc-h2 toc-link" data-title="MyAccount">MyAccount</a>
+                  </li>
+                  <li>
+                    <a href="#egov" class="toc-h2 toc-link" data-title="EGov">EGov</a>
+                  </li>
+                  <li>
+                    <a href="#utilities" class="toc-h2 toc-link" data-title="Utilities">Utilities</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#template-differences" class="toc-h1 toc-link" data-title="Template differences">Template differences</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#events" class="toc-h2 toc-link" data-title="Events">Events</a>
+                  </li>
+                  <li>
+                    <a href="#news" class="toc-h2 toc-link" data-title="News">News</a>
+                  </li>
+                  <li>
+                    <a href="#downloads" class="toc-h2 toc-link" data-title="Downloads">Downloads</a>
+                  </li>
+                  <li>
+                    <a href="#a-to-z" class="toc-h2 toc-link" data-title="A to Z">A to Z</a>
+                  </li>
+                  <li>
+                    <a href="#councillors" class="toc-h2 toc-link" data-title="Councillors">Councillors</a>
+                  </li>
+                  <li>
+                    <a href="#meetings-amp-minutes" class="toc-h2 toc-link" data-title="Meetings &amp; Minutes">Meetings &amp; Minutes</a>
+                  </li>
+                  <li>
+                    <a href="#directories" class="toc-h2 toc-link" data-title="Directories">Directories</a>
+                  </li>
+                  <li>
+                    <a href="#sitemap" class="toc-h2 toc-link" data-title="Sitemap">Sitemap</a>
+                  </li>
+                  <li>
+                    <a href="#feedback-form" class="toc-h2 toc-link" data-title="Feedback form">Feedback form</a>
+                  </li>
+                  <li>
+                    <a href="#email-a-friend-form" class="toc-h2 toc-link" data-title="Email a friend form">Email a friend form</a>
+                  </li>
+                  <li>
+                    <a href="#terms-and-conditions" class="toc-h2 toc-link" data-title="Terms and conditions">Terms and conditions</a>
+                  </li>
+                  <li>
+                    <a href="#accessibility-statement" class="toc-h2 toc-link" data-title="Accessibility statement">Accessibility statement</a>
+                  </li>
+                  <li>
+                    <a href="#location" class="toc-h2 toc-link" data-title="Location">Location</a>
+                  </li>
+                  <li>
+                    <a href="#api" class="toc-h2 toc-link" data-title="API">API</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#customisation" class="toc-h1 toc-link" data-title="Customisation">Customisation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#creating-a-theme" class="toc-h2 toc-link" data-title="Creating a theme">Creating a theme</a>
+                  </li>
+                  <li>
+                    <a href="#creating-a-theme-bundle" class="toc-h2 toc-link" data-title="Creating a theme bundle">Creating a theme bundle</a>
+                  </li>
+                  <li>
+                    <a href="#creating-a-theme-definition" class="toc-h2 toc-link" data-title="Creating a theme definition">Creating a theme definition</a>
+                  </li>
+                  <li>
+                    <a href="#defining-a-theme-service" class="toc-h2 toc-link" data-title="Defining a theme service">Defining a theme service</a>
+                  </li>
+                  <li>
+                    <a href="#using-a-custom-theme" class="toc-h2 toc-link" data-title="Using a custom theme">Using a custom theme</a>
+                  </li>
+                  <li>
+                    <a href="#twig-namespaces" class="toc-h2 toc-link" data-title="Twig namespaces">Twig namespaces</a>
+                  </li>
+                  <li>
+                    <a href="#customising-pages" class="toc-h2 toc-link" data-title="Customising pages">Customising pages</a>
+                  </li>
+                  <li>
+                    <a href="#customising-components" class="toc-h2 toc-link" data-title="Customising components">Customising components</a>
+                  </li>
+                  <li>
+                    <a href="#customising-widgets" class="toc-h2 toc-link" data-title="Customising widgets">Customising widgets</a>
+                  </li>
+                  <li>
+                    <a href="#customising-supplements" class="toc-h2 toc-link" data-title="Customising supplements">Customising supplements</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#troubleshooting" class="toc-h1 toc-link" data-title="Troubleshooting">Troubleshooting</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href="mailto:sarah@jadu.co.uk">Have a technical question?</a></li>
+            <li><a href="mailto:sarah@jadu.co.uk">Spotted an error?</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Photon is a PHP library built by Jadu to power templates for Jadu CMS.</p>
+
+<p>New template sets are implemented as Symfony bundles and registered with the CMS by either amending the <code>bundles.xml</code> configuration file or running the register theme terminal command.</p>
+
+<p>Templates are extensible and can be overridden easily. In common with many Symfony applications, routes are defined in the configuration file <code>routes.yml</code>, controller dependencies are set in the configuration file <code>services.yml</code>.</p>
+
+<p>Photon is built upon the Symfony framework, so having a good knowledge of the framework and Twig template language is beneficial. The following guides from the Symfony documentation are a good starting point: </p>
+
+<ul>
+<li><a href="http://symfony.com/doc/2.8/setup.html">Symfony Getting Started Guide</a></li>
+<li><a href="http://symfony.com/doc/current/service_container.html">Understanding the Service Container</a></li>
+</ul>
+
+<p>Extensive documentation is also provided for Twig:</p>
+
+<ul>
+<li><a href="https://twig.symfony.com/doc/1.x/">Twig documentation</a></li>
+</ul>
+<h1 id='themes'>Themes</h1>
+<p>Each theme within Photon is defined as a Symfony bundle.</p>
+<h2 id='whats-in-a-theme-bundle'>Whats in a theme bundle?</h2>
+<p>Each theme bundle contains a single theme. </p>
+
+<p>Themes extend one another, so a theme bundle need not be exhaustive.</p>
+
+<p>Typically a theme will contain:</p>
+
+<ul>
+<li><strong>Pages</strong>: controllers responsible for fetching the content from a <em>Repository</em> and redering a <em>Template</em></li>
+<li><strong>Components</strong>: controllers responsible for rendering a fragment to be embedded within a <em>Template</em></li>
+<li><strong>Theme</strong>: A simple PHP class that registers the theme and specifies paths to <em>Resources</em></li>
+<li><strong>Resources</strong>: a colletion of Twig templates, configuration files and static assets</li>
+<li><strong>Widgets</strong>: controllers responsible for rendering a widget</li>
+</ul>
+
+<p>Further information on the Bundle system is available in the Symfony documentation - <a href="https://symfony.com/doc/2.8/bundles.html">The Bundle System</a>.</p>
+<h2 id='registering-a-theme'>Registering a theme</h2>
+<blockquote>
+<p>Themes can be registered with the CMS in the <code>bundles.xml</code> config file.</p>
+</blockquote>
+<pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;bundles</span> <span class="na">xmlns:config=</span><span class="s">"http://www.jadu.co.uk/schema/config"</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;frontend</span> <span class="na">config:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+      ...
+      <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">"my-project"</span><span class="nt">&gt;</span>
+        MyProjectTheme\MyProjectThemeBundle
+      <span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;/frontend&gt;</span>
+<span class="nt">&lt;/bundles&gt;</span>
+</code></pre>
+<blockquote>
+<p>A command is provide to easily register Galaxies site themes with the CMS.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>php cli.php cms:theme-register /path/to/theme
+</code></pre>
+<p>Themes must be registered with the CMS so that they are loaded by the Symfony kernel when it is booted. Themes can either be registered by adding them to the <code>bundles.xml</code> config file, or running the <code>cms:theme-register</code> command.</p>
+<h1 id='controllers'>Controllers</h1><h2 id='page-controllers'>Page controllers</h2>
+<blockquote>
+<p>Pages are registered within the theme <code>services.yml</code> configuration file. </p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="s">photon_cms_project.page.document_category</span><span class="pi">:</span>
+  <span class="na">class</span><span class="pi">:</span> <span class="s">DocumentCategoryController</span>
+  <span class="na">parent</span><span class="pi">:</span> <span class="s">photon.controller.page</span>
+  <span class="na">arguments</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon.repository.category'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon.repository.document'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon.repository.homepage'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon.repository.homepage_category_default'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon.repository.supplement'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@sdk.configuration.constant_repository'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@router'</span>
+  <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">photon.page</span><span class="pi">,</span> 
+      <span class="nv">page_name</span><span class="pi">:</span> <span class="nv">document_category</span> <span class="pi">}</span>
+</code></pre>
+<blockquote>
+<p>Page services must be tagged with <code>photon.page</code>.</p>
+</blockquote>
+
+<p>Page controllers are responsible for fetching the content from a respository and rendering a template. A simple invokable controller  is defined per <code>Page</code> class. Page components are invoked by a route.</p>
+
+<p>Each page controller extends the <code>Photon\Core\Controller\Page</code> class of the <code>PhotonCoreBundle</code> project. </p>
+
+<p><code>Photon\Core\Controller\Page</code> itself extends the Symfon framework <code>Controller</code> class. Further details are available in the Symfony documentation - <a href="https://symfony.com/doc/2.8/controller.html">Controller</a>.</p>
+<h2 id='component-controllers'>Component controllers</h2>
+<blockquote>
+<p>Components are registered within the theme <code>services.yml</code> configuration file.</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="s">photon_cms_project.component.category_navigation</span><span class="pi">:</span>
+  <span class="na">class</span><span class="pi">:</span> <span class="s">CategoryNavigationController</span>
+  <span class="na">parent</span><span class="pi">:</span> <span class="s">photon.controller.component</span>
+  <span class="na">arguments</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@ohoton.repository.category'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@router'</span>
+      <span class="pi">-</span> <span class="s1">'</span><span class="s">@sdk.configuration.constant_repository'</span>
+  <span class="na">tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">photon.component</span><span class="pi">,</span> 
+      <span class="nv">component_name</span><span class="pi">:</span> <span class="nv">category_navigation</span> <span class="pi">}</span>
+</code></pre>
+<blockquote>
+<p>Component services must be tagged with <code>photon.component</code>.</p>
+</blockquote>
+
+<p>Component controllers, like page controllers, are responsible for fetching the content from a respository and rendering a template. </p>
+
+<p>A simple invokable controller class is defined per component. </p>
+
+<p>Page controllers have no knowledge of the action of the component controller, components are rendered within a page template as sub-requests.</p>
+
+<p>As with Pages, Components can be extended and overridden by other themes.</p>
+
+<p>Additional information on sub-requests is provided in the Symfony documentation - <a href="https://symfony.com/doc/2.8/components/http_kernel.html#sub-requests">Sub Requests</a>.</p>
+<h3 id='invoking-components'>Invoking components</h3><pre class="highlight twig tab-twig"><code><span class="cp">{{</span> <span class="nv">component</span><span class="p">(</span><span class="s1">'announcement'</span><span class="p">)</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">component</span><span class="p">(</span><span class="s1">'announcement'</span><span class="p">,</span> <span class="err">{</span><span class="nv">name</span><span class="err">:</span> <span class="s1">'Tom'</span><span class="err">}</span><span class="p">)</span> <span class="cp">}}</span>
+</code></pre>
+<p>Components are not invoked by a route, but instead by using the <code>component()</code> Twig function</p>
+
+<p>Parameters can be passed to components at render time, which are passed to the <code>__invoke()</code> method of the Component.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">'announcement.html.twig'</span><span class="p">,</span> <span class="p">[</span>
+        <span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
+</code></pre><h2 id='widget-controllers'>Widget controllers</h2>
+<blockquote>
+<p>Widgets are registered within the theme <code>services.yml</code> configuration file.</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="s">photon_cms_project.widget.website_statistics</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">WebsiteStatisticsWidget</span>
+    <span class="na">parent</span><span class="pi">:</span> <span class="s">photon.controller.widget</span>
+    <span class="na">arguments</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon.repository.website_statistics'</span>
+    <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">photon.widget</span><span class="pi">,</span> <span class="nv">widget_id</span><span class="pi">:</span> <span class="nv">31</span> <span class="pi">}</span>
+</code></pre>
+<blockquote>
+<p>Widget services must be tagged with <code>photon.widget</code> and with the parameter <code>widget_id</code>. The id must match the corresponding database entry in <code>JaduHomepageWidgets</code>.</p>
+</blockquote>
+
+<p>Widget controllers are specialised component controllers. They interact with the Homepage designer feature of Jadu CMS.</p>
+
+<aside class="notice">
+When no matching widget service is found, the default widget service is used, with <code>widget_id = 1</code>. The default widget will pass code stored in the database through the function <code>eval()</code> to generate the response returned from the controller.
+</aside>
+<h3 id='invoking-widgets'>Invoking widgets</h3><pre class="highlight twig tab-twig"><code><span class="cp">{{</span> <span class="nv">widget</span><span class="p">(</span><span class="nv">widgetRecord</span><span class="p">)</span> <span class="cp">}}</span>
+</code></pre>
+<p>Widgets are not invoked by a route, but instad by using the <code>widget()</code> Twig function.</p>
+
+<p>A widget record must be passed as a parameter to the <code>widget()</code> function.</p>
+<h2 id='interacting-with-the-request'>Interacting with the request</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequestStack</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">has</span><span class="p">(</span><span class="s1">'period'</span><span class="p">)</span>
+    <span class="o">&amp;&amp;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequestStack</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'period'</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'today'</span>
+<span class="p">)</span> <span class="p">{</span>
+</code></pre>
+<p>The <code>Page</code> class within <code>PhotonCoreBundle</code> initialises the Symfony <code>Request</code> object in its constructor.</p>
+
+<p>The Request stack object can be retrieved in classes that extend <code>Page</code> by calling <code>getRequestStack()</code> method.</p>
+
+<p>Further details on how to interact with data held in the Request object are provided in the Symfony documentation - <a href="https://symfony.com/doc/2.8/components/http_foundation.html#accessing-request-data">Accessing Request Data</a>.</p>
+<h2 id='returning-a-response'>Returning a response</h2><pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">'article.html.twig'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'page'</span> <span class="o">=&gt;</span> <span class="nv">$page</span><span class="p">,</span>
+    <span class="s1">'page_categoryId'</span> <span class="o">=&gt;</span> <span class="nv">$categoryId</span><span class="p">,</span>
+    <span class="s1">'page_contentType'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'page_translationItem'</span> <span class="o">=&gt;</span> <span class="nv">$document</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">(),</span>
+    <span class="s1">'page_translationType'</span><span class="o">=&gt;</span> <span class="s1">'document'</span><span class="p">,</span>
+    <span class="s1">'page_structure'</span> <span class="o">=&gt;</span> <span class="nv">$pageStructure</span>
+<span class="p">]);</span>
+</code></pre>
+<p>All controller classes contain an <code>__invoke()</code> method that is called when a request terminates at that controller. The <code>__invoke()</code> method must return a <code>Response</code> object.</p>
+
+<p>The <code>Photon\Core\Controller\Page</code> class of the <code>PhotonCoreBundle</code> project that all Photon Page controllers extend provides a method <code>render()</code> that returns a formatted <code>Response</code> object. </p>
+
+<p><code>render()</code> generally takes two arguments:</p>
+
+<ul>
+<li>the path to the Twig template to be rendered</li>
+<li>an array of values to be supplied to the template</li>
+</ul>
+
+<p>Further details on Response objects are provided by the Symfony documentation - <a href="https://symfony.com/doc/2.8/components/http_foundation.html#response">Response</a>.</p>
+<h2 id='core-page-controller-methods'>Core Page controller methods</h2>
+<p>The <code>Photon\Core\Controller\Page</code> class provides a number of useful functions to the controllers that extend it. </p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>render()</code></td>
+<td>Render a twig template and return a Response</td>
+</tr>
+<tr>
+<td><code>getMetaElement()</code></td>
+<td>Create and return a Meta object</td>
+</tr>
+<tr>
+<td><code>getRequestStack()</code></td>
+<td>Get the Symfony Request object for this request</td>
+</tr>
+<tr>
+<td><code>getMetadata()</code></td>
+<td>Populate and return a Metadata object for this page</td>
+</tr>
+<tr>
+<td><code>isPreview()</code></td>
+<td>Check if this page is currently being accessed as a preview</td>
+</tr>
+<tr>
+<td><code>getTranslatedString()</code></td>
+<td>Get the translated string for a given key based on the site&#39;s locale value</td>
+</tr>
+<tr>
+<td><code>isPasswordProtected()</code></td>
+<td>Check if the site is currently behind password protection</td>
+</tr>
+<tr>
+<td><code>isAuthenticated()</code></td>
+<td>Check if the user has a current session for viewing a site behind password protection</td>
+</tr>
+</tbody></table>
+<h1 id='routes'>Routes</h1>
+<blockquote>
+<p>Routes are defined in the theme <code>routing.yml</code> config file.</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="na">homepage</span><span class="pi">:</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">/homepage/{homepageId}/{homepageSlug}</span>
+    <span class="na">defaults</span><span class="pi">:</span>
+        <span class="na">_controller</span><span class="pi">:</span> <span class="s">photon.page.homepage</span>
+
+<span class="na">atoz_list</span><span class="pi">:</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">/a_to_z/{startsWith}</span>
+    <span class="na">defaults</span><span class="pi">:</span>
+        <span class="na">_controller</span><span class="pi">:</span> <span class="s">photon.page.atoz_list</span>
+        <span class="na">startsWith</span><span class="pi">:</span> <span class="s">~</span>
+
+<span class="na">atoz_article</span><span class="pi">:</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">/a_to_z/service/{serviceId}/{serviceSlug}</span>
+    <span class="na">defaults</span><span class="pi">:</span>
+        <span class="na">_controller</span><span class="pi">:</span> <span class="s">photon.page.atoz_article</span>
+    <span class="na">requirements</span><span class="pi">:</span>
+        <span class="na">serviceId</span><span class="pi">:</span> <span class="s">\d+</span>
+</code></pre>
+<p>Routes within Photon are based on the Symfony router. </p>
+
+<p>Where a <code>{placeholder}</code> is placed in the route path, that portion becomes a wildcard. The corresponding controller must now have an argument called <code>$placeholder</code>. </p>
+
+<aside class="notice">
+The wildcard and argument names must match exactly.
+</aside>
+
+<p>Each route has an internal name. For example <code>homepage</code>, <code>atoz_list</code> and <code>atoz_article</code>. These must be unique and are used to generate URLs in controllers and templates.</p>
+
+<p>Further information on routing is available in the Symfony documentation - <a href="https://symfony.com/doc/2.8/routing.html">Routing</a>.</p>
+<h2 id='generating-urls'>Generating URLs</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$link</span><span class="o">-&gt;</span><span class="na">setUrl</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateUrl</span><span class="p">(</span>
+    <span class="s1">'news_article'</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="s1">'articleId'</span> <span class="o">=&gt;</span> <span class="nv">$newsArticle</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">(),</span>
+        <span class="s1">'articleSlug'</span> <span class="o">=&gt;</span> <span class="nv">$newsArticle</span><span class="o">-&gt;</span><span class="na">getSlug</span><span class="p">(),</span>
+    <span class="p">]</span>
+<span class="p">));</span>
+</code></pre>
+<p>To generate a URL, you must specify the name of the route, and any parameters used in the path for that route.</p>
+
+<p>Instead of hardcoding URLs into templates, the <code>path</code> Twig function can be used to generate URLs based on the routing configuration. Changing the route will then update all template instances where that route is used.</p>
+<pre class="highlight twig tab-twig"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"</span><span class="cp">{{</span> <span class="nv">path</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">)</span> <span class="cp">}}</span><span class="s">"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<p>Further information on generating URLs is provided in the Symfony documentation - <a href="https://symfony.com/doc/2.8/routing.html#generating-urls">Generating URLs</a></p>
+<h2 id='redirecting'>Redirecting</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="c1">// redirect to the "homepage" route
+</span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirectToRoute</span><span class="p">(</span><span class="s1">'homepage'</span><span class="p">);</span>
+
+<span class="c1">// do a permanent - 301 redirect
+</span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirectToRoute</span><span class="p">(</span><span class="s1">'homepage'</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">301</span><span class="p">);</span>
+
+<span class="c1">// redirect to a route with parameters
+</span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirectToRoute</span><span class="p">(</span><span class="s1">'blog_show'</span><span class="p">,</span> 
+    <span class="p">[</span><span class="s1">'slug'</span> <span class="o">=&gt;</span> <span class="s1">'my-page'</span><span class="p">]</span>
+<span class="p">);</span>
+
+<span class="c1">// redirect externally
+</span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="s1">'http://symfony.com/doc'</span><span class="p">);</span>
+</code></pre>
+<p>A number of redirect options are provided via Symfony.</p>
+
+<p>Further information on redirecting is provided in the Symfony documentation - <a href="https://symfony.com/doc/2.8/controller.html#redirecting">Redirecting</a>.</p>
+<h1 id='models'>Models</h1><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="sd">/**
+ * @param Link $link
+ * @return Article
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setLink</span><span class="p">(</span><span class="nv">$link</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">link</span> <span class="o">=</span> <span class="nv">$link</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="sd">/** 
+ * @return Link
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">getLink</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">link</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>You can use a dot (.) to access attributes of a model variable in twig</p>
+</blockquote>
+<pre class="highlight twig tab-twig"><code><span class="cp">{{</span> <span class="nv">article.title</span> <span class="cp">}}</span>
+<span class="cp">{{</span> <span class="nv">article.link.url</span> <span class="cp">}}</span>
+</code></pre>
+<p>A number of model classes are provided to format data for pages and ensure a consistent interface when accessing data from different areas of the CMS.</p>
+
+<p>The attributes of the model are accessed using getter and setter functions in PHP. Calls to setter methods can be chained for ease of use.</p>
+<h2 id='article'>Article</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Article</span><span class="p">;</span>
+
+<span class="nv">$article</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Article</span><span class="p">();</span>
+<span class="nv">$article</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">());</span>
+<span class="nv">$article</span><span class="o">-&gt;</span><span class="na">setSummary</span><span class="p">(</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getSummary</span><span class="p">());</span>
+<span class="nv">$article</span><span class="o">-&gt;</span><span class="na">setBody</span><span class="p">(</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getDescription</span><span class="p">());</span>
+<span class="nv">$article</span><span class="o">-&gt;</span><span class="na">setImage</span><span class="p">(</span><span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getImage</span><span class="p">());</span>
+
+<span class="nv">$article</span><span class="o">-&gt;</span><span class="na">addMeta</span><span class="p">(</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTranslatedString</span><span class="p">(</span><span class="s1">'date-label'</span><span class="p">),</span> 
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMetaElement</span><span class="p">(</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTranslatedString</span><span class="p">(</span><span class="s1">'date-label'</span><span class="p">),</span> 
+        <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getEventDate</span><span class="p">(),</span> 
+        <span class="s1">'string'</span><span class="p">)</span>
+<span class="p">);</span>   
+</code></pre>
+<p>This model defines a generic article page.</p>
+<h3 id='classname'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Article</code></p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$image</td>
+<td>Image</td>
+<td>Featured image of the article</td>
+</tr>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>Title of the article</td>
+</tr>
+<tr>
+<td>$subTitle</td>
+<td>string</td>
+<td>Subtitle of the article</td>
+</tr>
+<tr>
+<td>$summary</td>
+<td>string</td>
+<td>A brief summary of the article</td>
+</tr>
+<tr>
+<td>$body</td>
+<td>string</td>
+<td>Rich text content that makes up the body of the article</td>
+</tr>
+<tr>
+<td>$meta</td>
+<td>array</td>
+<td>Array of metadata on this article</td>
+</tr>
+<tr>
+<td>$supplements</td>
+<td>array</td>
+<td>Array of supplements associated with this article</td>
+</tr>
+<tr>
+<td>$passwordProtected</td>
+<td>boolean</td>
+<td>Whether this content is password protected</td>
+</tr>
+<tr>
+<td>$restricted</td>
+<td>boolean</td>
+<td>Whether access to this content is restricted</td>
+</tr>
+<tr>
+<td>$navigation</td>
+<td>array</td>
+<td>Array of navigation links</td>
+</tr>
+<tr>
+<td>$pagination</td>
+<td>array</td>
+<td>Array of pagination links</td>
+</tr>
+<tr>
+<td>$link</td>
+<td>Link</td>
+<td>Link to this article</td>
+</tr>
+</tbody></table>
+<h2 id='form'>Form</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Form</span><span class="p">;</span>
+
+<span class="nv">$form</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Form</span><span class="p">();</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$title</span><span class="p">);</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">setMethod</span><span class="p">(</span><span class="s1">'post'</span><span class="p">);</span>
+
+<span class="nv">$control</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">();</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">'_token'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">'hidden'</span><span class="p">);</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">addControl</span><span class="p">(</span><span class="nv">$control</span><span class="p">);</span>            
+
+<span class="nv">$control</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">();</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="nv">$emailLabel</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">'email'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">'email'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setMandatory</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setAutocomplete</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">addControl</span><span class="p">(</span><span class="nv">$control</span><span class="p">);</span>        
+
+<span class="nv">$control</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">();</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="nv">$passwordLabel</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setMandatory</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setAutocomplete</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">addControl</span><span class="p">(</span><span class="nv">$control</span><span class="p">);</span>
+
+<span class="nv">$control</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">();</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="nv">$signinButtonLabel</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">'jaduSignInButton'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">'submit'</span><span class="p">);</span>
+<span class="nv">$form</span><span class="o">-&gt;</span><span class="na">setPrimaryAction</span><span class="p">(</span><span class="nv">$control</span><span class="p">);</span>
+</code></pre>
+<p>This model defines a form, including a list of form controls to submit data to the page.</p>
+<h3 id='classname-2'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Form</code></p>
+<h3 id='attributes-2'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$id</td>
+<td>integer</td>
+<td>The id of this form in the database, where the form is content managed</td>
+</tr>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>The title of the form</td>
+</tr>
+<tr>
+<td>$controls</td>
+<td>array</td>
+<td>An array of form controls that make up this form page</td>
+</tr>
+<tr>
+<td>$errors</td>
+<td>array</td>
+<td>An array of errors found in the form following validation</td>
+</tr>
+<tr>
+<td>$action</td>
+<td>string</td>
+<td>The content of the action attribute of the form HTML element</td>
+</tr>
+<tr>
+<td>$method</td>
+<td>string</td>
+<td>The content of the method attribute of the form HTML element</td>
+</tr>
+<tr>
+<td>$formHeading</td>
+<td>string</td>
+<td>The title of this form page</td>
+</tr>
+<tr>
+<td>$instructions</td>
+<td>string</td>
+<td>Rich text content that makes up the instructions of the form page</td>
+</tr>
+<tr>
+<td>$primaryAction</td>
+<td>FormControl</td>
+<td>The form control that forms the primary action of the form, often a submit button</td>
+</tr>
+<tr>
+<td>$secondaryAction</td>
+<td>FormControl</td>
+<td>The form control that forms the secondary action of the form, often a cancel or back button</td>
+</tr>
+</tbody></table>
+<h2 id='formcontrol'>FormControl</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\FormControl</span><span class="p">;</span>
+
+<span class="nv">$control</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">();</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setLabel</span><span class="p">(</span><span class="nv">$passwordLabel</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">'password'</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setMandatory</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$control</span><span class="o">-&gt;</span><span class="na">setAutocomplete</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</code></pre>
+<p>A single form control and its associated values, such as label and help text.</p>
+<h3 id='classname-3'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\FormControl</code></p>
+<h3 id='attributes-3'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$id</td>
+<td>integer</td>
+<td>The id of this form control in the database, where the form is content managed</td>
+</tr>
+<tr>
+<td>$label</td>
+<td>string</td>
+<td>The label of the form control</td>
+</tr>
+<tr>
+<td>$options</td>
+<td>array</td>
+<td>An array of form control options, for example in a select or radio button group</td>
+</tr>
+<tr>
+<td>$name</td>
+<td>string</td>
+<td>The content of the name attribute of the form control&#39;s HTML element</td>
+</tr>
+<tr>
+<td>$value</td>
+<td>string</td>
+<td>The content of the value attribute of the form control&#39;s HTML element</td>
+</tr>
+<tr>
+<td>$type</td>
+<td>string</td>
+<td>The type of form control HTML element to use in the template</td>
+</tr>
+<tr>
+<td>$error</td>
+<td>boolean</td>
+<td>Whether validation found an error in this control</td>
+</tr>
+<tr>
+<td>$autocomplete</td>
+<td>boolean</td>
+<td>Whether the autocomplete attribute should be disabled for this control</td>
+</tr>
+<tr>
+<td>$disabled</td>
+<td>boolean</td>
+<td>Whether this control is disabled in the user interface</td>
+</tr>
+<tr>
+<td>$help</td>
+<td>string</td>
+<td>The help text to display with this form control</td>
+</tr>
+<tr>
+<td>$maxlength</td>
+<td>integer</td>
+<td>The content of the maxlength attribute of the form control&#39;s HTML element</td>
+</tr>
+<tr>
+<td>$mandatory</td>
+<td>boolean</td>
+<td>Whether this control must be completed prior to successful submission</td>
+</tr>
+<tr>
+<td>$className</td>
+<td>string</td>
+<td>Additional CSS class name data associated with this control</td>
+</tr>
+<tr>
+<td>$placeholder</td>
+<td>string</td>
+<td>The content of the placeholder attribute of the form control&#39;s HTML element</td>
+</tr>
+</tbody></table>
+<h2 id='formcontroloption'>FormControlOption</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\FormControlOption</span><span class="p">;</span>
+
+<span class="nv">$option</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControlOption</span><span class="p">();</span>
+<span class="nv">$option</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setText</span><span class="p">(</span><span class="s1">'All Categories'</span><span class="p">);</span>
+<span class="nv">$options</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$option</span><span class="p">;</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$topLevelCategories</span> <span class="k">as</span> <span class="nv">$topLevelCategory</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$option</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormControlOption</span><span class="p">();</span>
+    <span class="nv">$option</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$topLevelCategory</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">())</span>
+        <span class="o">-&gt;</span><span class="na">setText</span><span class="p">(</span><span class="nv">$topLevelCategory</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">());</span>
+    <span class="nv">$options</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$option</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>A single option for a form control, such as a select or radio button group.</p>
+<h3 id='classname-4'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\FormControlOption</code></p>
+<h3 id='attributes-4'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$value</td>
+<td>string</td>
+<td>The content of the value attribute of the form control&#39;s HTML element</td>
+</tr>
+<tr>
+<td>$text</td>
+<td>string</td>
+<td>The label for this option</td>
+</tr>
+</tbody></table>
+<h2 id='link'>Link</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Link</span><span class="p">;</span>
+
+<span class="nv">$azLink</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Link</span><span class="p">();</span>
+<span class="nv">$azLink</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$char</span><span class="p">);</span>
+<span class="nv">$azLink</span><span class="o">-&gt;</span><span class="na">setUrl</span><span class="p">(</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">urlGenerator</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">'atoz_list'</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">'startsWith'</span> <span class="o">=&gt;</span> <span class="nv">$char</span><span class="p">,</span>                       
+<span class="p">]));</span>
+<span class="nv">$azLink</span><span class="o">-&gt;</span><span class="na">setDisabled</span><span class="p">((</span><span class="nv">$count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">));</span>
+</code></pre>
+<p>A link element, including the link destination and label text. </p>
+<h3 id='classname-5'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Link</code></p>
+<h3 id='attributes-5'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$url</td>
+<td>string</td>
+<td>The content of the href attribute of the link&#39;s HTML element</td>
+</tr>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>The text the link will be applied to</td>
+</tr>
+<tr>
+<td>$subtitle</td>
+<td>string</td>
+<td>Additional text that the link will be applied to, commonly used to split the title to allow additional HTML elements to be applied and styled differently</td>
+</tr>
+<tr>
+<td>$active</td>
+<td>boolean</td>
+<td>The link has been selected</td>
+</tr>
+<tr>
+<td>$disabled</td>
+<td>boolean</td>
+<td>The link should be displayed as disabled in the user interface</td>
+</tr>
+</tbody></table>
+<h2 id='listing'>Listing</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Listing</span><span class="p">;</span>
+
+<span class="nv">$listing</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Listing</span><span class="p">();</span>
+<span class="nv">$listing</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$azPageTitle</span><span class="p">);</span>
+
+<span class="nv">$listItems</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRecordList</span><span class="p">(</span><span class="nv">$items</span><span class="p">,</span> <span class="nv">$aliasitems</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$listItems</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$listing</span><span class="o">-&gt;</span><span class="na">addList</span><span class="p">(</span><span class="nv">$listItems</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nv">$listing</span><span class="o">-&gt;</span><span class="na">setAZLinkList</span><span class="p">(</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">buildAZLinkListBar</span><span class="p">()</span>
+<span class="p">);</span>
+</code></pre>
+<p>A generic list page.</p>
+<h3 id='classname-6'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Listing</code></p>
+<h3 id='attributes-6'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$filterBar</td>
+<td>Form</td>
+<td>A form for filtering the content of this list</td>
+</tr>
+<tr>
+<td>$pagination</td>
+<td>array</td>
+<td>Array of pagination links</td>
+</tr>
+<tr>
+<td>$feature</td>
+<td>Article</td>
+<td>Featured article from the list on this page</td>
+</tr>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>The title of the page</td>
+</tr>
+<tr>
+<td>$azLinkList</td>
+<td>array</td>
+<td>Array of A to Z navigation links for filtering the content of this list</td>
+</tr>
+<tr>
+<td>$lists</td>
+<td>array</td>
+<td>Array of lists to display on this page</td>
+</tr>
+</tbody></table>
+<h2 id='listitem'>ListItem</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\ListItem</span><span class="p">;</span>
+
+<span class="nv">$list</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ListItem</span><span class="p">();</span>
+<span class="nv">$list</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s1">'record'</span><span class="p">);</span>
+<span class="nv">$list</span><span class="o">-&gt;</span><span class="na">setItems</span><span class="p">(</span><span class="nv">$records</span><span class="p">);</span>
+</code></pre>
+<p>An array of records or articles. </p>
+<h3 id='classname-7'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\ListItem</code></p>
+<h3 id='attributes-7'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>The title of the list</td>
+</tr>
+<tr>
+<td>$items</td>
+<td>array</td>
+<td>Array of article or link objects that make up this list</td>
+</tr>
+<tr>
+<td>$type</td>
+<td>string</td>
+<td>The type of list, for example &quot;record&quot; or &quot;article&quot;</td>
+</tr>
+</tbody></table>
+<h2 id='meta'>Meta</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Meta</span><span class="p">;</span>
+
+<span class="nv">$meta</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meta</span><span class="p">();</span>
+<span class="nv">$meta</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$title</span><span class="p">);</span>
+<span class="nv">$meta</span><span class="o">-&gt;</span><span class="na">setValue</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+<span class="nv">$meta</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nv">$type</span><span class="p">);</span>
+</code></pre>
+<p>A snippet of content related to an article, for example the published date.</p>
+<h3 id='classname-8'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Meta</code></p>
+<h3 id='attributes-8'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$value</td>
+<td>string</td>
+<td>The value of the metadata defined</td>
+</tr>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>The label for the metadata defined</td>
+</tr>
+<tr>
+<td>$type</td>
+<td>string</td>
+<td>The type of the value, for example &quot;string&quot; or &quot;date&quot;</td>
+</tr>
+</tbody></table>
+<h2 id='modular'>Modular</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Modular</span><span class="p">;</span>
+
+<span class="nv">$modular</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Modular</span><span class="p">();</span>
+<span class="nv">$modular</span><span class="o">-&gt;</span><span class="na">setHomepage</span><span class="p">(</span><span class="nv">$homepage</span><span class="p">);</span>
+<span class="nv">$modular</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$homepage</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">());</span>
+<span class="nv">$modular</span><span class="o">-&gt;</span><span class="na">setSupplements</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSupplements</span><span class="p">(</span><span class="nv">$homepage</span><span class="p">));</span>
+</code></pre>
+<p>Generic modular page for use with Jadu CMS Homepage content type.</p>
+<h3 id='classname-9'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Modular</code></p>
+<h3 id='attributes-9'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$title</td>
+<td>string</td>
+<td>The title of the page</td>
+</tr>
+<tr>
+<td>$homepage</td>
+<td>Homepage</td>
+<td>The modular content block of the page</td>
+</tr>
+<tr>
+<td>$supplements</td>
+<td>array</td>
+<td>Array of supplements associated with this article</td>
+</tr>
+<tr>
+<td>$navigation</td>
+<td>array</td>
+<td>Array of navigation links</td>
+</tr>
+<tr>
+<td>$documents</td>
+<td>array</td>
+<td>Array of document records associated with this page</td>
+</tr>
+</tbody></table>
+<h2 id='page'>Page</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\Element\Page</span><span class="p">;</span>
+
+<span class="nv">$page</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Page</span><span class="p">();</span>
+<span class="nv">$page</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span><span class="nv">$article</span><span class="p">);</span>
+<span class="nv">$page</span><span class="o">-&gt;</span><span class="na">setBreadcrumb</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBreadcrumb</span><span class="p">());</span>
+<span class="nv">$page</span><span class="o">-&gt;</span><span class="na">setMetadata</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMetadata</span><span class="p">());</span>
+<span class="nv">$page</span><span class="o">-&gt;</span><span class="na">setBodyClass</span><span class="p">(</span><span class="s1">'councillor-article'</span><span class="p">);</span>
+
+</code></pre>
+<p>A generic page, including elements such as metadata and breadcrumb.</p>
+<h3 id='classname-10'>Classname</h3>
+<p><code>Photon\CmsEngine\Model\Element\Page</code></p>
+<h3 id='attributes-10'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>$breadcrumb</td>
+<td>array</td>
+<td>Array of breadcrumb links</td>
+</tr>
+<tr>
+<td>$navigation</td>
+<td>array</td>
+<td>Array of navigation links</td>
+</tr>
+<tr>
+<td>$content</td>
+<td>Modular/Listing/Article/Form</td>
+<td>The main content block of the page</td>
+</tr>
+<tr>
+<td>$metadata</td>
+<td>array</td>
+<td>HTML metadata values</td>
+</tr>
+<tr>
+<td>$attributes</td>
+<td>array</td>
+<td>Array of key value pairs associated with the page</td>
+</tr>
+<tr>
+<td>$bodyClass</td>
+<td>string</td>
+<td>Additional CSS class name to be printed on the body HTML element</td>
+</tr>
+</tbody></table>
+<h1 id='default-theme'>Default theme</h1>
+<p>The default theme implements all functionality provided with Jadu CMS, and provides a base from which to extend when creating a custom theme.</p>
+
+<p>The default theme is maintained, and any updates available will be added either:</p>
+
+<ul>
+<li>when you next use Composer to update your dependencies</li>
+<li>when your site is patched with an updated Jadu CMS release</li>
+</ul>
+<h2 id='page-classes'>Page classes</h2>
+<p>Uniquely classes are set on each page of the default theme. For reference, these are:</p>
+
+<table><thead>
+<tr>
+<th>Page</th>
+<th>Class name</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>A to Z article</td>
+<td>atoz-article</td>
+</tr>
+<tr>
+<td>A to Z list</td>
+<td>atoz-list</td>
+</tr>
+<tr>
+<td>Councillor article</td>
+<td>councillor-article</td>
+</tr>
+<tr>
+<td>Councillor list</td>
+<td>councillor-list</td>
+</tr>
+<tr>
+<td>Meeting article</td>
+<td>meeting-article</td>
+</tr>
+<tr>
+<td>Meeting list</td>
+<td>meeting-list</td>
+</tr>
+<tr>
+<td>Account</td>
+<td>user-home-list</td>
+</tr>
+<tr>
+<td>Sign in</td>
+<td>signin-form</td>
+</tr>
+<tr>
+<td>API key application</td>
+<td>api-form</td>
+</tr>
+<tr>
+<td>Change details</td>
+<td>change-details-form</td>
+</tr>
+<tr>
+<td>Change password</td>
+<td>password-reset-form</td>
+</tr>
+<tr>
+<td>Forgot password</td>
+<td>forgot-password-form</td>
+</tr>
+<tr>
+<td>Reset password</td>
+<td>password-reset-form</td>
+</tr>
+<tr>
+<td>Register</td>
+<td>registration-form</td>
+</tr>
+<tr>
+<td>Unsubscribe</td>
+<td>unsubscribe-form</td>
+</tr>
+<tr>
+<td>Directory landing page</td>
+<td>directory-article</td>
+</tr>
+<tr>
+<td>Directory A to Z list</td>
+<td>directory-record-list</td>
+</tr>
+<tr>
+<td>Directory record</td>
+<td>directory-record-article</td>
+</tr>
+<tr>
+<td>Directory search results</td>
+<td>directory-result-list</td>
+</tr>
+<tr>
+<td>Directory category list</td>
+<td>directory-record-list</td>
+</tr>
+<tr>
+<td>Directory submission</td>
+<td>directory-submit-form</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>document-article</td>
+</tr>
+<tr>
+<td>Download landing page</td>
+<td>download-article</td>
+</tr>
+<tr>
+<td>Event article</td>
+<td>event-article</td>
+</tr>
+<tr>
+<td>Event list</td>
+<td>event-list</td>
+</tr>
+<tr>
+<td>Event submission</td>
+<td>event-submit-form</td>
+</tr>
+<tr>
+<td>Category landing page</td>
+<td>category-modular</td>
+</tr>
+<tr>
+<td>Standalone homepage</td>
+<td>homepage-modular</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>index-modular</td>
+</tr>
+<tr>
+<td>News article</td>
+<td>news-article</td>
+</tr>
+<tr>
+<td>News list</td>
+<td>news-list</td>
+</tr>
+<tr>
+<td>Accessibility settings</td>
+<td>accessibility-form</td>
+</tr>
+<tr>
+<td>Search results</td>
+<td>search-list</td>
+</tr>
+<tr>
+<td>Offline page</td>
+<td>offline-article</td>
+</tr>
+</tbody></table>
+<h2 id='non-html-response-routes'>Non-HTML response routes</h2>
+<p>For the following routes, output comes directly from the controller and is not rendered in a template:</p>
+
+<ul>
+<li>meeting_download</li>
+<li>content_rss</li>
+<li>file_download</li>
+<li>logout</li>
+</ul>
+<h2 id='hard-coded-text'>Hard coded text</h2><pre class="highlight twig tab-twig"><code><span class="cp">{{</span> 
+    <span class="nv">getTranslatedString</span><span class="p">(</span>
+        <span class="s1">'password-reset-email-ip-statement'</span><span class="p">,</span> 
+        <span class="p">[</span><span class="nv">app.request.getClientIp</span><span class="p">()]</span>
+    <span class="p">)</span> 
+<span class="cp">}}</span>
+</code></pre>
+<blockquote>
+<p>Within page and component controllers, translated text can be retrieved using the function <code>getTranslatedString()</code> of <code>Photon\Core\Controller\Page</code>. </p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$crumb</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTranslatedString</span><span class="p">(</span><span class="s1">'az-page-link'</span><span class="p">));</span>
+</code></pre>
+<p>Hard coded text in templates is managed using the Language Pack module in Jadu CMS.</p>
+
+<p>A non-technical user interface is provided to add, update and remove text in the language pack.</p>
+
+<p>Photon provides functions to retrieve the appropriate text based on the locale associated with the site.</p>
+
+<p>The function to retrieve text takes two arguments:</p>
+
+<ul>
+<li>the reference for the string to retrieve.</li>
+<li>an array of parameters to replace placeholders in the text (optional).</li>
+</ul>
+<h3 id='site-locale'>Site locale</h3>
+<p>The locale of a site is set within the JaduLanguagePacksToSites database table. Where no matching record is found, requests for text fallback to the language pack installed with the CMS.</p>
+
+<p>New language packs can be defined within the CMS and are associated with a locale. Available locales are defined within the JaduLanguageLocales database table.</p>
+<h2 id='layouts'>Layouts</h2>
+<p>The default template set makes use of template inheritance in Twig to reduce repetition and ease maintenance. </p>
+
+<p>The primary template is <code>base.html.twig</code>. The base template defines the HTML skeleton of the page and a number of block tags that a child template may override or extend. </p>
+
+<p>Further information on extending templates can be found in <a href="https://twig.symfony.com/doc/1.x/tags/extends.html">Twig documentation</a>.</p>
+<h3 id='article'>Article</h3>
+<p>A page on a single topic with a title and body of content.</p>
+
+<ul>
+<li>A to Z article</li>
+<li>Councillor article</li>
+<li>Meeting article</li>
+<li>News article</li>
+<li>Event article</li>
+<li>Download article</li>
+<li>Document article</li>
+<li>Directory article</li>
+<li>Directory record article</li>
+<li>Offline page</li>
+</ul>
+<h3 id='list'>List</h3>
+<p>A list of records or articles, that may be paginated or filterable.</p>
+
+<ul>
+<li>A to Z list</li>
+<li>Councillor list</li>
+<li>Meeting list</li>
+<li>User home</li>
+<li>News list</li>
+<li>Default category homepage</li>
+<li>Event list</li>
+<li>Directory search results</li>
+<li>Directory record list</li>
+<li>Search result list</li>
+</ul>
+<h3 id='modular'>Modular</h3>
+<p>A page of content made up of blocks of widgets.</p>
+
+<ul>
+<li>Index</li>
+<li>Standalone homepage</li>
+<li>Category homepage</li>
+</ul>
+<h3 id='form'>Form</h3>
+<p>A HTML form.</p>
+
+<ul>
+<li>API apply</li>
+<li>Change details</li>
+<li>Forgot password</li>
+<li>Password reset</li>
+<li>Registration</li>
+<li>Sign in</li>
+<li>Unsubscribe</li>
+<li>Event submission</li>
+<li>Directory submission</li>
+<li>Accessibility settings</li>
+</ul>
+<h1 id='acceptance-criteria'>Acceptance criteria</h1>
+<p>Acceptance criteria have been defined for each page contained within the default theme, and are as follows.</p>
+<h2 id='publishing'>Publishing</h2><h3 id='document-article'>Document article</h3>
+<ul>
+<li>Category specific stylesheet is used</li>
+<li>Document specific metadata is used</li>
+<li>Breadcrumb includes category path</li>
+<li>I can preview a document page</li>
+<li>Preview includes accessibility check javascript</li>
+<li>Approved version is shown </li>
+<li>Page errors if an invalid document ID is passed - 404 response</li>
+<li>Page errors if a category ID not assigned to document is passed - 301 response, redirect to valid category</li>
+<li>Page errors if an invalid page number is passed - 404 response</li>
+<li>If no page number passed, default page number 1 is used</li>
+<li>If password protected and not authenticated, message and password form shown</li>
+<li>Submitting valid password in password form is saved against session</li>
+<li>If password protected and authenticated, or not password protected, document content is shown</li>
+<li>If access level is greater than current session, permission denied message shown</li>
+<li>If access level is less than or equal to current session, document content is shown</li>
+<li>Document title, page title, image, page content are rendered on page</li>
+<li>If document title is the same as page title, only document title is shown</li>
+<li>Image is only shown when completed</li>
+<li>Caption is rendered when completed</li>
+<li>Multimedia content is rendered in document editor content</li>
+<li>List of pages is shown if there are more than one page in document</li>
+<li>Current page is highlighted as active in the list</li>
+<li>Each list item is page title and link to valid document page path</li>
+<li>If page number is greater than 1, previous link is shown</li>
+<li>If page number is less than total number of pages, next link is shown</li>
+<li>Page supplements are shown</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h3 id='independent-homepage'>Independent homepage</h3>
+<ul>
+<li>Homepage specific stylesheet is used</li>
+<li>Page errors if an invalid homepage ID is passed - 404 response</li>
+<li>I can preview a homepage</li>
+<li>Preview includes accessibility check javascript</li>
+<li>Breadcrumb includes category path</li>
+<li>Homepage specific metadata is used</li>
+<li>Modular homepage widget block is rendered as in CMS</li>
+<li>Approved version is shown </li>
+<li>Page supplements are shown</li>
+<li>HTML content is rendered unencoded</li>
+<li>Hide navigation uses a one column layout</li>
+</ul>
+<h3 id='index'>Index</h3>
+<ul>
+<li>No breadcrumb is shown</li>
+<li>Homepage specific stylesheet is used</li>
+<li>No h1 is shown</li>
+<li>Page does not error if no homepage is available</li>
+<li>Homepage specific metadata is used</li>
+<li>Approved version is shown </li>
+<li>Modular homepage widget block is rendered as in CMS</li>
+<li>HTML content is rendered unencoded</li>
+<li>Homepage content relates to the independent homepage with highest position</li>
+</ul>
+<h3 id='category-homepage'>Category homepage</h3>
+<ul>
+<li>Category specific stylesheet is used</li>
+<li>Page does not error if no homepage is assigned</li>
+<li>Page errors if an invalid category ID is passed - 404 response</li>
+<li>Page errors if no documents, no subcategories or no homepage assigned - 404 response</li>
+<li>Breadcrumb includes category path</li>
+<li>Modular homepage widget block is rendered as in CMS</li>
+<li>Approved version is shown </li>
+<li>List of documents assigned to category shown</li>
+<li>Homepage specific metadata is not used</li>
+<li>Modular content only rendered if homepage assigned</li>
+<li>Page supplements are shown</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h3 id='directory-article'>Directory article</h3>
+<ul>
+<li>Page errors if an invalid directory ID is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Directory title, description are rendered</li>
+<li>Description is only printed if completed</li>
+<li>Call to action to directory a to z is included</li>
+<li>Call to action to directory submission is included</li>
+<li>List of directory subcategories is included</li>
+<li>List item includes directory name, valid path to directory category</li>
+</ul>
+<h3 id='directory-search'>Directory search</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+<li>List of results is paginated</li>
+<li>50 results are shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>List of results matches the criteria submitted</li>
+<li>List item includes record title and link to valid record path</li>
+<li>If location search, results shown on map</li>
+<li>Pins include fields configured within directory settings</li>
+<li>Message shown if no results found</li>
+<li>Search form is shown</li>
+</ul>
+<h3 id='directory-record-submission'>Directory record submission</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+</ul>
+<h3 id='directory-a-to-z-list'>Directory A to Z list</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>I can view a list of A to Z records starting with the selected letter</li>
+<li>Each list item links to the correct record path</li>
+<li>List of records appears in alphabetical order</li>
+<li>All records starting with a letter are shown on one page (no pagination)</li>
+<li>List of records can be filtered by a different letter by clicking a letter in A-Z bar</li>
+<li>Letters with no records are shown as disabled</li>
+<li>Letters with records link to the correct A to Z list path</li>
+<li>Message shown if no records in directory</li>
+<li>Breadcrumb includes directory article</li>
+</ul>
+<h3 id='directory-record-list'>Directory record list</h3>
+<ul>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Page errors if an invalid category id is passed - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+<li>Breadcrumb includes directory category path</li>
+<li>Category adverts are included</li>
+<li>Category description is only rendered if completed</li>
+<li>List of records in category is shown</li>
+<li>List item includes record title and link to valid directory record path</li>
+<li>List of subcategories is shown</li>
+<li>List item includes category name and link to valid directory category path</li>
+<li>List of records is paginated</li>
+<li>50 records shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+</ul>
+<h3 id='directory-record-article'>Directory record article</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Page errors if an invalid record ID is passed - 404 response</li>
+<li>Page errors if record is offline - 404 response</li>
+<li>Directory record specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+<li>Breadcrumb includes directory category path</li>
+<li>Record title, and fields are rendered</li>
+<li>If an optional field is not completed, it is not rendered </li>
+<li>Multimedia in document editor content is rendered</li>
+<li>Google map is rendered, and pin includes fields configured within directory settings</li>
+<li>Link fields are rendered as a link</li>
+<li>Email fields are rendered as a mailto: link</li>
+<li>ESRI map is rendered </li>
+<li>HTML content is rendered unencoded</li>
+<li>Image is rendered</li>
+<li>Image includes valid alt attribute</li>
+</ul>
+<h3 id='news-article'>News article</h3>
+<ul>
+<li>I can preview a news article</li>
+<li>Page errors if an invalid news ID is passed - 404 response</li>
+<li>Page errors if the news article is offline - 404 response</li>
+<li>Breadcrumb includes news list</li>
+<li>Category specific stylesheet is used</li>
+<li>News article specific metadata is used</li>
+<li>Title, summary, image, content, news date content is rendered on the page</li>
+<li>Image is only rendered if it has been completed</li>
+<li>If image has caption, caption is shown</li>
+<li>News date is rendered in a recognised date format</li>
+<li>Multimedia items are rendered in article document editor content</li>
+<li>Approved version is shown </li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h3 id='news-list'>News list</h3>
+<ul>
+<li>I can view a list of news articles</li>
+<li>News articles are shown in chronological order - newest to oldest</li>
+<li>10 articles are shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>List of news articles can be filtered by year and month</li>
+<li>Each article links to valid news article path</li>
+<li>Each article shows title, summary and news date</li>
+<li>Message shown if no news items in system</li>
+</ul>
+<h3 id='event-article'>Event article</h3>
+<ul>
+<li>I can view an event</li>
+<li>Page errors if an invalid event ID is passed - 404 response</li>
+<li>Page errors if the event is offline - 404 response</li>
+<li>Breadcrumb includes events list</li>
+<li>I can preview an event</li>
+<li>Event specific metadata is used</li>
+<li>Title, event date, date interval, event time, location address, esri map, cost, summary, image, content are rendered on the page</li>
+<li>Multimedia items are rendered in event document editor content</li>
+<li>Interval is only shown if it has been completed</li>
+<li>ESRI map is only shown if integration is enabled</li>
+<li>Time is only shown if it has been completed</li>
+<li>Document editor content is only shown if it has been completed</li>
+<li>Image is only shown if it has been completed</li>
+<li>Image caption is shown where it has been added</li>
+<li>Approved version is shown </li>
+<li>Page does not error if location deleted</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h3 id='event-list'>Event list</h3>
+<ul>
+<li>I can view a list of events</li>
+<li>A call to action is shown to submit your event</li>
+<li>10 events are shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>Each event includes, title, summary, event date</li>
+<li>Each event links to a valid event path</li>
+<li>List of events can be filtered by date and location</li>
+<li>Events are shown in chronological order - from today ascending</li>
+<li>Message shown if no events in system</li>
+</ul>
+<h3 id='event-submission'>Event submission</h3>
+<ul>
+<li>Form includes title, start date, interval, end date, start time, end time, location, new location, cost, summary, description, image fields and submit button</li>
+<li>Error shown if start date is invalid date format or empty</li>
+<li>Error shown if end date is invalid date format</li>
+<li>Error shown if auth field is empty or invalid content</li>
+<li>Error shown if title empty or greater than 255 characters</li>
+<li>Error shown if new location is greater than 255 characters</li>
+<li>Error shown if location does not match a valid location id</li>
+<li>Error shown if summary is empty or greater than max summary character limit</li>
+<li>Error shown if description is greater than 65535 characters</li>
+<li>Error shown if start time is not in time format</li>
+<li>Error shown if end time is not in time format</li>
+<li>Error shown if cost is empty or greater than 255 characters</li>
+<li>Error shown if start date is after end date</li>
+<li>Error shown if image is not an image file of type jpg, jpeg, gif or png</li>
+<li>If errors are found, submitted values are shown in form fields</li>
+<li>If no errors found, event is submitted and image uploaded</li>
+<li>Image should be appended to description of submitted event</li>
+<li>Submitted event should not be live and visible on the website immediately after submission</li>
+<li>Image should appear in the site image library with valid title</li>
+<li>Event should have valid metadata</li>
+<li>Email notification of new event submission should be sent</li>
+<li>If event submitted, redirect to event list and show success message</li>
+</ul>
+<h3 id='download-article'>Download article</h3>
+<ul>
+<li>Category specific stylesheet is used</li>
+<li>Page errors if an invalid download id is used - 404 response</li>
+<li>Page errors if download is offline - 404 response</li>
+<li>Page does not error if download if not visible - 200 response</li>
+<li>Approved version is shown </li>
+<li>If password protected and not authenticated, message and password form shown</li>
+<li>Submitting valid password in password form is saved against session</li>
+<li>If password protected and authenticated, or not password protected, download content is shown</li>
+<li>Download title, description, list of files is rendered</li>
+<li>Each uploaded file includes filename, file size, extension and link to valid download path</li>
+<li>Each linked file includes filename and link to external path</li>
+<li>Description is only shown if completed</li>
+</ul>
+<h2 id='myaccount'>MyAccount</h2><h3 id='change-details-form'>Change details form</h3>
+<ul>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to appropriate url if user adapter change details page is specified</li>
+<li>Must have valid user session to view</li>
+<li>Redirects to index if no valid user session</li>
+<li>Redirects to user home if user adapter change details is disabled</li>
+<li>Redirects to register authorisation if email has not been authorised</li>
+<li>Breadcrumb includes user home</li>
+<li>Form includes csrf token, email address field and save changes submit button</li>
+<li>Salutation field, forename, surname, birthday, age, sex, occupation, company, address, city, county, postcode, country, telephone, mobile, fax, website, data protection and targetting question fields when enabled in register preferences</li>
+<li>Fields are prefilled with user’s current details</li>
+<li>Error message is shown if CSRF token invalid on submission</li>
+<li>Error message is shown if email address is not a string in email address format</li>
+<li>Error message is shown if email address matches a different registered user</li>
+<li>Error message is shown if salutation is not one of Mr, Miss, Mrs, Ms, Mx, Dr or other</li>
+<li>Error message is shown if forename is blank</li>
+<li>Error message is shown if surname is blank</li>
+<li>Error message is shown if birthday is not a valid date</li>
+<li>Error message is shown if birthday is not in the past</li>
+<li>Error message is shown if age is not a number</li>
+<li>Error message is shown if sex is not one of “Male” or “Female”</li>
+<li>Error message is shown if address is blank</li>
+<li>Error message is shown if city is blank</li>
+<li>Error message is shown if postcode is blank or includes non alphanumeric characters</li>
+<li>Error message is shown if country is blank</li>
+<li>Error message is shown if an answer is not supplied for targetting question</li>
+<li>If errors are found, submitted values are shown in form fields</li>
+<li>If no errors found, user details are updated</li>
+<li>If user email is updated and email authentication is enabled, authentication email is sent</li>
+<li>If user is updated, redirected to user home and success message shown</li>
+<li>Breadcrumb includes user account link</li>
+</ul>
+<h3 id='api-apply-form'>API apply form</h3>
+<ul>
+<li>Must have valid user session to view</li>
+<li>Redirects to index if no valid user session</li>
+<li>Form includes description field, terms checkbox and submit button</li>
+<li>An error is highlighted if terms is not checked on submission</li>
+<li>On successful submission a api key submission is generated, redirected to user home, success message shown</li>
+</ul>
+<h3 id='reset-password-form'>Reset password form</h3>
+<ul>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to appropriate url if user adapter change password page is specified</li>
+<li>Redirects to index and error message shown if user not logged in and password reset code invalid</li>
+<li>Redirects to user home and error message shown if user logged in and password reset code invalid</li>
+<li>Form includes old password field, new password field, new password confirmation field and submit button</li>
+<li>If change has been forced, forced hidden input printed</li>
+<li>Error message is shown if password is less than 6 characters</li>
+<li>Error message is shown if password is greater than 30 characters</li>
+<li>Error message is shown if new password is not the same as new password confirmation</li>
+<li>If errors are found, submitted values are shown in form fields</li>
+<li>If no errors found, password is updated</li>
+<li>If password is updated, reset code is disabled.</li>
+</ul>
+<h3 id='forgot-password-form'>Forgot password form</h3>
+<ul>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to appropriate url if user adapter forgot password page is specified</li>
+<li>Redirects to signin page if user adapter change details is disabled</li>
+<li>Form includes email address field and submit button</li>
+<li>Error message shown if email is not valid format</li>
+<li>Password reset email sent if email matches an existing user</li>
+<li>Success message shown if password reset email is sent</li>
+</ul>
+<h3 id='register'>Register</h3>
+<ul>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to change details if valid user session</li>
+<li>Redirects to sign in if user adapter register is disabled</li>
+<li>Form includes csrf token, email address field, email address confirmation, password, password confirmation and register submit button</li>
+<li>Salutation field, forename, surname, birthday, age, sex, occupation, company, address, city, county, postcode, country, telephone, mobile, fax, website, data protection and targetting question fields when enabled in register preferences</li>
+<li>Error message is shown if CSRF token invalid on submission</li>
+<li>Error message is shown if password is less than 6 characters</li>
+<li>Error message is shown if password is greater than 30 characters</li>
+<li>Error message is shown if password is not the same as password confirmation</li>
+<li>Error message is shown if email address is empty</li>
+<li>Error message is shown if email address is not a string in email address format</li>
+<li>Error message is shown if email address matches a different registered user</li>
+<li>Error message is shown if email address is not the same as email confirmation</li>
+<li>Error message is shown if salutation is not one of Mr, Miss, Mrs, Ms, Mx, Dr or other</li>
+<li>Error message is shown if forename is blank</li>
+<li>Error message is shown if surname is blank</li>
+<li>Error message is shown if birthday is not a valid date</li>
+<li>Error message is shown if birthday is in the future</li>
+<li>Error message is shown if age is not a number</li>
+<li>Error message is shown if age is blank</li>
+<li>Error message is shown if sex is not one of “Male” or “Female”</li>
+<li>Error message is shown if address is blank</li>
+<li>Error message is shown if city is blank</li>
+<li>Error message is shown if postcode is blank or includes non alphanumeric characters</li>
+<li>Error message is shown if country is blank</li>
+<li>Error message is shown if an answer is not supplied for targetting question</li>
+<li>If errors are found, submitted values are shown in form fields</li>
+<li>If no errors found, user is registered</li>
+<li>If email authentication is enabled, authentication email is sent, redirected to index and info message is shown</li>
+<li>If user is registered, redirected to user home and success message shown</li>
+</ul>
+<h3 id='sign-in-form'>Sign in form</h3>
+<ul>
+<li>Redirects to https if ssl is enabled </li>
+<li>Form includes email address, password, sign in button</li>
+<li>Error message is shown if details do not match user in system </li>
+<li>Error message doesn’t specify the incorrect value</li>
+<li>If details match valid user, user session started, user redirected to user account, success message shown</li>
+</ul>
+<h3 id='unsubscribe'>Unsubscribe</h3>
+<ul>
+<li>If user id and email match valid user from database, success message shown, redirect to index</li>
+<li>If user id and email do not match valid user from database, error message shown, redirect to index</li>
+<li>If valid user from database is found, data protection value is changed to 0</li>
+</ul>
+<h3 id='user-home'>User home</h3>
+<ul>
+<li>Redirects to https if ssl is enabled</li>
+<li>Must have valid user session to view</li>
+<li>Redirects to appropriate url if user adapter user home page is specified</li>
+<li>If user email authorisation is pending, message is shown and other functions disabled</li>
+<li>Submitted directory entries are shown on user home</li>
+<li>Valid api keys are shown on user home</li>
+<li>Welcome message naming user is shown</li>
+<li>If user adapter allows change details, link is shown</li>
+<li>If user adapter allows change password, link is shown</li>
+<li>Link is shown to logout of account</li>
+</ul>
+<h3 id='change-password-form'>Change password form</h3>
+<ul>
+<li>Must have valid user session to view</li>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to appropriate url if user adapter change password page is specified</li>
+<li>Redirects to index and error message shown if user not logged in </li>
+<li>Form includes old password field, new password field, new password confirmation field and submit button</li>
+<li>Error message is shown if password is less than 6 characters</li>
+<li>Error message is shown if password is greater than 30 characters</li>
+<li>Error message is shown if new password is not the same as new password confirmation</li>
+<li>If no errors found, password is updated</li>
+<li>If password is updated, reset code is disabled.</li>
+<li>If password is updated, redirects to user home, success message shown</li>
+<li>Breadcrumb includes user account link</li>
+</ul>
+<h2 id='egov'>EGov</h2><h3 id='meeting-amp-minute-article'>Meeting &amp; minute article</h3>
+<ul>
+<li>I can view a meeting article</li>
+<li>Page errors if an invalid meeting ID is provided - 404 response</li>
+<li>Page errors if meeting is offline - 404 response</li>
+<li>Breadcrumb includes a link to meeting list</li>
+<li>Committee title, meeting date, list of attachments are rendered on page</li>
+<li>Multimedia content in document editor content is rendered</li>
+<li>Meeting attachments can be downloaded</li>
+<li>HTML content is rendered unencoded</li>
+<li>Attachment types appear in the configured order</li>
+<li>Attachments are grouped by type</li>
+<li>Attachments appear in the configured position in their list</li>
+<li>Meeting specific metadata is used</li>
+</ul>
+<h3 id='meeting-amp-minute-list'>Meeting &amp; minute list</h3>
+<ul>
+<li>I can view a list of meetings</li>
+<li>Only live meetings are shown in the list</li>
+<li>List is ordered by meeting date ascending</li>
+<li>Current page defaults to today where no filter options are set</li>
+<li>Meetings can be filtered by committee</li>
+<li>Meetings can be filtered by committee status (archived/current)</li>
+<li>10 meetings are rendered per page</li>
+<li>Each list item links to valid meeting path</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>Message shown if no meetings in system</li>
+</ul>
+<h3 id='a-to-z-article'>A to Z article</h3>
+<ul>
+<li>Page errors if an invalid service ID is passed - 404 response</li>
+<li>Page errors if the service is offline - 404 response</li>
+<li>Page redirects to appropriate URL if service has redirect set</li>
+<li>Breadcrumb includes A-Z list</li>
+<li>A to Z record metadata is included in the page</li>
+<li>Title, content, eligibility, accessibility and availability content is rendered on the page</li>
+<li>Multimedia items are rendered in service document editor content</li>
+<li>Eligibility section is only shown if it has been completed</li>
+<li>Accessibility section is only shown if it has been completed</li>
+<li>Availability section is only shown if it has been completed</li>
+<li>Contacts section is only shown if it has been completed</li>
+<li>Each contact assigned to service is printed</li>
+<li>Contact name is only printed if it has been completed</li>
+<li>Contact department is only printed if it has been completed</li>
+<li>Contact email is only printed if it has been completed</li>
+<li>Contact telephone is only printed if it has been completed</li>
+<li>Contact mobile is only printed if it has been completed</li>
+<li>Contact fax is only printed if it has been completed</li>
+<li>Contact URL is only printed if it has been completed</li>
+<li>Contact address is only printed if it has been completed</li>
+<li>Contact email is rendered as a mailto: link</li>
+<li>Contact telephone is rendered as a tel: link</li>
+<li>Contact mobile is rendered as a tel: link</li>
+<li>Contact URL is rendered as a link</li>
+<li>Approved version is shown </li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h3 id='a-to-z-list'>A to Z list</h3>
+<ul>
+<li>I can view a list of A to Z records starting with the selected letter</li>
+<li>Each list item links to the correct A to Z article path</li>
+<li>A to Z record aliases are included in the list of records</li>
+<li>List of records appears in alphabetical order</li>
+<li>All records starting with a letter are shown on one page (no pagination)</li>
+<li>List of records can be filtered by a different letter by clicking a letter in A-Z bar</li>
+<li>Letters with no records are shown as disabled</li>
+<li>Letters with records link to the correct A to Z list path</li>
+<li>Message shown if no services in system</li>
+</ul>
+<h3 id='councillors-article'>Councillors article</h3>
+<ul>
+<li>Approved version is shown </li>
+<li>Page errors if invalid councillor ID is passed - 404 response</li>
+<li>Page errors if councillor is offline - 404 response</li>
+<li>Breadcrumb includes councillors list</li>
+<li>First name, second name, image, party, ward, position, address, telephone, fax, email, content are rendered</li>
+<li>Page does not error if party deleted</li>
+<li>Page does not error if ward deleted</li>
+<li>Multimedia is rendered in document editor content</li>
+<li>Image is only printed if completed</li>
+<li>Image Caption is rendered if completed</li>
+<li>Position is only printed if completed</li>
+<li>Address is only printed if completed</li>
+<li>Telephone is only printed if completed</li>
+<li>Telephone is rendered as a tel: link</li>
+<li>Fax is only printed if completed</li>
+<li>Email is only printed if completed</li>
+<li>Email is rendered as a mailto: link</li>
+<li>Content is only printed if completed</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h3 id='councillors-list'>Councillors list</h3>
+<ul>
+<li>I can view a list of councillors</li>
+<li>List is not paginated</li>
+<li>List can be filtered by party, ward</li>
+<li>List of records is sorted by alphabetical order</li>
+<li>Each item links to valid councillor path and includes first name and surname</li>
+<li>Message shown if no councillors in system</li>
+</ul>
+<h2 id='utilities'>Utilities</h2><h3 id='offline'>Offline</h3>
+<ul>
+<li>If site is offline, 40X response</li>
+<li>Offline exception page is shown</li>
+</ul>
+<h3 id='accessibility-settings'>Accessibility settings</h3>
+<ul>
+<li>Colour scheme setting is saved to session when form is submitted</li>
+<li>Font size setting is saved to session when form is submitted</li>
+<li>Font setting is saved to session when form is submitted</li>
+<li>Using the reset button clears saved session values</li>
+<li>Form can be navigated by keyboard only</li>
+</ul>
+<h1 id='template-differences'>Template differences</h1>
+<p>There are a number of differences between the default template set provided with Photon, and the Jadu CMS legacy template set. </p>
+<h2 id='events'>Events</h2>
+<p>Events templates have been condensed into two pages: events list and event article. A separate page to view events in a category is no longer available, events related to a particular category can be added to document category and document article templates where desired. </p>
+
+<p>The event list does not include a calendar navigation element, events are shown in chronological order with next/previous pagination. Filtering by time period and location now interact, where as previously they were independent. </p>
+
+<p>The event calendar is still available as a widget.</p>
+<h2 id='news'>News</h2>
+<p>News templates have been condensed into two pages: news list and news article. A separate page to view news article in a category is no longer available, news related to a particular category can be added to document category and document article templates where desired. </p>
+
+<p>The news archive is now combined into news list, the navigation of the news archive is provided as a filter form rather than a list of links. </p>
+
+<p>The news list shows news articles in chronological order with next/previous pagination. </p>
+<h2 id='downloads'>Downloads</h2>
+<p>Downloads templates have been condensed in a singled page: download article. Separate pages to view downloads in a category are no longer available. By default, downloads related to a particular category are listed on the document article template.</p>
+
+<p>The download article template defaults to showing all files associated with a download record, and then providing a direct link to download the file, rather than then providing a link to the file specific page. The breadcrumb of the download article now links to document category tree, rather than the parallel download category tree.</p>
+
+<p>As there is no downloads index page, there is no listing of popular downloads on the site.</p>
+<h2 id='a-to-z'>A to Z</h2>
+<p>The A to Z home page, with separate tag cloud based navigation is no longer provided. A single list of A to Z items with alphabetical links to filter the list by letter is available, along with an A to Z article page. The A to Z article page no longer lists all  content assigned to a category related to the A to Z article. </p>
+<h2 id='councillors'>Councillors</h2>
+<p>The councillor index page, with hard coded statement, is no longer provided, a single list of councillors with filters for ward and party is provided instead. </p>
+
+<p>The other councillors for a ward are no longer listed on the councillor article page. The &quot;view by name&quot;, &quot;view by party&quot; and &quot;view by ward&quot; navigation links are no longer listed on the councillor article page.</p>
+<h2 id='meetings-amp-minutes'>Meetings &amp; Minutes</h2>
+<p>Meeting templates have been condensed to remove the meeting specific category navigation pages. Meetings related to a particular category can be added to document category and document article templates where desired.</p>
+
+<p>The meeting list page now shows all meetings chronologically with a filter form provided to filter by meeting heading or archive status. </p>
+
+<p>Separate templates are no longer provided to view all archived meeting committees, or meetings related to a single committee. </p>
+
+<p>The content of a meeting article page is now shown on load, rather than after clicking to view more as previously.</p>
+<h2 id='directories'>Directories</h2>
+<p>Directory templates have been condensed to remove the directory specific category navigation pages. By default, directories related to a particular category are listed on the document article template. </p>
+
+<p>The breadcrumb of directory pages now links to document category tree, rather than the parallel directory category tree. </p>
+<h2 id='sitemap'>Sitemap</h2>
+<p>A separate, hardcoded sitemap template is no longer provided. A sitemap widget that outputs the document category tree is provided in its place. </p>
+<h2 id='feedback-form'>Feedback form</h2>
+<p>A hardcoded feedback form is no longer provided. We recommend a content managed form is used where required.</p>
+<h2 id='email-a-friend-form'>Email a friend form</h2>
+<p>An email a friend form is no longer provided due to security concerns with this feature. </p>
+<h2 id='terms-and-conditions'>Terms and conditions</h2>
+<p>A separate terms and conditions content type is no longer provided, we recommend a content managed document or homepage is used where required.</p>
+<h2 id='accessibility-statement'>Accessibility statement</h2>
+<p>A separate accessibility statement content type is no longer provided, we recommend a content managed document or homepage is used where required.</p>
+<h2 id='location'>Location</h2>
+<p>A separate location content type is no longer provided, we recommend a content managed document or homepage is used where required.</p>
+<h2 id='api'>API</h2>
+<p>A separate page to view an account&#39;s API key is no longer provided. The API key is instead shown directly on the user&#39;s account homepage.</p>
+<h1 id='customisation'>Customisation</h1><h2 id='creating-a-theme'>Creating a theme</h2>
+<p>Adding a new theme requires you to:</p>
+
+<ul>
+<li>Create a new theme bundle</li>
+<li>Create a theme class that defines your theme</li>
+<li>Register your theme with the CMS</li>
+<li>Configure your Symfony app to use the theme</li>
+</ul>
+<h2 id='creating-a-theme-bundle'>Creating a theme bundle</h2><pre class="highlight plaintext"><code>AlphaTheme 
+    |- AlphaThemeBundle.php
+    |- Component
+    |    |- CategoryNavigationController.php
+    |- DependencyInjection
+    |    |- AlphaThemeExtension.php
+    |- Page
+    |    |- UtilitiesContent
+    |        |- ThemeDemoController.php
+    |- Resources
+    |    |- config
+    |    |   |- routing.yml
+    |    |   |- services.yml
+    |    |   |- theme.yml
+    |    |- public 
+    |    |   |- dist
+    |    |   |   |...
+    |    |   |- images
+    |    |   |   |...
+    |    |   |- js
+    |    |       |...
+    |    |- templates
+    |        |- layouts
+    |        |   |...
+    |        |- pages
+    |        |   |...
+    |        |- partials
+    |        |   |...
+    |        |- widgets
+    |            |...
+    |- Theme
+        |- AlphaTheme.php
+
+</code></pre>
+<p>A bundle is in essence a folder of files laid out in a consistent way. </p>
+
+<p>It <strong>must</strong> contain:</p>
+
+<ul>
+<li>A bundle definition file eg. <code>AlphaThemeBundle.php</code></li>
+<li>A theme definition file eg. <code>Theme/AlphaTheme.php</code></li>
+<li>A theme service definition in a config file eg. <code>Resources/config/services.yml</code></li>
+<li>Dependency injection class to load the theme service definition eg. <code>DependencyInjection/AlphaThemeExtension.php</code></li>
+</ul>
+
+<p>For <strong>Galaxies theme bundles</strong>, the following addtions are also required:</p>
+
+<ul>
+<li>A demo route definition in a config file eg. <code>Resources/config/routing.yml</code></li>
+<li>A theme config file eg. <code>Resources/config/theme.yml</code></li>
+<li>A demo route controller eg. <code>Page/UtilitiesContent/ThemeDemoController.php</code></li>
+<li>A preview image eg. <code>Resources/public/images/preview.png</code></li>
+</ul>
+<h2 id='creating-a-theme-definition'>Creating a theme definition</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Spacecraft\DemoProject\Theme</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Photon\Core\Theme\Theme</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">DemoTheme</span> <span class="k">implements</span> <span class="nx">Theme</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'demo'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getParent</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">'base'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getPath</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/../Resources/templates'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>The example defines the <code>demo</code> theme, which extends <code>base</code>. By convention, the theme file sits within the <code>Theme</code> directory of the project. </p>
+
+<p>The machine name of the theme should be defined in the <code>getName()</code> method. If the theme is extending an existing theme, this should be defined in the <code>getParent()</code> method. <code>base</code> is the machine name of the CMS default theme.</p>
+
+<p>The path to the twig templates provided by this theme should be defined within the <code>getPath()</code> method.</p>
+<h2 id='defining-a-theme-service'>Defining a theme service</h2><pre class="highlight yaml tab-yaml"><code><span class="s">spacecraft_demo_project.theme</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">Spacecraft\DemoProject\Theme\DemoTheme</span>
+    <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">photon.theme</span> <span class="pi">}</span>
+</code></pre>
+<p>To define a theme service service, create a service in <code>services.yml</code> that points to the theme definition file. The service should be tagged with <code>photon.theme</code>.</p>
+
+<aside class="notice">
+Remember to include Dependency injection project extension if your theme includes its own services.yml.
+</aside>
+<h2 id='using-a-custom-theme'>Using a custom theme</h2><pre class="highlight yaml tab-yaml"><code><span class="na">photon_core</span><span class="pi">:</span>
+    <span class="na">theme</span><span class="pi">:</span> <span class="s">demo</span>
+</code></pre>
+<p>To use a theme, the configuration of your Symfony application should be updated. The <code>photon_core</code> element should have a child, <code>theme</code>. The value of <code>theme</code> should be the machine name of the theme, eg. <code>demo</code>.</p>
+
+<p>By default, the CMS stores the Symfony application for the main site in <code>/path/to/jadu/config/frontend.yml</code>.</p>
+<h2 id='twig-namespaces'>Twig namespaces</h2><pre class="highlight twig tab-twig"><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s1">'@theme:base/components/announcement.html.twig'</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">title_outer</span> <span class="cp">%}</span>
+    <span class="nt">&lt;h2&gt;</span><span class="cp">{{</span> <span class="nv">block</span><span class="p">(</span><span class="s1">'title'</span><span class="p">)</span> <span class="cp">}}</span><span class="nt">&lt;/h2&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</code></pre>
+<p>The selected theme will always be the main namespace for Twig, i.e. <code>pages/demo.html.twig</code> will be loaded from the selected theme&#39;s templates. </p>
+
+<p>If a theme has a parent theme, then the parent theme will also be within the main namespace. </p>
+
+<p>Twig templates of a particular theme can be referenced using the theme namespace.</p>
+
+<aside class="notice">
+This is particularly useful when extending a base theme.
+</aside>
+<h2 id='customising-pages'>Customising pages</h2>
+<blockquote>
+<p>Defining the controller:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Spacecraft\DemoProject\Page</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Photon\Core\Controller\Page</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">DemoController</span> <span class="k">extends</span> <span class="nx">Page</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @return Response
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">'pages/demo.html.twig'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Defining the service:</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="s">spacecraft_demo_project.page.demo</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">Spacecraft\DemoProject\Page\DemoController</span>
+    <span class="na">parent</span><span class="pi">:</span> <span class="s">photon.controller.page</span>
+</code></pre>
+<blockquote>
+<p>When adding a new page, simply define the route and specify the new controller service</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="na">demo</span><span class="pi">:</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">/demo</span>
+    <span class="na">defaults</span><span class="pi">:</span>
+        <span class="na">_controller</span><span class="pi">:</span> <span class="s">spacecraft_demo_project.page.demo</span>
+</code></pre>
+<p>Pages can be added in Photon by creating a controller class, defining a service and route.</p>
+
+<p>The controller class is a standard Symfony controller that takes a <code>Request</code> and returns a <code>Response</code>. Generally, each page will have it&#39;s own controller and be an invokable class.</p>
+
+<p>In this example the Twig template being rendered needs to be available in the current theme. </p>
+
+<aside class="notice">
+When creating the service, the parent service <code>photon.controller.page</code> can be used to simplify the definition. This will set all of the dependencies that are required by the <code>Page</code> base class.
+</aside>
+<h2 id='customising-components'>Customising components</h2>
+<blockquote>
+<p>Defining the controller:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Spacecraft\DemoProject\Component</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Photon\Core\Controller\Component</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">AnnouncementController</span> <span class="k">extends</span> <span class="nx">Component</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @return Response
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">'components/announcement.html.twig'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Defining the service:</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="s">spacecraft_demo_project.page.demo</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">Spacecraft\DemoProject\Component\AnnouncementController</span>
+    <span class="na">parent</span><span class="pi">:</span> <span class="s">photon.controller.component</span>
+    <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">photon.component</span><span class="pi">,</span> <span class="nv">component_name</span><span class="pi">:</span> <span class="nv">announcement</span> <span class="pi">}</span>
+</code></pre>
+<blockquote>
+<p>Invoking the component:</p>
+</blockquote>
+<pre class="highlight twig tab-twig"><code><span class="cp">{{</span> <span class="nv">component</span><span class="p">(</span><span class="s1">'announcement'</span><span class="p">)</span> <span class="cp">}}</span>
+</code></pre>
+<p>Components can be added in Photon by creating a controller class and defining a service tagged as <code>photon.component</code>.</p>
+
+<p>The controller class for a component is a standard Symfony controller that takes a <code>Request</code> and returns a <code>Response</code>. The controller must be an invokable class to be compatible with the component system.</p>
+
+<p>The service must be given a name. This name will be used when referencing the component within a Twig template.</p>
+
+<p>Once the component service is defined it can be rendered within any Photon template using the <code>component()</code> Twig function.</p>
+
+<aside class="notice">
+When creating the service, the parent service <code>photon.controller.component</code> can be used to simplify the definition. This will set all of the dependencies that are required by the <code>Component</code> base class. 
+</aside>
+<h2 id='customising-widgets'>Customising widgets</h2>
+<blockquote>
+<p>Defining the controller:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Photon\CmsProject\Widget</span><span class="p">;</span>
+
+
+<span class="k">use</span> <span class="nx">Photon\CmsEngine\Model\PublishingContent\Homepage\HomepageWidget</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Photon\Core\Controller\Widget</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ContentWidget</span> <span class="k">extends</span> <span class="nx">Widget</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * @param HomepageWidget $widget
+     * @param bool $isPreview
+     *
+     * @return Response
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nx">HomepageWidget</span> <span class="nv">$widget</span><span class="p">,</span> <span class="nv">$isPreview</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$isPreview</span> <span class="o">&amp;&amp;</span> <span class="k">empty</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getSettingValue</span><span class="p">(</span><span class="s1">'title'</span><span class="p">))</span> <span class="o">&amp;&amp;</span> <span class="k">empty</span><span class="p">(</span><span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getSettingValue</span><span class="p">(</span><span class="s1">'content'</span><span class="p">)))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">'Please apply some settings to this widget.'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">'widgets/content.html.twig'</span><span class="p">,</span> <span class="p">[</span>
+            <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getSettingValue</span><span class="p">(</span><span class="s1">'title'</span><span class="p">),</span>
+            <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getSettingValue</span><span class="p">(</span><span class="s1">'content'</span><span class="p">),</span>
+        <span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<blockquote>
+<p>Defining the service:</p>
+</blockquote>
+<pre class="highlight yaml tab-yaml"><code><span class="s">photon_cms_project.widget.website_statistics</span><span class="pi">:</span>
+    <span class="na">class</span><span class="pi">:</span> <span class="s">Photon\CmsProject\Widget\WebsiteStatisticsWidget</span>
+    <span class="na">parent</span><span class="pi">:</span> <span class="s">photon.controller.widget</span>
+    <span class="na">arguments</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s1">'</span><span class="s">@photon_cms_engine.repository.website_statistics'</span>
+    <span class="na">tags</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="pi">{</span> <span class="nv">name</span><span class="pi">:</span> <span class="nv">photon.widget</span><span class="pi">,</span> <span class="nv">widget_id</span><span class="pi">:</span> <span class="nv">31</span> <span class="pi">}</span>
+</code></pre>
+<p>Widgets can be added in Photon by creating a controller class, registering the widget in the <code>JaduHomepageWidgets</code> database table and defining a service tagged as <code>photon.widget</code> and the id of the widget in the CMS database.</p>
+
+<p>The controller class for a widget is a standard Symfony controller that takes a request and returns a response. The controller must be an invokable class to be compatible with the widget system.</p>
+
+<p>The widget service must be tagged with <code>photon.widget</code> and given an id. The id is used when the CMS identifies the controller to invoke, where a matching controller can not be found, the default widget controller is reverted to.</p>
+
+<aside class="notice">
+When creating the service, the parent <code>photon.controller.widget</code> can be used to simplify the definition. This will set all of the dependencies that are required by the <code>Widget</code> base class. 
+</aside>
+<h2 id='customising-supplements'>Customising supplements</h2><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;system</span> <span class="na">xmlns:config=</span><span class="s">"http://www.jadu.co.uk/schema/config"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;supplements</span> <span class="na">config:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">"spacecraft-popular-pages"</span><span class="nt">&gt;</span>PopularPagesPageSupplementManager<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/supplements&gt;</span>
+<span class="nt">&lt;/system&gt;</span>
+</code></pre>
+<p>Supplements can be added in Photon by creating a manager class, administration interface file and associated class.</p>
+
+<p>The new supplement class must be registered with the CMS in the database table <code>JaduPageSupplements</code>. The supplement manager class must be registered in <code>page_supplements.xml</code>.</p>
+<h1 id='troubleshooting'>Troubleshooting</h1>
+<p><strong>The site is complaining that the theme doesn&#39;t exist</strong></p>
+
+<p>This is commonly down to either the theme service not being defined within the theme bundle <code>services.yml</code>, or the DependencyInjection folder and it&#39;s related files being missing from the theme bundle.</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
