@@ -70,8 +70,11 @@ return $this->redirectToRoute('homepage');
 return $this->redirectToRoute('homepage', [], 301);
 
 // redirect to a route with parameters
-return $this->redirectToRoute('blog_show', 
-    ['slug' => 'my-page']
+return $this->redirectToRoute(
+    'blog_show',
+    [
+        'slug' => 'my-page',
+    ]
 );
 
 // redirect externally

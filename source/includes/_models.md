@@ -3,22 +3,34 @@
 ```php
 <?php
 
-/**
- * @param Link $link
- * @return Article
- */
-public function setLink($link)
-{
-    $this->link = $link;
-    return $this;
-}
+namespace Photon\CmsEngine\Model\Element;
 
-/** 
- * @return Link
- */
-public function getLink()
+class Article
 {
-    return $this->link;
+    /**
+     * @var Link
+     */
+    private $link;
+    
+    /**
+     * @param Link $link
+     * 
+     * @return Article
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+    
+    /** 
+     * @return Link
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
 }
 ```
 
@@ -47,12 +59,13 @@ $article->setBody($item->getDescription());
 $article->setImage($item->getImage());
 
 $article->addMeta(
-    $this->getTranslatedString('date-label'), 
+    $this->getTranslatedString('date-label'),
     $this->getMetaElement(
-        $this->getTranslatedString('date-label'), 
-        $item->getEventDate(), 
-        'string')
-);   
+        $this->getTranslatedString('date-label'),
+        $item->getEventDate(),
+        'string'
+    )
+);
 ```
 
 This model defines a generic article page.
@@ -84,6 +97,7 @@ $link | Link | Link to this article
 <?php
 
 use Photon\CmsEngine\Model\Element\Form;
+use Photon\CmsEngine\Model\Element\FormControl;
 
 $form = new Form();
 $form->setTitle($title);
@@ -92,7 +106,7 @@ $form->setMethod('post');
 $control = new FormControl();
 $control->setName('_token');
 $control->setType('hidden');
-$form->addControl($control);            
+$form->addControl($control);
 
 $control = new FormControl();
 $control->setLabel($emailLabel);
@@ -101,7 +115,7 @@ $control->setType('email');
 $control->setValue('');
 $control->setMandatory(true);
 $control->setAutocomplete(false);
-$form->addControl($control);        
+$form->addControl($control);
 
 $control = new FormControl();
 $control->setLabel($passwordLabel);
@@ -224,10 +238,14 @@ use Photon\CmsEngine\Model\Element\Link;
 $azLink = new Link();
 $azLink->setTitle($char);
 $azLink->setUrl(
-    $this->urlGenerator->generate('atoz_list', [
-    'startsWith' => $char,                       
-]));
-$azLink->setDisabled(($count > 0));
+    $this->urlGenerator->generate(
+        'atoz_list',
+        [
+            'startsWith' => $char,
+        ]
+    )
+);
+$azLink->setDisabled($count > 0);
 ```
 
 A link element, including the link destination and label text. 
@@ -261,6 +279,7 @@ $listItems = $this->getRecordList($items, $aliasitems);
 if ($listItems) {
     $listing->addList($listItems);
 }
+
 $listing->setAZLinkList(
     $this->buildAZLinkListBar()
 );
@@ -378,7 +397,6 @@ $page->setContent($article);
 $page->setBreadcrumb($this->getBreadcrumb());
 $page->setMetadata($this->getMetadata());
 $page->setBodyClass('councillor-article');
-
 ```
 
 A generic page, including elements such as metadata and breadcrumb.

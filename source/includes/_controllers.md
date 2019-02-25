@@ -6,19 +6,18 @@
 
 ```yaml
 photon_cms_project.page.document_category:
-  class: DocumentCategoryController
-  parent: photon.controller.page
-  arguments:
-      - '@photon.repository.category'
-      - '@photon.repository.document'
-      - '@photon.repository.homepage'
-      - '@photon.repository.homepage_category_default'
-      - '@photon.repository.supplement'
-      - '@sdk.configuration.constant_repository'
-      - '@router'
-  tags:
-      - { name: photon.page, 
-      page_name: document_category }
+    class: DocumentCategoryController
+    parent: photon.controller.page
+    arguments:
+        - '@photon.repository.category'
+        - '@photon.repository.document'
+        - '@photon.repository.homepage'
+        - '@photon.repository.homepage_category_default'
+        - '@photon.repository.supplement'
+        - '@sdk.configuration.constant_repository'
+        - '@router'
+    tags:
+        - { name: photon.page, page_name: document_category }
 ```
 
 > Page services must be tagged with `photon.page`.
@@ -35,15 +34,14 @@ Each page controller extends the `Photon\Core\Controller\Page` class of the `Pho
 
 ```yaml
 photon_cms_project.component.category_navigation:
-  class: CategoryNavigationController
-  parent: photon.controller.component
-  arguments:
-      - '@ohoton.repository.category'
-      - '@router'
-      - '@sdk.configuration.constant_repository'
-  tags:
-      - { name: photon.component, 
-      component_name: category_navigation }
+    class: CategoryNavigationController
+    parent: photon.controller.component
+    arguments:
+        - '@ohoton.repository.category'
+        - '@router'
+        - '@sdk.configuration.constant_repository'
+    tags:
+        - { name: photon.component, component_name: category_navigation }
 ```
 
 > Component services must be tagged with `photon.component`.
@@ -72,11 +70,27 @@ Parameters can be passed to components at render time, which are passed to the `
 ```php
 <?php
 
-public function __invoke($name)
+namespace Spacecraft\DemoProject\Component;
+
+use Photon\Core\Controller\Component;
+use Symfony\Component\HttpFoundation\Response;
+
+class CategoryNavigationController extends Component
 {
-    return $this->render('announcement.html.twig', [
-        'name' => $name,
-    ]);
+    /**
+     * @param string $name
+     * 
+     * @return Response
+     */
+    public function __invoke($name)
+    {
+        return $this->render(
+            'announcement.html.twig',
+            [
+                'name' => $name,
+            ]
+        );
+    }
 }
 ```
 
@@ -107,6 +121,7 @@ When no matching widget service is found, the default widget service is used, wi
 ```twig
 {{ widget(widgetRecord) }}
 ```
+
 Widgets are not invoked by a route, but instad by using the `widget()` Twig function.
 
 A widget record must be passed as a parameter to the `widget()` function.
@@ -116,9 +131,12 @@ A widget record must be passed as a parameter to the `widget()` function.
 ```php
 <?php
 
-if ($this->getRequestStack()->request->has('period')
-    && $this->getRequestStack()->get('period') == 'today'
+if (
+    $this->getRequestStack()->request->has('period')
+    && $this->getRequestStack()->request->get('period') == 'today'
 ) {
+    // ...
+}
 ```
 
 The `Page` class within `PhotonCoreBundle` initialises the Symfony `Request` object in its constructor.
@@ -133,14 +151,17 @@ Further details on how to interact with data held in the Request object are prov
 
 <?php
 
-return $this->render('article.html.twig', [
-    'page' => $page,
-    'page_categoryId' => $categoryId,
-    'page_contentType' => 1,
-    'page_translationItem' => $document->getId(),
-    'page_translationType'=> 'document',
-    'page_structure' => $pageStructure
-]);
+return $this->render(
+    'article.html.twig', 
+    [
+        'page' => $page,
+        'page_categoryId' => $categoryId,
+        'page_contentType' => 1,
+        'page_translationItem' => $document->getId(),
+        'page_translationType'=> 'document',
+        'page_structure' => $pageStructure,
+    ]
+);
 ```
 
 All controller classes contain an `__invoke()` method that is called when a request terminates at that controller. The `__invoke()` method must return a `Response` object.

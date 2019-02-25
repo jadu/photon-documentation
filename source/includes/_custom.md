@@ -75,16 +75,25 @@ use Photon\Core\Theme\Theme;
 
 class DemoTheme implements Theme
 {
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'demo';
     }
 
+    /**
+     * @return string
+     */
     public function getParent()
     {
         return 'base';
     }
 
+    /**
+     * @return string
+     */
     public function getPath()
     {
         return __DIR__ . '/../Resources/templates';
