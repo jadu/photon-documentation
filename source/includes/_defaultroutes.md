@@ -1,4 +1,4 @@
-#Routes in the default theme
+#Default routes
 
 The default theme consists of the following routes and associated page controllers that output their response in a template. Page controllers are found in the theme `Page` directory.
 
@@ -42,6 +42,87 @@ Filtered list of A to Z entries and aliases.
 
 `EGov`
 
+##Accessibility settings
+
+Form to customise the appearance of the site in line with a user's accessibility needs.
+
+###Route name
+
+`accessibility_settings`
+
+###URL pattern
+
+`/accessibility/settings`
+
+###Type
+
+`Form`
+
+###Module
+
+`Utilities`
+
+##API apply
+
+Form to apply for an API key linked with a user's account. 
+
+###Route name
+
+`user_account_api_apply`
+
+###URL pattern
+
+`/account/api/apply`
+
+###Type
+
+`Form`
+
+###Module
+
+`MyAccount`
+
+##Category
+
+Landing page of a category, including navigation to subcategories and documents relating to a single category of the site's taxonomy. 
+
+###Route name
+
+`document_category`
+
+###URL pattern
+
+`/info/{categoryId}/{categorySlug}`
+
+###Type
+
+`Modular`
+
+###Module
+
+`Publishing`
+
+##Change details
+
+Form to update the details of a user.
+
+###Route name
+
+`user_account_change_detail`
+
+###URL pattern
+
+`/account/change-detail`
+
+###Type
+
+`Form`
+
+###Module
+
+`MyAccount`
+
+
 ##Councillor article
 
 Details of a single Councillor, including their contact details and associated image. 
@@ -81,226 +162,6 @@ Filtered list of councillors.
 ###Module
 
 `EGov`
-
-##Meeting article
-
-Details of a single meeting, including any agendas, minutes and other attachments.
-
-###Route name
-
-`meeting_article`
-
-###URL pattern
-
-`/meetings/meeting/{meetingId}/{meetingSlug}`
-
-###Type
-
-`Article`
-
-###Module
-
-`EGov`
-
-##Meeting download
-
- Stream a meeting file attachment.
-
-###Route name
-
-`meeting_download`
-
-###URL pattern
-
-`/download/meetings/id/{attachmentId}/{attachmentSlug}`
-
-###Type
-
-n/a - no HTML output
-
-###Module
-
-`EGov`
-
-##Meeting list
-
-Filtered and paginated list of meetings.
-
-###Route name
-
-`meeting_list`
-
-###URL pattern
-
-`/meetings`
-
-###Type
-
-`List`
-
-###Module
-
-`EGov`
-
-##User home
-
-User's account page detailing interactions with the site.
-
-###Route name
-
-`user_home`
-
-###URL pattern
-
-`/account`
-
-###Type
-
-`List`
-
-###Module
-
-`MyAccount`
-
-##Sign in 
-
-Form to sign in to an existing user account. 
-
-###Route name
-
-`user_account_signin`
-
-###URL pattern
-
-`/account/signin`
-
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
-
-##API apply
-
-Form to apply for an API key linked with a user's account. 
-
-###Route name
-
-`user_account_api_apply`
-
-###URL pattern
-
-`/account/api/apply`
-
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
-
-##Change details
-
-Form to update the details of a user.
-
-###Route name
-
-`user_account_change_detail`
-
-###URL pattern
-
-`/account/change-detail`
-
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
-
-##Forgot password
-
-Form to request a password reset link. 
-
-###Route name
-
-`user_account_change_password`
-
-###URL pattern
-
-`/account/change-password`
-
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
-
-##Password reset code
-
-Form to input a new password. 
-
-###Route name
-
-`user_account_password_reset`
-
-###URL pattern
-
-`/account/password-reset/{resetCode}`
-
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
-
-##Register
-
-Form to create a new user account.
-
-###Route name
-
-`user_registration`
-
-###URL pattern
-
-`/register`
-
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
-
-##Unsubscribe
-
-Form to unsubscribe from marketing newsletters sent by the site. 
-
-###Route name
-
-`unsubscribe`
-
-###URL pattern
-
-`/account/unsubscribe`
- 
-###Type
-
-`Form`
-
-###Module
-
-`MyAccount`
 
 ##Directory article
 
@@ -542,6 +403,26 @@ Form for public submission of a new event.
 
 `Publishing`
 
+##Forgot password
+
+Form to request a password reset link. 
+
+###Route name
+
+`user_account_change_password`
+
+###URL pattern
+
+`/account/change-password`
+
+###Type
+
+`Form`
+
+###Module
+
+`MyAccount`
+
 ##Index
 
 The main homepage of the site.
@@ -582,25 +463,65 @@ A single independent landing page.
 
 `Publishing`
 
-##Category
+##Meeting article
 
-Landing page of a category, including navigation to subcategories and documents relating to a single category of the site's taxonomy. 
+Details of a single meeting, including any agendas, minutes and other attachments.
 
 ###Route name
 
-`document_category`
+`meeting_article`
 
 ###URL pattern
 
-`/info/{categoryId}/{categorySlug}`
+`/meetings/meeting/{meetingId}/{meetingSlug}`
 
 ###Type
 
-`Modular`
+`Article`
 
 ###Module
 
-`Publishing`
+`EGov`
+
+##Meeting download
+
+ Stream a meeting file attachment.
+
+###Route name
+
+`meeting_download`
+
+###URL pattern
+
+`/download/meetings/id/{attachmentId}/{attachmentSlug}`
+
+###Type
+
+n/a - no HTML output
+
+###Module
+
+`EGov`
+
+##Meeting list
+
+Filtered and paginated list of meetings.
+
+###Route name
+
+`meeting_list`
+
+###URL pattern
+
+`/meetings`
+
+###Type
+
+`List`
+
+###Module
+
+`EGov`
 
 ##News article
 
@@ -642,6 +563,86 @@ Filtered and paginated list of news articles.
 
 `Publishing`
 
+##Offline
+
+Holding page shown when the site has been taken offline.
+
+###Route name
+
+`site_offline`
+
+###URL pattern
+
+`/offline`
+ 
+###Type
+
+`Article`
+
+###Module
+
+`Utilities`
+
+##Password reset code
+
+Form to input a new password. 
+
+###Route name
+
+`user_account_password_reset`
+
+###URL pattern
+
+`/account/password-reset/{resetCode}`
+
+###Type
+
+`Form`
+
+###Module
+
+`MyAccount`
+
+##Register
+
+Form to create a new user account.
+
+###Route name
+
+`user_registration`
+
+###URL pattern
+
+`/register`
+
+###Type
+
+`Form`
+
+###Module
+
+`MyAccount`
+
+##Restricted content login
+
+Form used to access a restricted Galaxies site. 
+
+###Route name
+
+`restricted`
+
+###URL pattern
+
+`/restricted`
+
+###Type
+
+`Article`
+
+###Module
+
+`Utilities`
+
 ##RSS
 
 An RSS feed of recently published content
@@ -661,26 +662,6 @@ n/a - no HTML output
 ###Module
 
 `Publishing`
-
-##Accessibility settings
-
-Form to customise the appearance of the site in line with a user's accessibility needs.
-
-###Route name
-
-`accessibility_settings`
-
-###URL pattern
-
-`/accessibility/settings`
-
-###Type
-
-`Form`
-
-###Module
-
-`Utilities`
 
 ##Search list
 
@@ -702,45 +683,65 @@ List of search results provided by the site's search provider.
 
 `Utilities`
 
-##Offline
+##Sign in 
 
-Holding page shown when the site has been taken offline.
+Form to sign in to an existing user account. 
 
 ###Route name
 
-`site_offline`
+`user_account_signin`
 
 ###URL pattern
 
-`/offline`
+`/account/signin`
+
+###Type
+
+`Form`
+
+###Module
+
+`MyAccount`
+
+##Unsubscribe
+
+Form to unsubscribe from marketing newsletters sent by the site. 
+
+###Route name
+
+`unsubscribe`
+
+###URL pattern
+
+`/account/unsubscribe`
  
 ###Type
 
-`Article`
+`Form`
 
 ###Module
 
-`Utilities`
+`MyAccount`
 
-##Restricted content login
+##User home
 
-Form used to access a restricted Galaxies site. 
+User's account page detailing interactions with the site.
 
 ###Route name
 
-`restricted`
+`user_home`
 
 ###URL pattern
 
-`/restricted`
+`/account`
 
 ###Type
 
-`Article`
+`List`
 
 ###Module
 
-`Utilities`
+`MyAccount`
 
 ##Non-HTML response routes
 
