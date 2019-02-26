@@ -13,7 +13,6 @@ includes:
   - models
   - default
   - defaultroutes
-  - acceptance
   - differences
   - custom
   - troubleshooting

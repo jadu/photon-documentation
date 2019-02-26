@@ -316,7 +316,7 @@
               </ul>
           </li>
           <li>
-            <a href="#default-routes" class="toc-h1 toc-link" data-title="Default routes">Default routes</a>
+            <a href="#default-routes-amp-pages" class="toc-h1 toc-link" data-title="Default routes &amp; pages">Default routes &amp; pages</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#a-to-z-article" class="toc-h2 toc-link" data-title="A to Z article">A to Z article</a>
@@ -337,6 +337,9 @@
                     <a href="#change-details" class="toc-h2 toc-link" data-title="Change details">Change details</a>
                   </li>
                   <li>
+                    <a href="#change-password" class="toc-h2 toc-link" data-title="Change password">Change password</a>
+                  </li>
+                  <li>
                     <a href="#councillor-article" class="toc-h2 toc-link" data-title="Councillor article">Councillor article</a>
                   </li>
                   <li>
@@ -346,7 +349,7 @@
                     <a href="#directory-article" class="toc-h2 toc-link" data-title="Directory article">Directory article</a>
                   </li>
                   <li>
-                    <a href="#directory-a-to-z-list" class="toc-h2 toc-link" data-title="Directory a to z list">Directory a to z list</a>
+                    <a href="#directory-a-to-z-list" class="toc-h2 toc-link" data-title="Directory A to Z list">Directory A to Z list</a>
                   </li>
                   <li>
                     <a href="#directory-record-article" class="toc-h2 toc-link" data-title="Directory record article">Directory record article</a>
@@ -406,7 +409,7 @@
                     <a href="#offline" class="toc-h2 toc-link" data-title="Offline">Offline</a>
                   </li>
                   <li>
-                    <a href="#password-reset-code" class="toc-h2 toc-link" data-title="Password reset code">Password reset code</a>
+                    <a href="#password-reset" class="toc-h2 toc-link" data-title="Password reset">Password reset</a>
                   </li>
                   <li>
                     <a href="#register" class="toc-h2 toc-link" data-title="Register">Register</a>
@@ -431,23 +434,6 @@
                   </li>
                   <li>
                     <a href="#non-html-response-routes" class="toc-h2 toc-link" data-title="Non-HTML response routes">Non-HTML response routes</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#acceptance-criteria" class="toc-h1 toc-link" data-title="Acceptance criteria">Acceptance criteria</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#publishing" class="toc-h2 toc-link" data-title="Publishing">Publishing</a>
-                  </li>
-                  <li>
-                    <a href="#myaccount" class="toc-h2 toc-link" data-title="MyAccount">MyAccount</a>
-                  </li>
-                  <li>
-                    <a href="#egov" class="toc-h2 toc-link" data-title="EGov">EGov</a>
-                  </li>
-                  <li>
-                    <a href="#utilities" class="toc-h2 toc-link" data-title="Utilities">Utilities</a>
                   </li>
               </ul>
           </li>
@@ -1762,7 +1748,7 @@ The wildcard and argument names must match exactly.
 <li>Directory submission</li>
 <li>Accessibility settings</li>
 </ul>
-<h1 id='default-routes'>Default routes</h1>
+<h1 id='default-routes-amp-pages'>Default routes &amp; pages</h1>
 <p>The default theme consists of the following routes and associated page controllers that output their response in a template. Page controllers are found in the theme <code>Page</code> directory.</p>
 <h2 id='a-to-z-article'>A to Z article</h2>
 <p>A single A to Z of services entry and any associated contact details.</p>
@@ -1774,6 +1760,35 @@ The wildcard and argument names must match exactly.
 <p><code>Article</code></p>
 <h3 id='module'>Module</h3>
 <p><code>EGov</code></p>
+<h3 id='acceptance-criteria'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if an invalid service ID is passed - 404 response</li>
+<li>Page errors if the service is offline - 404 response</li>
+<li>Page redirects to appropriate URL if service has redirect set</li>
+<li>Breadcrumb includes A-Z list</li>
+<li>A to Z record metadata is included in the page</li>
+<li>Title, content, eligibility, accessibility and availability content is rendered on the page</li>
+<li>Multimedia items are rendered in service document editor content</li>
+<li>Eligibility section is only shown if it has been completed</li>
+<li>Accessibility section is only shown if it has been completed</li>
+<li>Availability section is only shown if it has been completed</li>
+<li>Contacts section is only shown if it has been completed</li>
+<li>Each contact assigned to service is printed</li>
+<li>Contact name is only printed if it has been completed</li>
+<li>Contact department is only printed if it has been completed</li>
+<li>Contact email is only printed if it has been completed</li>
+<li>Contact telephone is only printed if it has been completed</li>
+<li>Contact mobile is only printed if it has been completed</li>
+<li>Contact fax is only printed if it has been completed</li>
+<li>Contact URL is only printed if it has been completed</li>
+<li>Contact address is only printed if it has been completed</li>
+<li>Contact email is rendered as a mailto: link</li>
+<li>Contact telephone is rendered as a tel: link</li>
+<li>Contact mobile is rendered as a tel: link</li>
+<li>Contact URL is rendered as a link</li>
+<li>Approved version is shown </li>
+<li>HTML content is rendered unencoded</li>
+</ul>
 <h2 id='a-to-z-list'>A to Z list</h2>
 <p>Filtered list of A to Z entries and aliases.</p>
 <h3 id='route-name-2'>Route name</h3>
@@ -1784,6 +1799,18 @@ The wildcard and argument names must match exactly.
 <p><code>List</code></p>
 <h3 id='module-2'>Module</h3>
 <p><code>EGov</code></p>
+<h3 id='acceptance-criteria-2'>Acceptance criteria</h3>
+<ul>
+<li>I can view a list of A to Z records starting with the selected letter</li>
+<li>Each list item links to the correct A to Z article path</li>
+<li>A to Z record aliases are included in the list of records</li>
+<li>List of records appears in alphabetical order</li>
+<li>All records starting with a letter are shown on one page (no pagination)</li>
+<li>List of records can be filtered by a different letter by clicking a letter in A-Z bar</li>
+<li>Letters with no records are shown as disabled</li>
+<li>Letters with records link to the correct A to Z list path</li>
+<li>Message shown if no services in system</li>
+</ul>
 <h2 id='accessibility-settings'>Accessibility settings</h2>
 <p>Form to customise the appearance of the site in line with a user&#39;s accessibility needs.</p>
 <h3 id='route-name-3'>Route name</h3>
@@ -1794,6 +1821,14 @@ The wildcard and argument names must match exactly.
 <p><code>Form</code></p>
 <h3 id='module-3'>Module</h3>
 <p><code>Utilities</code></p>
+<h3 id='accessibility-criteria'>Accessibility criteria</h3>
+<ul>
+<li>Colour scheme setting is saved to session when form is submitted</li>
+<li>Font size setting is saved to session when form is submitted</li>
+<li>Font setting is saved to session when form is submitted</li>
+<li>Using the reset button clears saved session values</li>
+<li>Form can be navigated by keyboard only</li>
+</ul>
 <h2 id='api-apply'>API apply</h2>
 <p>Form to apply for an API key linked with a user&#39;s account. </p>
 <h3 id='route-name-4'>Route name</h3>
@@ -1804,6 +1839,14 @@ The wildcard and argument names must match exactly.
 <p><code>Form</code></p>
 <h3 id='module-4'>Module</h3>
 <p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-3'>Acceptance criteria</h3>
+<ul>
+<li>Must have valid user session to view</li>
+<li>Redirects to index if no valid user session</li>
+<li>Form includes description field, terms checkbox and submit button</li>
+<li>An error is highlighted if terms is not checked on submission</li>
+<li>On successful submission a api key submission is generated, redirected to user home, success message shown</li>
+</ul>
 <h2 id='category'>Category</h2>
 <p>Landing page of a category, including navigation to subcategories and documents relating to a single category of the site&#39;s taxonomy. </p>
 <h3 id='route-name-5'>Route name</h3>
@@ -1814,394 +1857,7 @@ The wildcard and argument names must match exactly.
 <p><code>Modular</code></p>
 <h3 id='module-5'>Module</h3>
 <p><code>Publishing</code></p>
-<h2 id='change-details'>Change details</h2>
-<p>Form to update the details of a user.</p>
-<h3 id='route-name-6'>Route name</h3>
-<p><code>user_account_change_detail</code></p>
-<h3 id='url-pattern-6'>URL pattern</h3>
-<p><code>/account/change-detail</code></p>
-<h3 id='type-6'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-6'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='councillor-article'>Councillor article</h2>
-<p>Details of a single Councillor, including their contact details and associated image. </p>
-<h3 id='route-name-7'>Route name</h3>
-<p><code>councillor_article</code></p>
-<h3 id='url-pattern-7'>URL pattern</h3>
-<p><code>/councillors/{councillorId}/{councillorSlug}</code></p>
-<h3 id='type-7'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-7'>Module</h3>
-<p><code>EGov</code></p>
-<h2 id='councillor-list'>Councillor list</h2>
-<p>Filtered list of councillors. </p>
-<h3 id='route-name-8'>Route name</h3>
-<p><code>councillor_list</code></p>
-<h3 id='url-pattern-8'>URL pattern</h3>
-<p><code>/councillors</code></p>
-<h3 id='type-8'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-8'>Module</h3>
-<p><code>EGov</code></p>
-<h2 id='directory-article'>Directory article</h2>
-<p>Directory home page including description and links to A to Z of records.</p>
-<h3 id='route-name-9'>Route name</h3>
-<p><code>directory_article</code></p>
-<h3 id='url-pattern-9'>URL pattern</h3>
-<p><code>/directory/{directoryId}/{directorySlug}</code></p>
-<h3 id='type-9'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-9'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='directory-a-to-z-list'>Directory a to z list</h2>
-<p>List of directory records begining with a particular letter.</p>
-<h3 id='route-name-10'>Route name</h3>
-<p><code>directory_atoz</code></p>
-<h3 id='url-pattern-10'>URL pattern</h3>
-<p><code>/directory/{directoryId}/a-to-z/{startsWith}</code></p>
-<h3 id='type-10'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-10'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='directory-record-article'>Directory record article</h2>
-<p>Details of a particular directory record article. </p>
-<h3 id='route-name-11'>Route name</h3>
-<p><code>directory_record_details</code></p>
-<h3 id='url-pattern-11'>URL pattern</h3>
-<p><code>/directory-record/{recordId}/{recordSlug}</code></p>
-<h3 id='type-11'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-11'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='directory-search-result-list'>Directory search result list</h2>
-<p>List of records matching a search term in a directory.</p>
-<h3 id='route-name-12'>Route name</h3>
-<p><code>directory_search</code></p>
-<h3 id='url-pattern-12'>URL pattern</h3>
-<p><code>/directory/search</code></p>
-<h3 id='type-12'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-12'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='directory-record-list'>Directory record list</h2>
-<p>List of directory records in a particular category.</p>
-<h3 id='route-name-13'>Route name</h3>
-<p><code>directory_category</code></p>
-<h3 id='url-pattern-13'>URL pattern</h3>
-<p><code>/directory/{directoryId}/{directorySlug}/category/{categoryId}/{pageNumber}</code> </p>
-<h3 id='type-13'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-13'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='directory-record-submission'>Directory record submission</h2>
-<p>Form for public submission of a new record to a directory.</p>
-<h3 id='route-name-14'>Route name</h3>
-<p><code>directory_submit</code></p>
-<h3 id='url-pattern-14'>URL pattern</h3>
-<p><code>/directory/{directoryId}/{directorySlug}/submit</code></p>
-<h3 id='type-14'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-14'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='document-article'>Document article</h2>
-<p>A single page of a document with navigation to all other pages in that document. </p>
-<h3 id='route-name-15'>Route name</h3>
-<p><code>document_page</code></p>
-<h3 id='url-pattern-15'>URL pattern</h3>
-<p><code>/info/{categoryId}/{categorySlug}/{documentId}/{documentSlug}/{pageNumber}</code> </p>
-<h3 id='type-15'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-15'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='download-article'>Download article</h2>
-<p>Details of a single download, with a links to download all associated files. </p>
-<h3 id='route-name-16'>Route name</h3>
-<p><code>download_article</code></p>
-<h3 id='url-pattern-16'>URL pattern</h3>
-<p><code>/downloads/download/{downloadId}/{downloadSlug}</code></p>
-<h3 id='type-16'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-16'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='download-file'>Download file</h2>
-<p>Stream a file.</p>
-<h3 id='route-name-17'>Route name</h3>
-<p><code>file_download</code></p>
-<h3 id='url-pattern-17'>URL pattern</h3>
-<p><code>/downloads/file/{fileId}/{fileSlug}</code></p>
-<h3 id='type-17'>Type</h3>
-<p>n/a - no HTML output</p>
-<h3 id='module-17'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='event-article'>Event article</h2>
-<p>A single event and associated image. </p>
-<h3 id='route-name-18'>Route name</h3>
-<p><code>event_article</code></p>
-<h3 id='url-pattern-18'>URL pattern</h3>
-<p><code>/events/event/{eventId}/{eventSlug}</code></p>
-<h3 id='type-18'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-18'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='event-list'>Event list</h2>
-<p>Filtered and paginated list of events.</p>
-<h3 id='route-name-19'>Route name</h3>
-<p><code>event_list</code></p>
-<h3 id='url-pattern-19'>URL pattern</h3>
-<p><code>/events</code></p>
-<h3 id='type-19'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-19'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='event-submission'>Event submission</h2>
-<p>Form for public submission of a new event.</p>
-<h3 id='route-name-20'>Route name</h3>
-<p><code>event_submission</code></p>
-<h3 id='url-pattern-20'>URL pattern</h3>
-<p><code>/event/new</code></p>
-<h3 id='type-20'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-20'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='forgot-password'>Forgot password</h2>
-<p>Form to request a password reset link. </p>
-<h3 id='route-name-21'>Route name</h3>
-<p><code>user_account_change_password</code></p>
-<h3 id='url-pattern-21'>URL pattern</h3>
-<p><code>/account/change-password</code></p>
-<h3 id='type-21'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-21'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='index'>Index</h2>
-<p>The main homepage of the site.</p>
-<h3 id='route-name-22'>Route name</h3>
-<p><code>index</code></p>
-<h3 id='url-pattern-22'>URL pattern</h3>
-<p><code>/</code></p>
-<h3 id='type-22'>Type</h3>
-<p><code>Modular</code></p>
-<h3 id='module-22'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='homepage'>Homepage</h2>
-<p>A single independent landing page.</p>
-<h3 id='route-name-23'>Route name</h3>
-<p><code>homepage</code></p>
-<h3 id='url-pattern-23'>URL pattern</h3>
-<p><code>/homepage/{homepageId}/{homepageSlug}</code></p>
-<h3 id='type-23'>Type</h3>
-<p><code>Modular</code></p>
-<h3 id='module-23'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='meeting-article'>Meeting article</h2>
-<p>Details of a single meeting, including any agendas, minutes and other attachments.</p>
-<h3 id='route-name-24'>Route name</h3>
-<p><code>meeting_article</code></p>
-<h3 id='url-pattern-24'>URL pattern</h3>
-<p><code>/meetings/meeting/{meetingId}/{meetingSlug}</code></p>
-<h3 id='type-24'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-24'>Module</h3>
-<p><code>EGov</code></p>
-<h2 id='meeting-download'>Meeting download</h2>
-<p>Stream a meeting file attachment.</p>
-<h3 id='route-name-25'>Route name</h3>
-<p><code>meeting_download</code></p>
-<h3 id='url-pattern-25'>URL pattern</h3>
-<p><code>/download/meetings/id/{attachmentId}/{attachmentSlug}</code></p>
-<h3 id='type-25'>Type</h3>
-<p>n/a - no HTML output</p>
-<h3 id='module-25'>Module</h3>
-<p><code>EGov</code></p>
-<h2 id='meeting-list'>Meeting list</h2>
-<p>Filtered and paginated list of meetings.</p>
-<h3 id='route-name-26'>Route name</h3>
-<p><code>meeting_list</code></p>
-<h3 id='url-pattern-26'>URL pattern</h3>
-<p><code>/meetings</code></p>
-<h3 id='type-26'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-26'>Module</h3>
-<p><code>EGov</code></p>
-<h2 id='news-article'>News article</h2>
-<p>A single news article and associated image.</p>
-<h3 id='route-name-27'>Route name</h3>
-<p><code>news_article</code></p>
-<h3 id='url-pattern-27'>URL pattern</h3>
-<p><code>/news/article/{articleId}/{articleSlug}</code></p>
-<h3 id='type-27'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-27'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='news-list'>News list</h2>
-<p>Filtered and paginated list of news articles.</p>
-<h3 id='route-name-28'>Route name</h3>
-<p><code>news_list</code></p>
-<h3 id='url-pattern-28'>URL pattern</h3>
-<p><code>/news</code></p>
-<h3 id='type-28'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-28'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='offline'>Offline</h2>
-<p>Holding page shown when the site has been taken offline.</p>
-<h3 id='route-name-29'>Route name</h3>
-<p><code>site_offline</code></p>
-<h3 id='url-pattern-29'>URL pattern</h3>
-<p><code>/offline</code></p>
-<h3 id='type-29'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-29'>Module</h3>
-<p><code>Utilities</code></p>
-<h2 id='password-reset-code'>Password reset code</h2>
-<p>Form to input a new password. </p>
-<h3 id='route-name-30'>Route name</h3>
-<p><code>user_account_password_reset</code></p>
-<h3 id='url-pattern-30'>URL pattern</h3>
-<p><code>/account/password-reset/{resetCode}</code></p>
-<h3 id='type-30'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-30'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='register'>Register</h2>
-<p>Form to create a new user account.</p>
-<h3 id='route-name-31'>Route name</h3>
-<p><code>user_registration</code></p>
-<h3 id='url-pattern-31'>URL pattern</h3>
-<p><code>/register</code></p>
-<h3 id='type-31'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-31'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='restricted-content-login'>Restricted content login</h2>
-<p>Form used to access a restricted Galaxies site. </p>
-<h3 id='route-name-32'>Route name</h3>
-<p><code>restricted</code></p>
-<h3 id='url-pattern-32'>URL pattern</h3>
-<p><code>/restricted</code></p>
-<h3 id='type-32'>Type</h3>
-<p><code>Article</code></p>
-<h3 id='module-32'>Module</h3>
-<p><code>Utilities</code></p>
-<h2 id='rss'>RSS</h2>
-<p>An RSS feed of recently published content</p>
-<h3 id='route-name-33'>Route name</h3>
-<p><code>content_rss</code></p>
-<h3 id='url-pattern-33'>URL pattern</h3>
-<p><code>/rss/{contentType}</code></p>
-<h3 id='type-33'>Type</h3>
-<p>n/a - no HTML output</p>
-<h3 id='module-33'>Module</h3>
-<p><code>Publishing</code></p>
-<h2 id='search-list'>Search list</h2>
-<p>List of search results provided by the site&#39;s search provider.</p>
-<h3 id='route-name-34'>Route name</h3>
-<p><code>search_list</code></p>
-<h3 id='url-pattern-34'>URL pattern</h3>
-<p><code>/site-search/results/</code></p>
-<h3 id='type-34'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-34'>Module</h3>
-<p><code>Utilities</code></p>
-<h2 id='sign-in'>Sign in</h2>
-<p>Form to sign in to an existing user account. </p>
-<h3 id='route-name-35'>Route name</h3>
-<p><code>user_account_signin</code></p>
-<h3 id='url-pattern-35'>URL pattern</h3>
-<p><code>/account/signin</code></p>
-<h3 id='type-35'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-35'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='unsubscribe'>Unsubscribe</h2>
-<p>Form to unsubscribe from marketing newsletters sent by the site. </p>
-<h3 id='route-name-36'>Route name</h3>
-<p><code>unsubscribe</code></p>
-<h3 id='url-pattern-36'>URL pattern</h3>
-<p><code>/account/unsubscribe</code></p>
-<h3 id='type-36'>Type</h3>
-<p><code>Form</code></p>
-<h3 id='module-36'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='user-home'>User home</h2>
-<p>User&#39;s account page detailing interactions with the site.</p>
-<h3 id='route-name-37'>Route name</h3>
-<p><code>user_home</code></p>
-<h3 id='url-pattern-37'>URL pattern</h3>
-<p><code>/account</code></p>
-<h3 id='type-37'>Type</h3>
-<p><code>List</code></p>
-<h3 id='module-37'>Module</h3>
-<p><code>MyAccount</code></p>
-<h2 id='non-html-response-routes'>Non-HTML response routes</h2>
-<p>For the following routes, output comes directly from the controller and is not rendered in a template:</p>
-
-<ul>
-<li>meeting_download</li>
-<li>content_rss</li>
-<li>file_download</li>
-<li>logout</li>
-</ul>
-<h1 id='acceptance-criteria'>Acceptance criteria</h1>
-<p>Acceptance criteria have been defined for each page contained within the default theme, and are as follows.</p>
-<h2 id='publishing'>Publishing</h2><h3 id='document-article'>Document article</h3>
-<ul>
-<li>Category specific stylesheet is used</li>
-<li>Document specific metadata is used</li>
-<li>Breadcrumb includes category path</li>
-<li>I can preview a document page</li>
-<li>Preview includes accessibility check javascript</li>
-<li>Approved version is shown </li>
-<li>Page errors if an invalid document ID is passed - 404 response</li>
-<li>Page errors if a category ID not assigned to document is passed - 301 response, redirect to valid category</li>
-<li>Page errors if an invalid page number is passed - 404 response</li>
-<li>If no page number passed, default page number 1 is used</li>
-<li>If password protected and not authenticated, message and password form shown</li>
-<li>Submitting valid password in password form is saved against session</li>
-<li>If password protected and authenticated, or not password protected, document content is shown</li>
-<li>If access level is greater than current session, permission denied message shown</li>
-<li>If access level is less than or equal to current session, document content is shown</li>
-<li>Document title, page title, image, page content are rendered on page</li>
-<li>If document title is the same as page title, only document title is shown</li>
-<li>Image is only shown when completed</li>
-<li>Caption is rendered when completed</li>
-<li>Multimedia content is rendered in document editor content</li>
-<li>List of pages is shown if there are more than one page in document</li>
-<li>Current page is highlighted as active in the list</li>
-<li>Each list item is page title and link to valid document page path</li>
-<li>If page number is greater than 1, previous link is shown</li>
-<li>If page number is less than total number of pages, next link is shown</li>
-<li>Page supplements are shown</li>
-<li>HTML content is rendered unencoded</li>
-</ul>
-<h3 id='independent-homepage'>Independent homepage</h3>
-<ul>
-<li>Homepage specific stylesheet is used</li>
-<li>Page errors if an invalid homepage ID is passed - 404 response</li>
-<li>I can preview a homepage</li>
-<li>Preview includes accessibility check javascript</li>
-<li>Breadcrumb includes category path</li>
-<li>Homepage specific metadata is used</li>
-<li>Modular homepage widget block is rendered as in CMS</li>
-<li>Approved version is shown </li>
-<li>Page supplements are shown</li>
-<li>HTML content is rendered unencoded</li>
-<li>Hide navigation uses a one column layout</li>
-</ul>
-<h3 id='index'>Index</h3>
-<ul>
-<li>No breadcrumb is shown</li>
-<li>Homepage specific stylesheet is used</li>
-<li>No h1 is shown</li>
-<li>Page does not error if no homepage is available</li>
-<li>Homepage specific metadata is used</li>
-<li>Approved version is shown </li>
-<li>Modular homepage widget block is rendered as in CMS</li>
-<li>HTML content is rendered unencoded</li>
-<li>Homepage content relates to the independent homepage with highest position</li>
-</ul>
-<h3 id='category-homepage'>Category homepage</h3>
+<h3 id='acceptance-criteria-4'>Acceptance criteria</h3>
 <ul>
 <li>Category specific stylesheet is used</li>
 <li>Page does not error if no homepage is assigned</li>
@@ -2216,197 +1872,17 @@ The wildcard and argument names must match exactly.
 <li>Page supplements are shown</li>
 <li>HTML content is rendered unencoded</li>
 </ul>
-<h3 id='directory-article'>Directory article</h3>
-<ul>
-<li>Page errors if an invalid directory ID is passed - 404 response</li>
-<li>Page errors if directory is offline - 404 response</li>
-<li>Directory specific metadata is used</li>
-<li>Directory title, description are rendered</li>
-<li>Description is only printed if completed</li>
-<li>Call to action to directory a to z is included</li>
-<li>Call to action to directory submission is included</li>
-<li>List of directory subcategories is included</li>
-<li>List item includes directory name, valid path to directory category</li>
-</ul>
-<h3 id='directory-search'>Directory search</h3>
-<ul>
-<li>Page errors if an invalid directory id is passed - 404 response</li>
-<li>Page errors if directory is offline - 404 response</li>
-<li>Directory specific metadata is used</li>
-<li>Breadcrumb includes directory article</li>
-<li>List of results is paginated</li>
-<li>50 results are shown per page</li>
-<li>If page number is greater than 1, a previous link is shown</li>
-<li>If more pages exist than the current page number, a next link is shown</li>
-<li>List of results matches the criteria submitted</li>
-<li>List item includes record title and link to valid record path</li>
-<li>If location search, results shown on map</li>
-<li>Pins include fields configured within directory settings</li>
-<li>Message shown if no results found</li>
-<li>Search form is shown</li>
-</ul>
-<h3 id='directory-record-submission'>Directory record submission</h3>
-<ul>
-<li>Page errors if an invalid directory id is passed - 404 response</li>
-<li>Page errors if directory is offline - 404 response</li>
-<li>Directory specific metadata is used</li>
-<li>Breadcrumb includes directory article</li>
-</ul>
-<h3 id='directory-a-to-z-list'>Directory A to Z list</h3>
-<ul>
-<li>Page errors if an invalid directory id is passed - 404 response</li>
-<li>Page errors if directory is offline - 404 response</li>
-<li>Directory specific metadata is used</li>
-<li>I can view a list of A to Z records starting with the selected letter</li>
-<li>Each list item links to the correct record path</li>
-<li>List of records appears in alphabetical order</li>
-<li>All records starting with a letter are shown on one page (no pagination)</li>
-<li>List of records can be filtered by a different letter by clicking a letter in A-Z bar</li>
-<li>Letters with no records are shown as disabled</li>
-<li>Letters with records link to the correct A to Z list path</li>
-<li>Message shown if no records in directory</li>
-<li>Breadcrumb includes directory article</li>
-</ul>
-<h3 id='directory-record-list'>Directory record list</h3>
-<ul>
-<li>Page errors if directory is offline - 404 response</li>
-<li>Page errors if an invalid category id is passed - 404 response</li>
-<li>Directory specific metadata is used</li>
-<li>Breadcrumb includes directory article</li>
-<li>Breadcrumb includes directory category path</li>
-<li>Category adverts are included</li>
-<li>Category description is only rendered if completed</li>
-<li>List of records in category is shown</li>
-<li>List item includes record title and link to valid directory record path</li>
-<li>List of subcategories is shown</li>
-<li>List item includes category name and link to valid directory category path</li>
-<li>List of records is paginated</li>
-<li>50 records shown per page</li>
-<li>If page number is greater than 1, a previous link is shown</li>
-<li>If more pages exist than the current page number, a next link is shown</li>
-</ul>
-<h3 id='directory-record-article'>Directory record article</h3>
-<ul>
-<li>Page errors if an invalid directory id is passed - 404 response</li>
-<li>Page errors if directory is offline - 404 response</li>
-<li>Page errors if an invalid record ID is passed - 404 response</li>
-<li>Page errors if record is offline - 404 response</li>
-<li>Directory record specific metadata is used</li>
-<li>Breadcrumb includes directory article</li>
-<li>Breadcrumb includes directory category path</li>
-<li>Record title, and fields are rendered</li>
-<li>If an optional field is not completed, it is not rendered </li>
-<li>Multimedia in document editor content is rendered</li>
-<li>Google map is rendered, and pin includes fields configured within directory settings</li>
-<li>Link fields are rendered as a link</li>
-<li>Email fields are rendered as a mailto: link</li>
-<li>ESRI map is rendered </li>
-<li>HTML content is rendered unencoded</li>
-<li>Image is rendered</li>
-<li>Image includes valid alt attribute</li>
-</ul>
-<h3 id='news-article'>News article</h3>
-<ul>
-<li>I can preview a news article</li>
-<li>Page errors if an invalid news ID is passed - 404 response</li>
-<li>Page errors if the news article is offline - 404 response</li>
-<li>Breadcrumb includes news list</li>
-<li>Category specific stylesheet is used</li>
-<li>News article specific metadata is used</li>
-<li>Title, summary, image, content, news date content is rendered on the page</li>
-<li>Image is only rendered if it has been completed</li>
-<li>If image has caption, caption is shown</li>
-<li>News date is rendered in a recognised date format</li>
-<li>Multimedia items are rendered in article document editor content</li>
-<li>Approved version is shown </li>
-<li>HTML content is rendered unencoded</li>
-</ul>
-<h3 id='news-list'>News list</h3>
-<ul>
-<li>I can view a list of news articles</li>
-<li>News articles are shown in chronological order - newest to oldest</li>
-<li>10 articles are shown per page</li>
-<li>If page number is greater than 1, a previous link is shown</li>
-<li>If more pages exist than the current page number, a next link is shown</li>
-<li>List of news articles can be filtered by year and month</li>
-<li>Each article links to valid news article path</li>
-<li>Each article shows title, summary and news date</li>
-<li>Message shown if no news items in system</li>
-</ul>
-<h3 id='event-article'>Event article</h3>
-<ul>
-<li>I can view an event</li>
-<li>Page errors if an invalid event ID is passed - 404 response</li>
-<li>Page errors if the event is offline - 404 response</li>
-<li>Breadcrumb includes events list</li>
-<li>I can preview an event</li>
-<li>Event specific metadata is used</li>
-<li>Title, event date, date interval, event time, location address, esri map, cost, summary, image, content are rendered on the page</li>
-<li>Multimedia items are rendered in event document editor content</li>
-<li>Interval is only shown if it has been completed</li>
-<li>ESRI map is only shown if integration is enabled</li>
-<li>Time is only shown if it has been completed</li>
-<li>Document editor content is only shown if it has been completed</li>
-<li>Image is only shown if it has been completed</li>
-<li>Image caption is shown where it has been added</li>
-<li>Approved version is shown </li>
-<li>Page does not error if location deleted</li>
-<li>HTML content is rendered unencoded</li>
-</ul>
-<h3 id='event-list'>Event list</h3>
-<ul>
-<li>I can view a list of events</li>
-<li>A call to action is shown to submit your event</li>
-<li>10 events are shown per page</li>
-<li>If page number is greater than 1, a previous link is shown</li>
-<li>If more pages exist than the current page number, a next link is shown</li>
-<li>Each event includes, title, summary, event date</li>
-<li>Each event links to a valid event path</li>
-<li>List of events can be filtered by date and location</li>
-<li>Events are shown in chronological order - from today ascending</li>
-<li>Message shown if no events in system</li>
-</ul>
-<h3 id='event-submission'>Event submission</h3>
-<ul>
-<li>Form includes title, start date, interval, end date, start time, end time, location, new location, cost, summary, description, image fields and submit button</li>
-<li>Error shown if start date is invalid date format or empty</li>
-<li>Error shown if end date is invalid date format</li>
-<li>Error shown if auth field is empty or invalid content</li>
-<li>Error shown if title empty or greater than 255 characters</li>
-<li>Error shown if new location is greater than 255 characters</li>
-<li>Error shown if location does not match a valid location id</li>
-<li>Error shown if summary is empty or greater than max summary character limit</li>
-<li>Error shown if description is greater than 65535 characters</li>
-<li>Error shown if start time is not in time format</li>
-<li>Error shown if end time is not in time format</li>
-<li>Error shown if cost is empty or greater than 255 characters</li>
-<li>Error shown if start date is after end date</li>
-<li>Error shown if image is not an image file of type jpg, jpeg, gif or png</li>
-<li>If errors are found, submitted values are shown in form fields</li>
-<li>If no errors found, event is submitted and image uploaded</li>
-<li>Image should be appended to description of submitted event</li>
-<li>Submitted event should not be live and visible on the website immediately after submission</li>
-<li>Image should appear in the site image library with valid title</li>
-<li>Event should have valid metadata</li>
-<li>Email notification of new event submission should be sent</li>
-<li>If event submitted, redirect to event list and show success message</li>
-</ul>
-<h3 id='download-article'>Download article</h3>
-<ul>
-<li>Category specific stylesheet is used</li>
-<li>Page errors if an invalid download id is used - 404 response</li>
-<li>Page errors if download is offline - 404 response</li>
-<li>Page does not error if download if not visible - 200 response</li>
-<li>Approved version is shown </li>
-<li>If password protected and not authenticated, message and password form shown</li>
-<li>Submitting valid password in password form is saved against session</li>
-<li>If password protected and authenticated, or not password protected, download content is shown</li>
-<li>Download title, description, list of files is rendered</li>
-<li>Each uploaded file includes filename, file size, extension and link to valid download path</li>
-<li>Each linked file includes filename and link to external path</li>
-<li>Description is only shown if completed</li>
-</ul>
-<h2 id='myaccount'>MyAccount</h2><h3 id='change-details-form'>Change details form</h3>
+<h2 id='change-details'>Change details</h2>
+<p>Form to update the details of a user.</p>
+<h3 id='route-name-6'>Route name</h3>
+<p><code>user_account_change_detail</code></p>
+<h3 id='url-pattern-6'>URL pattern</h3>
+<p><code>/account/change-detail</code></p>
+<h3 id='type-6'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-6'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-5'>Acceptance criteria</h3>
 <ul>
 <li>Redirects to https if ssl is enabled</li>
 <li>Redirects to appropriate url if user adapter change details page is specified</li>
@@ -2439,15 +1915,593 @@ The wildcard and argument names must match exactly.
 <li>If user is updated, redirected to user home and success message shown</li>
 <li>Breadcrumb includes user account link</li>
 </ul>
-<h3 id='api-apply-form'>API apply form</h3>
+<h2 id='change-password'>Change password</h2>
+<p>Form to update the password of a user. </p>
+<h3 id='route-name-7'>Route name</h3>
+<p><code>user_account_change_password</code></p>
+<h3 id='url-pattern-7'>URL pattern</h3>
+<p><code>/account/change-password</code></p>
+<h3 id='type-7'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-7'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-6'>Acceptance criteria</h3>
 <ul>
 <li>Must have valid user session to view</li>
-<li>Redirects to index if no valid user session</li>
-<li>Form includes description field, terms checkbox and submit button</li>
-<li>An error is highlighted if terms is not checked on submission</li>
-<li>On successful submission a api key submission is generated, redirected to user home, success message shown</li>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to appropriate url if user adapter change password page is specified</li>
+<li>Redirects to index and error message shown if user not logged in </li>
+<li>Form includes old password field, new password field, new password confirmation field and submit button</li>
+<li>Error message is shown if password is less than 6 characters</li>
+<li>Error message is shown if password is greater than 30 characters</li>
+<li>Error message is shown if new password is not the same as new password confirmation</li>
+<li>If no errors found, password is updated</li>
+<li>If password is updated, reset code is disabled.</li>
+<li>If password is updated, redirects to user home, success message shown</li>
+<li>Breadcrumb includes user account link</li>
 </ul>
-<h3 id='reset-password-form'>Reset password form</h3>
+<h2 id='councillor-article'>Councillor article</h2>
+<p>Details of a single Councillor, including their contact details and associated image. </p>
+<h3 id='route-name-8'>Route name</h3>
+<p><code>councillor_article</code></p>
+<h3 id='url-pattern-8'>URL pattern</h3>
+<p><code>/councillors/{councillorId}/{councillorSlug}</code></p>
+<h3 id='type-8'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-8'>Module</h3>
+<p><code>EGov</code></p>
+<h3 id='acceptance-criteria-7'>Acceptance criteria</h3>
+<ul>
+<li>Approved version is shown </li>
+<li>Page errors if invalid councillor ID is passed - 404 response</li>
+<li>Page errors if councillor is offline - 404 response</li>
+<li>Breadcrumb includes councillors list</li>
+<li>First name, second name, image, party, ward, position, address, telephone, fax, email, content are rendered</li>
+<li>Page does not error if party deleted</li>
+<li>Page does not error if ward deleted</li>
+<li>Multimedia is rendered in document editor content</li>
+<li>Image is only printed if completed</li>
+<li>Image Caption is rendered if completed</li>
+<li>Position is only printed if completed</li>
+<li>Address is only printed if completed</li>
+<li>Telephone is only printed if completed</li>
+<li>Telephone is rendered as a tel: link</li>
+<li>Fax is only printed if completed</li>
+<li>Email is only printed if completed</li>
+<li>Email is rendered as a mailto: link</li>
+<li>Content is only printed if completed</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h2 id='councillor-list'>Councillor list</h2>
+<p>Filtered list of councillors. </p>
+<h3 id='route-name-9'>Route name</h3>
+<p><code>councillor_list</code></p>
+<h3 id='url-pattern-9'>URL pattern</h3>
+<p><code>/councillors</code></p>
+<h3 id='type-9'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-9'>Module</h3>
+<p><code>EGov</code></p>
+<h3 id='acceptance-criteria-8'>Acceptance criteria</h3>
+<ul>
+<li>I can view a list of councillors</li>
+<li>List is not paginated</li>
+<li>List can be filtered by party, ward</li>
+<li>List of records is sorted by alphabetical order</li>
+<li>Each item links to valid councillor path and includes first name and surname</li>
+<li>Message shown if no councillors in system</li>
+</ul>
+<h2 id='directory-article'>Directory article</h2>
+<p>Directory home page including description and links to A to Z of records.</p>
+<h3 id='route-name-10'>Route name</h3>
+<p><code>directory_article</code></p>
+<h3 id='url-pattern-10'>URL pattern</h3>
+<p><code>/directory/{directoryId}/{directorySlug}</code></p>
+<h3 id='type-10'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-10'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-9'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if an invalid directory ID is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Directory title, description are rendered</li>
+<li>Description is only printed if completed</li>
+<li>Call to action to directory a to z is included</li>
+<li>Call to action to directory submission is included</li>
+<li>List of directory subcategories is included</li>
+<li>List item includes directory name, valid path to directory category</li>
+</ul>
+<h2 id='directory-a-to-z-list'>Directory A to Z list</h2>
+<p>List of directory records begining with a particular letter.</p>
+<h3 id='route-name-11'>Route name</h3>
+<p><code>directory_atoz</code></p>
+<h3 id='url-pattern-11'>URL pattern</h3>
+<p><code>/directory/{directoryId}/a-to-z/{startsWith}</code></p>
+<h3 id='type-11'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-11'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-10'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>I can view a list of A to Z records starting with the selected letter</li>
+<li>Each list item links to the correct record path</li>
+<li>List of records appears in alphabetical order</li>
+<li>All records starting with a letter are shown on one page (no pagination)</li>
+<li>List of records can be filtered by a different letter by clicking a letter in A-Z bar</li>
+<li>Letters with no records are shown as disabled</li>
+<li>Letters with records link to the correct A to Z list path</li>
+<li>Message shown if no records in directory</li>
+<li>Breadcrumb includes directory article</li>
+</ul>
+<h2 id='directory-record-article'>Directory record article</h2>
+<p>Details of a particular directory record article. </p>
+<h3 id='route-name-12'>Route name</h3>
+<p><code>directory_record_details</code></p>
+<h3 id='url-pattern-12'>URL pattern</h3>
+<p><code>/directory-record/{recordId}/{recordSlug}</code></p>
+<h3 id='type-12'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-12'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-11'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Page errors if an invalid record ID is passed - 404 response</li>
+<li>Page errors if record is offline - 404 response</li>
+<li>Directory record specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+<li>Breadcrumb includes directory category path</li>
+<li>Record title, and fields are rendered</li>
+<li>If an optional field is not completed, it is not rendered </li>
+<li>Multimedia in document editor content is rendered</li>
+<li>Google map is rendered, and pin includes fields configured within directory settings</li>
+<li>Link fields are rendered as a link</li>
+<li>Email fields are rendered as a mailto: link</li>
+<li>ESRI map is rendered </li>
+<li>HTML content is rendered unencoded</li>
+<li>Image is rendered</li>
+<li>Image includes valid alt attribute</li>
+</ul>
+<h2 id='directory-search-result-list'>Directory search result list</h2>
+<p>List of records matching a search term in a directory.</p>
+<h3 id='route-name-13'>Route name</h3>
+<p><code>directory_search</code></p>
+<h3 id='url-pattern-13'>URL pattern</h3>
+<p><code>/directory/search</code></p>
+<h3 id='type-13'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-13'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-12'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+<li>List of results is paginated</li>
+<li>50 results are shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>List of results matches the criteria submitted</li>
+<li>List item includes record title and link to valid record path</li>
+<li>If location search, results shown on map</li>
+<li>Pins include fields configured within directory settings</li>
+<li>Message shown if no results found</li>
+<li>Search form is shown</li>
+</ul>
+<h2 id='directory-record-list'>Directory record list</h2>
+<p>List of directory records in a particular category.</p>
+<h3 id='route-name-14'>Route name</h3>
+<p><code>directory_category</code></p>
+<h3 id='url-pattern-14'>URL pattern</h3>
+<p><code>/directory/{directoryId}/{directorySlug}/category/{categoryId}/{pageNumber}</code> </p>
+<h3 id='type-14'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-14'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-13'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Page errors if an invalid category id is passed - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+<li>Breadcrumb includes directory category path</li>
+<li>Category adverts are included</li>
+<li>Category description is only rendered if completed</li>
+<li>List of records in category is shown</li>
+<li>List item includes record title and link to valid directory record path</li>
+<li>List of subcategories is shown</li>
+<li>List item includes category name and link to valid directory category path</li>
+<li>List of records is paginated</li>
+<li>50 records shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+</ul>
+<h2 id='directory-record-submission'>Directory record submission</h2>
+<p>Form for public submission of a new record to a directory.</p>
+<h3 id='route-name-15'>Route name</h3>
+<p><code>directory_submit</code></p>
+<h3 id='url-pattern-15'>URL pattern</h3>
+<p><code>/directory/{directoryId}/{directorySlug}/submit</code></p>
+<h3 id='type-15'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-15'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-14'>Acceptance criteria</h3>
+<ul>
+<li>Page errors if an invalid directory id is passed - 404 response</li>
+<li>Page errors if directory is offline - 404 response</li>
+<li>Directory specific metadata is used</li>
+<li>Breadcrumb includes directory article</li>
+</ul>
+<h2 id='document-article'>Document article</h2>
+<p>A single page of a document with navigation to all other pages in that document. </p>
+<h3 id='route-name-16'>Route name</h3>
+<p><code>document_page</code></p>
+<h3 id='url-pattern-16'>URL pattern</h3>
+<p><code>/info/{categoryId}/{categorySlug}/{documentId}/{documentSlug}/{pageNumber}</code> </p>
+<h3 id='type-16'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-16'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-15'>Acceptance criteria</h3>
+<ul>
+<li>Category specific stylesheet is used</li>
+<li>Document specific metadata is used</li>
+<li>Breadcrumb includes category path</li>
+<li>I can preview a document page</li>
+<li>Preview includes accessibility check javascript</li>
+<li>Approved version is shown </li>
+<li>Page errors if an invalid document ID is passed - 404 response</li>
+<li>Page errors if a category ID not assigned to document is passed - 301 response, redirect to valid category</li>
+<li>Page errors if an invalid page number is passed - 404 response</li>
+<li>If no page number passed, default page number 1 is used</li>
+<li>If password protected and not authenticated, message and password form shown</li>
+<li>Submitting valid password in password form is saved against session</li>
+<li>If password protected and authenticated, or not password protected, document content is shown</li>
+<li>If access level is greater than current session, permission denied message shown</li>
+<li>If access level is less than or equal to current session, document content is shown</li>
+<li>Document title, page title, image, page content are rendered on page</li>
+<li>If document title is the same as page title, only document title is shown</li>
+<li>Image is only shown when completed</li>
+<li>Caption is rendered when completed</li>
+<li>Multimedia content is rendered in document editor content</li>
+<li>List of pages is shown if there are more than one page in document</li>
+<li>Current page is highlighted as active in the list</li>
+<li>Each list item is page title and link to valid document page path</li>
+<li>If page number is greater than 1, previous link is shown</li>
+<li>If page number is less than total number of pages, next link is shown</li>
+<li>Page supplements are shown</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h2 id='download-article'>Download article</h2>
+<p>Details of a single download, with a links to download all associated files. </p>
+<h3 id='route-name-17'>Route name</h3>
+<p><code>download_article</code></p>
+<h3 id='url-pattern-17'>URL pattern</h3>
+<p><code>/downloads/download/{downloadId}/{downloadSlug}</code></p>
+<h3 id='type-17'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-17'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-16'>Acceptance criteria</h3>
+<ul>
+<li>Category specific stylesheet is used</li>
+<li>Page errors if an invalid download id is used - 404 response</li>
+<li>Page errors if download is offline - 404 response</li>
+<li>Page does not error if download if not visible - 200 response</li>
+<li>Approved version is shown </li>
+<li>If password protected and not authenticated, message and password form shown</li>
+<li>Submitting valid password in password form is saved against session</li>
+<li>If password protected and authenticated, or not password protected, download content is shown</li>
+<li>Download title, description, list of files is rendered</li>
+<li>Each uploaded file includes filename, file size, extension and link to valid download path</li>
+<li>Each linked file includes filename and link to external path</li>
+<li>Description is only shown if completed</li>
+</ul>
+<h2 id='download-file'>Download file</h2>
+<p>Stream a file.</p>
+<h3 id='route-name-18'>Route name</h3>
+<p><code>file_download</code></p>
+<h3 id='url-pattern-18'>URL pattern</h3>
+<p><code>/downloads/file/{fileId}/{fileSlug}</code></p>
+<h3 id='type-18'>Type</h3>
+<p>n/a - no HTML output</p>
+<h3 id='module-18'>Module</h3>
+<p><code>Publishing</code></p>
+<h2 id='event-article'>Event article</h2>
+<p>A single event and associated image. </p>
+<h3 id='route-name-19'>Route name</h3>
+<p><code>event_article</code></p>
+<h3 id='url-pattern-19'>URL pattern</h3>
+<p><code>/events/event/{eventId}/{eventSlug}</code></p>
+<h3 id='type-19'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-19'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-17'>Acceptance criteria</h3>
+<ul>
+<li>I can view an event</li>
+<li>Page errors if an invalid event ID is passed - 404 response</li>
+<li>Page errors if the event is offline - 404 response</li>
+<li>Breadcrumb includes events list</li>
+<li>I can preview an event</li>
+<li>Event specific metadata is used</li>
+<li>Title, event date, date interval, event time, location address, esri map, cost, summary, image, content are rendered on the page</li>
+<li>Multimedia items are rendered in event document editor content</li>
+<li>Interval is only shown if it has been completed</li>
+<li>ESRI map is only shown if integration is enabled</li>
+<li>Time is only shown if it has been completed</li>
+<li>Document editor content is only shown if it has been completed</li>
+<li>Image is only shown if it has been completed</li>
+<li>Image caption is shown where it has been added</li>
+<li>Approved version is shown </li>
+<li>Page does not error if location deleted</li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h2 id='event-list'>Event list</h2>
+<p>Filtered and paginated list of events.</p>
+<h3 id='route-name-20'>Route name</h3>
+<p><code>event_list</code></p>
+<h3 id='url-pattern-20'>URL pattern</h3>
+<p><code>/events</code></p>
+<h3 id='type-20'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-20'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-18'>Acceptance criteria</h3>
+<ul>
+<li>I can view a list of events</li>
+<li>A call to action is shown to submit your event</li>
+<li>10 events are shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>Each event includes, title, summary, event date</li>
+<li>Each event links to a valid event path</li>
+<li>List of events can be filtered by date and location</li>
+<li>Events are shown in chronological order - from today ascending</li>
+<li>Message shown if no events in system</li>
+</ul>
+<h2 id='event-submission'>Event submission</h2>
+<p>Form for public submission of a new event.</p>
+<h3 id='route-name-21'>Route name</h3>
+<p><code>event_submission</code></p>
+<h3 id='url-pattern-21'>URL pattern</h3>
+<p><code>/event/new</code></p>
+<h3 id='type-21'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-21'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-19'>Acceptance criteria</h3>
+<ul>
+<li>Form includes title, start date, interval, end date, start time, end time, location, new location, cost, summary, description, image fields and submit button</li>
+<li>Error shown if start date is invalid date format or empty</li>
+<li>Error shown if end date is invalid date format</li>
+<li>Error shown if auth field is empty or invalid content</li>
+<li>Error shown if title empty or greater than 255 characters</li>
+<li>Error shown if new location is greater than 255 characters</li>
+<li>Error shown if location does not match a valid location id</li>
+<li>Error shown if summary is empty or greater than max summary character limit</li>
+<li>Error shown if description is greater than 65535 characters</li>
+<li>Error shown if start time is not in time format</li>
+<li>Error shown if end time is not in time format</li>
+<li>Error shown if cost is empty or greater than 255 characters</li>
+<li>Error shown if start date is after end date</li>
+<li>Error shown if image is not an image file of type jpg, jpeg, gif or png</li>
+<li>If errors are found, submitted values are shown in form fields</li>
+<li>If no errors found, event is submitted and image uploaded</li>
+<li>Image should be appended to description of submitted event</li>
+<li>Submitted event should not be live and visible on the website immediately after submission</li>
+<li>Image should appear in the site image library with valid title</li>
+<li>Event should have valid metadata</li>
+<li>Email notification of new event submission should be sent</li>
+<li>If event submitted, redirect to event list and show success message</li>
+</ul>
+<h2 id='forgot-password'>Forgot password</h2>
+<p>Form to request a password reset link. </p>
+<h3 id='route-name-22'>Route name</h3>
+<p><code>user_account_forget_password</code></p>
+<h3 id='url-pattern-22'>URL pattern</h3>
+<p><code>/account/forgot-password</code></p>
+<h3 id='type-22'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-22'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-20'>Acceptance criteria</h3>
+<ul>
+<li>Redirects to https if ssl is enabled</li>
+<li>Redirects to appropriate url if user adapter forgot password page is specified</li>
+<li>Redirects to signin page if user adapter change details is disabled</li>
+<li>Form includes email address field and submit button</li>
+<li>Error message shown if email is not valid format</li>
+<li>Password reset email sent if email matches an existing user</li>
+<li>Success message shown if password reset email is sent</li>
+</ul>
+<h2 id='index'>Index</h2>
+<p>The main homepage of the site.</p>
+<h3 id='route-name-23'>Route name</h3>
+<p><code>index</code></p>
+<h3 id='url-pattern-23'>URL pattern</h3>
+<p><code>/</code></p>
+<h3 id='type-23'>Type</h3>
+<p><code>Modular</code></p>
+<h3 id='module-23'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-21'>Acceptance criteria</h3>
+<ul>
+<li>No breadcrumb is shown</li>
+<li>Homepage specific stylesheet is used</li>
+<li>No h1 is shown</li>
+<li>Page does not error if no homepage is available</li>
+<li>Homepage specific metadata is used</li>
+<li>Approved version is shown </li>
+<li>Modular homepage widget block is rendered as in CMS</li>
+<li>HTML content is rendered unencoded</li>
+<li>Homepage content relates to the independent homepage with highest position</li>
+</ul>
+<h2 id='homepage'>Homepage</h2>
+<p>A single independent landing page.</p>
+<h3 id='route-name-24'>Route name</h3>
+<p><code>homepage</code></p>
+<h3 id='url-pattern-24'>URL pattern</h3>
+<p><code>/homepage/{homepageId}/{homepageSlug}</code></p>
+<h3 id='type-24'>Type</h3>
+<p><code>Modular</code></p>
+<h3 id='module-24'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-22'>Acceptance criteria</h3>
+<ul>
+<li>Homepage specific stylesheet is used</li>
+<li>Page errors if an invalid homepage ID is passed - 404 response</li>
+<li>I can preview a homepage</li>
+<li>Preview includes accessibility check javascript</li>
+<li>Breadcrumb includes category path</li>
+<li>Homepage specific metadata is used</li>
+<li>Modular homepage widget block is rendered as in CMS</li>
+<li>Approved version is shown </li>
+<li>Page supplements are shown</li>
+<li>HTML content is rendered unencoded</li>
+<li>Hide navigation uses a one column layout</li>
+</ul>
+<h2 id='meeting-article'>Meeting article</h2>
+<p>Details of a single meeting, including any agendas, minutes and other attachments.</p>
+<h3 id='route-name-25'>Route name</h3>
+<p><code>meeting_article</code></p>
+<h3 id='url-pattern-25'>URL pattern</h3>
+<p><code>/meetings/meeting/{meetingId}/{meetingSlug}</code></p>
+<h3 id='type-25'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-25'>Module</h3>
+<p><code>EGov</code></p>
+<h3 id='acceptance-criteria-23'>Acceptance criteria</h3>
+<ul>
+<li>I can view a meeting article</li>
+<li>Page errors if an invalid meeting ID is provided - 404 response</li>
+<li>Page errors if meeting is offline - 404 response</li>
+<li>Breadcrumb includes a link to meeting list</li>
+<li>Committee title, meeting date, list of attachments are rendered on page</li>
+<li>Multimedia content in document editor content is rendered</li>
+<li>Meeting attachments can be downloaded</li>
+<li>HTML content is rendered unencoded</li>
+<li>Attachment types appear in the configured order</li>
+<li>Attachments are grouped by type</li>
+<li>Attachments appear in the configured position in their list</li>
+<li>Meeting specific metadata is used</li>
+</ul>
+<h2 id='meeting-download'>Meeting download</h2>
+<p>Stream a meeting file attachment.</p>
+<h3 id='route-name-26'>Route name</h3>
+<p><code>meeting_download</code></p>
+<h3 id='url-pattern-26'>URL pattern</h3>
+<p><code>/download/meetings/id/{attachmentId}/{attachmentSlug}</code></p>
+<h3 id='type-26'>Type</h3>
+<p>n/a - no HTML output</p>
+<h3 id='module-26'>Module</h3>
+<p><code>EGov</code></p>
+<h2 id='meeting-list'>Meeting list</h2>
+<p>Filtered and paginated list of meetings.</p>
+<h3 id='route-name-27'>Route name</h3>
+<p><code>meeting_list</code></p>
+<h3 id='url-pattern-27'>URL pattern</h3>
+<p><code>/meetings</code></p>
+<h3 id='type-27'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-27'>Module</h3>
+<p><code>EGov</code></p>
+<h3 id='acceptance-criteria-24'>Acceptance criteria</h3>
+<ul>
+<li>I can view a list of meetings</li>
+<li>Only live meetings are shown in the list</li>
+<li>List is ordered by meeting date ascending</li>
+<li>Current page defaults to today where no filter options are set</li>
+<li>Meetings can be filtered by committee</li>
+<li>Meetings can be filtered by committee status (archived/current)</li>
+<li>10 meetings are rendered per page</li>
+<li>Each list item links to valid meeting path</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>Message shown if no meetings in system</li>
+</ul>
+<h2 id='news-article'>News article</h2>
+<p>A single news article and associated image.</p>
+<h3 id='route-name-28'>Route name</h3>
+<p><code>news_article</code></p>
+<h3 id='url-pattern-28'>URL pattern</h3>
+<p><code>/news/article/{articleId}/{articleSlug}</code></p>
+<h3 id='type-28'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-28'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-25'>Acceptance criteria</h3>
+<ul>
+<li>I can preview a news article</li>
+<li>Page errors if an invalid news ID is passed - 404 response</li>
+<li>Page errors if the news article is offline - 404 response</li>
+<li>Breadcrumb includes news list</li>
+<li>Category specific stylesheet is used</li>
+<li>News article specific metadata is used</li>
+<li>Title, summary, image, content, news date content is rendered on the page</li>
+<li>Image is only rendered if it has been completed</li>
+<li>If image has caption, caption is shown</li>
+<li>News date is rendered in a recognised date format</li>
+<li>Multimedia items are rendered in article document editor content</li>
+<li>Approved version is shown </li>
+<li>HTML content is rendered unencoded</li>
+</ul>
+<h2 id='news-list'>News list</h2>
+<p>Filtered and paginated list of news articles.</p>
+<h3 id='route-name-29'>Route name</h3>
+<p><code>news_list</code></p>
+<h3 id='url-pattern-29'>URL pattern</h3>
+<p><code>/news</code></p>
+<h3 id='type-29'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-29'>Module</h3>
+<p><code>Publishing</code></p>
+<h3 id='acceptance-criteria-26'>Acceptance criteria</h3>
+<ul>
+<li>I can view a list of news articles</li>
+<li>News articles are shown in chronological order - newest to oldest</li>
+<li>10 articles are shown per page</li>
+<li>If page number is greater than 1, a previous link is shown</li>
+<li>If more pages exist than the current page number, a next link is shown</li>
+<li>List of news articles can be filtered by year and month</li>
+<li>Each article links to valid news article path</li>
+<li>Each article shows title, summary and news date</li>
+<li>Message shown if no news items in system</li>
+</ul>
+<h2 id='offline'>Offline</h2>
+<p>Holding page shown when the site has been taken offline.</p>
+<h3 id='route-name-30'>Route name</h3>
+<p><code>site_offline</code></p>
+<h3 id='url-pattern-30'>URL pattern</h3>
+<p><code>/offline</code></p>
+<h3 id='type-30'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-30'>Module</h3>
+<p><code>Utilities</code></p>
+<h3 id='acceptance-criteria-27'>Acceptance criteria</h3>
+<ul>
+<li>If site is offline, 40X response</li>
+<li>Offline exception page is shown</li>
+</ul>
+<h2 id='password-reset'>Password reset</h2>
+<p>Form to input a new password. </p>
+<h3 id='route-name-31'>Route name</h3>
+<p><code>user_account_password_reset</code></p>
+<h3 id='url-pattern-31'>URL pattern</h3>
+<p><code>/account/password-reset/{resetCode}</code></p>
+<h3 id='type-31'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-31'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-28'>Acceptance criteria</h3>
 <ul>
 <li>Redirects to https if ssl is enabled</li>
 <li>Redirects to appropriate url if user adapter change password page is specified</li>
@@ -2462,17 +2516,17 @@ The wildcard and argument names must match exactly.
 <li>If no errors found, password is updated</li>
 <li>If password is updated, reset code is disabled.</li>
 </ul>
-<h3 id='forgot-password-form'>Forgot password form</h3>
-<ul>
-<li>Redirects to https if ssl is enabled</li>
-<li>Redirects to appropriate url if user adapter forgot password page is specified</li>
-<li>Redirects to signin page if user adapter change details is disabled</li>
-<li>Form includes email address field and submit button</li>
-<li>Error message shown if email is not valid format</li>
-<li>Password reset email sent if email matches an existing user</li>
-<li>Success message shown if password reset email is sent</li>
-</ul>
-<h3 id='register'>Register</h3>
+<h2 id='register'>Register</h2>
+<p>Form to create a new user account.</p>
+<h3 id='route-name-32'>Route name</h3>
+<p><code>user_registration</code></p>
+<h3 id='url-pattern-32'>URL pattern</h3>
+<p><code>/register</code></p>
+<h3 id='type-32'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-32'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-29'>Acceptance criteria</h3>
 <ul>
 <li>Redirects to https if ssl is enabled</li>
 <li>Redirects to change details if valid user session</li>
@@ -2505,7 +2559,47 @@ The wildcard and argument names must match exactly.
 <li>If email authentication is enabled, authentication email is sent, redirected to index and info message is shown</li>
 <li>If user is registered, redirected to user home and success message shown</li>
 </ul>
-<h3 id='sign-in-form'>Sign in form</h3>
+<h2 id='restricted-content-login'>Restricted content login</h2>
+<p>Form used to access a restricted Galaxies site. </p>
+<h3 id='route-name-33'>Route name</h3>
+<p><code>restricted</code></p>
+<h3 id='url-pattern-33'>URL pattern</h3>
+<p><code>/restricted</code></p>
+<h3 id='type-33'>Type</h3>
+<p><code>Article</code></p>
+<h3 id='module-33'>Module</h3>
+<p><code>Utilities</code></p>
+<h2 id='rss'>RSS</h2>
+<p>An RSS feed of recently published content</p>
+<h3 id='route-name-34'>Route name</h3>
+<p><code>content_rss</code></p>
+<h3 id='url-pattern-34'>URL pattern</h3>
+<p><code>/rss/{contentType}</code></p>
+<h3 id='type-34'>Type</h3>
+<p>n/a - no HTML output</p>
+<h3 id='module-34'>Module</h3>
+<p><code>Publishing</code></p>
+<h2 id='search-list'>Search list</h2>
+<p>List of search results provided by the site&#39;s search provider.</p>
+<h3 id='route-name-35'>Route name</h3>
+<p><code>search_list</code></p>
+<h3 id='url-pattern-35'>URL pattern</h3>
+<p><code>/site-search/results/</code></p>
+<h3 id='type-35'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-35'>Module</h3>
+<p><code>Utilities</code></p>
+<h2 id='sign-in'>Sign in</h2>
+<p>Form to sign in to an existing user account. </p>
+<h3 id='route-name-36'>Route name</h3>
+<p><code>user_account_signin</code></p>
+<h3 id='url-pattern-36'>URL pattern</h3>
+<p><code>/account/signin</code></p>
+<h3 id='type-36'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-36'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-30'>Acceptance criteria</h3>
 <ul>
 <li>Redirects to https if ssl is enabled </li>
 <li>Form includes email address, password, sign in button</li>
@@ -2513,13 +2607,33 @@ The wildcard and argument names must match exactly.
 <li>Error message doesn’t specify the incorrect value</li>
 <li>If details match valid user, user session started, user redirected to user account, success message shown</li>
 </ul>
-<h3 id='unsubscribe'>Unsubscribe</h3>
+<h2 id='unsubscribe'>Unsubscribe</h2>
+<p>Form to unsubscribe from marketing newsletters sent by the site. </p>
+<h3 id='route-name-37'>Route name</h3>
+<p><code>unsubscribe</code></p>
+<h3 id='url-pattern-37'>URL pattern</h3>
+<p><code>/account/unsubscribe</code></p>
+<h3 id='type-37'>Type</h3>
+<p><code>Form</code></p>
+<h3 id='module-37'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-31'>Acceptance criteria</h3>
 <ul>
 <li>If user id and email match valid user from database, success message shown, redirect to index</li>
 <li>If user id and email do not match valid user from database, error message shown, redirect to index</li>
 <li>If valid user from database is found, data protection value is changed to 0</li>
 </ul>
-<h3 id='user-home'>User home</h3>
+<h2 id='user-home'>User home</h2>
+<p>User&#39;s account page detailing interactions with the site.</p>
+<h3 id='route-name-38'>Route name</h3>
+<p><code>user_home</code></p>
+<h3 id='url-pattern-38'>URL pattern</h3>
+<p><code>/account</code></p>
+<h3 id='type-38'>Type</h3>
+<p><code>List</code></p>
+<h3 id='module-38'>Module</h3>
+<p><code>MyAccount</code></p>
+<h3 id='acceptance-criteria-32'>Acceptance criteria</h3>
 <ul>
 <li>Redirects to https if ssl is enabled</li>
 <li>Must have valid user session to view</li>
@@ -2532,134 +2646,14 @@ The wildcard and argument names must match exactly.
 <li>If user adapter allows change password, link is shown</li>
 <li>Link is shown to logout of account</li>
 </ul>
-<h3 id='change-password-form'>Change password form</h3>
+<h2 id='non-html-response-routes'>Non-HTML response routes</h2>
+<p>For the following routes, output comes directly from the controller and is not rendered in a template:</p>
+
 <ul>
-<li>Must have valid user session to view</li>
-<li>Redirects to https if ssl is enabled</li>
-<li>Redirects to appropriate url if user adapter change password page is specified</li>
-<li>Redirects to index and error message shown if user not logged in </li>
-<li>Form includes old password field, new password field, new password confirmation field and submit button</li>
-<li>Error message is shown if password is less than 6 characters</li>
-<li>Error message is shown if password is greater than 30 characters</li>
-<li>Error message is shown if new password is not the same as new password confirmation</li>
-<li>If no errors found, password is updated</li>
-<li>If password is updated, reset code is disabled.</li>
-<li>If password is updated, redirects to user home, success message shown</li>
-<li>Breadcrumb includes user account link</li>
-</ul>
-<h2 id='egov'>EGov</h2><h3 id='meeting-amp-minute-article'>Meeting &amp; minute article</h3>
-<ul>
-<li>I can view a meeting article</li>
-<li>Page errors if an invalid meeting ID is provided - 404 response</li>
-<li>Page errors if meeting is offline - 404 response</li>
-<li>Breadcrumb includes a link to meeting list</li>
-<li>Committee title, meeting date, list of attachments are rendered on page</li>
-<li>Multimedia content in document editor content is rendered</li>
-<li>Meeting attachments can be downloaded</li>
-<li>HTML content is rendered unencoded</li>
-<li>Attachment types appear in the configured order</li>
-<li>Attachments are grouped by type</li>
-<li>Attachments appear in the configured position in their list</li>
-<li>Meeting specific metadata is used</li>
-</ul>
-<h3 id='meeting-amp-minute-list'>Meeting &amp; minute list</h3>
-<ul>
-<li>I can view a list of meetings</li>
-<li>Only live meetings are shown in the list</li>
-<li>List is ordered by meeting date ascending</li>
-<li>Current page defaults to today where no filter options are set</li>
-<li>Meetings can be filtered by committee</li>
-<li>Meetings can be filtered by committee status (archived/current)</li>
-<li>10 meetings are rendered per page</li>
-<li>Each list item links to valid meeting path</li>
-<li>If page number is greater than 1, a previous link is shown</li>
-<li>If more pages exist than the current page number, a next link is shown</li>
-<li>Message shown if no meetings in system</li>
-</ul>
-<h3 id='a-to-z-article'>A to Z article</h3>
-<ul>
-<li>Page errors if an invalid service ID is passed - 404 response</li>
-<li>Page errors if the service is offline - 404 response</li>
-<li>Page redirects to appropriate URL if service has redirect set</li>
-<li>Breadcrumb includes A-Z list</li>
-<li>A to Z record metadata is included in the page</li>
-<li>Title, content, eligibility, accessibility and availability content is rendered on the page</li>
-<li>Multimedia items are rendered in service document editor content</li>
-<li>Eligibility section is only shown if it has been completed</li>
-<li>Accessibility section is only shown if it has been completed</li>
-<li>Availability section is only shown if it has been completed</li>
-<li>Contacts section is only shown if it has been completed</li>
-<li>Each contact assigned to service is printed</li>
-<li>Contact name is only printed if it has been completed</li>
-<li>Contact department is only printed if it has been completed</li>
-<li>Contact email is only printed if it has been completed</li>
-<li>Contact telephone is only printed if it has been completed</li>
-<li>Contact mobile is only printed if it has been completed</li>
-<li>Contact fax is only printed if it has been completed</li>
-<li>Contact URL is only printed if it has been completed</li>
-<li>Contact address is only printed if it has been completed</li>
-<li>Contact email is rendered as a mailto: link</li>
-<li>Contact telephone is rendered as a tel: link</li>
-<li>Contact mobile is rendered as a tel: link</li>
-<li>Contact URL is rendered as a link</li>
-<li>Approved version is shown </li>
-<li>HTML content is rendered unencoded</li>
-</ul>
-<h3 id='a-to-z-list'>A to Z list</h3>
-<ul>
-<li>I can view a list of A to Z records starting with the selected letter</li>
-<li>Each list item links to the correct A to Z article path</li>
-<li>A to Z record aliases are included in the list of records</li>
-<li>List of records appears in alphabetical order</li>
-<li>All records starting with a letter are shown on one page (no pagination)</li>
-<li>List of records can be filtered by a different letter by clicking a letter in A-Z bar</li>
-<li>Letters with no records are shown as disabled</li>
-<li>Letters with records link to the correct A to Z list path</li>
-<li>Message shown if no services in system</li>
-</ul>
-<h3 id='councillors-article'>Councillors article</h3>
-<ul>
-<li>Approved version is shown </li>
-<li>Page errors if invalid councillor ID is passed - 404 response</li>
-<li>Page errors if councillor is offline - 404 response</li>
-<li>Breadcrumb includes councillors list</li>
-<li>First name, second name, image, party, ward, position, address, telephone, fax, email, content are rendered</li>
-<li>Page does not error if party deleted</li>
-<li>Page does not error if ward deleted</li>
-<li>Multimedia is rendered in document editor content</li>
-<li>Image is only printed if completed</li>
-<li>Image Caption is rendered if completed</li>
-<li>Position is only printed if completed</li>
-<li>Address is only printed if completed</li>
-<li>Telephone is only printed if completed</li>
-<li>Telephone is rendered as a tel: link</li>
-<li>Fax is only printed if completed</li>
-<li>Email is only printed if completed</li>
-<li>Email is rendered as a mailto: link</li>
-<li>Content is only printed if completed</li>
-<li>HTML content is rendered unencoded</li>
-</ul>
-<h3 id='councillors-list'>Councillors list</h3>
-<ul>
-<li>I can view a list of councillors</li>
-<li>List is not paginated</li>
-<li>List can be filtered by party, ward</li>
-<li>List of records is sorted by alphabetical order</li>
-<li>Each item links to valid councillor path and includes first name and surname</li>
-<li>Message shown if no councillors in system</li>
-</ul>
-<h2 id='utilities'>Utilities</h2><h3 id='offline'>Offline</h3>
-<ul>
-<li>If site is offline, 40X response</li>
-<li>Offline exception page is shown</li>
-</ul>
-<h3 id='accessibility-settings'>Accessibility settings</h3>
-<ul>
-<li>Colour scheme setting is saved to session when form is submitted</li>
-<li>Font size setting is saved to session when form is submitted</li>
-<li>Font setting is saved to session when form is submitted</li>
-<li>Using the reset button clears saved session values</li>
-<li>Form can be navigated by keyboard only</li>
+<li>meeting_download</li>
+<li>content_rss</li>
+<li>file_download</li>
+<li>logout</li>
 </ul>
 <h1 id='template-differences'>Template differences</h1>
 <p>There are a number of differences between the default template set provided with Photon, and the Jadu CMS legacy template set. </p>
