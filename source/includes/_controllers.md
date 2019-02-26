@@ -1,6 +1,6 @@
-# Controllers
+#Controllers
 
-## Page controllers
+##Page controllers
 
 > Pages are registered within the theme `services.yml` configuration file. 
 
@@ -28,7 +28,7 @@ Each page controller extends the `Photon\Core\Controller\Page` class of the `Pho
 
 `Photon\Core\Controller\Page` itself extends the Symfon framework `Controller` class. Further details are available in the Symfony documentation - [Controller](https://symfony.com/doc/2.8/controller.html).
 
-## Component controllers
+##Component controllers
 
 > Components are registered within the theme `services.yml` configuration file.
 
@@ -56,7 +56,7 @@ As with Pages, Components can be extended and overridden by other themes.
 
 Additional information on sub-requests is provided in the Symfony documentation - <a href="https://symfony.com/doc/2.8/components/http_kernel.html#sub-requests">Sub Requests</a>.
 
-### Invoking components
+###Invoking components
 
 ```twig
 {{ component('announcement') }}
@@ -94,7 +94,7 @@ class CategoryNavigationController extends Component
 }
 ```
 
-## Widget controllers
+##Widget controllers
 
 > Widgets are registered within the theme `services.yml` configuration file.
 
@@ -116,7 +116,7 @@ Widget controllers are specialised component controllers. They interact with the
 When no matching widget service is found, the default widget service is used, with <code>widget_id = 1</code>. The default widget will pass code stored in the database through the function <code>eval()</code> to generate the response returned from the controller.
 </aside>
 
-### Invoking widgets
+###Invoking widgets
 
 ```twig
 {{ widget(widgetRecord) }}
@@ -145,7 +145,7 @@ The Request stack object can be retrieved in classes that extend `Page` by calli
 
 Further details on how to interact with data held in the Request object are provided in the Symfony documentation - [Accessing Request Data](https://symfony.com/doc/2.8/components/http_foundation.html#accessing-request-data).
 
-## Returning a response
+##Returning a response
 
 ```php
 
@@ -175,7 +175,7 @@ The `Photon\Core\Controller\Page` class of the `PhotonCoreBundle` project that a
 
 Further details on Response objects are provided by the Symfony documentation - [Response](https://symfony.com/doc/2.8/components/http_foundation.html#response).
 
-## Core Page controller methods
+##Core Page controller methods
 
 The `Photon\Core\Controller\Page` class provides a number of useful functions to the controllers that extend it. 
 

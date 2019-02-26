@@ -1,4 +1,4 @@
-# Models
+#Models
 
 ```php
 <?php
@@ -45,7 +45,7 @@ A number of model classes are provided to format data for pages and ensure a con
 
 The attributes of the model are accessed using getter and setter functions in PHP. Calls to setter methods can be chained for ease of use.
 
-## Article
+##Article
 
 ```php
 <?php
@@ -70,11 +70,11 @@ $article->addMeta(
 
 This model defines a generic article page.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Article`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -91,7 +91,7 @@ $navigation | array | Array of navigation links
 $pagination | array | Array of pagination links
 $link | Link | Link to this article
 
-## Form
+##Form
 
 ```php
 <?php
@@ -135,11 +135,11 @@ $form->setPrimaryAction($control);
 
 This model defines a form, including a list of form controls to submit data to the page.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Form`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -154,7 +154,7 @@ $instructions | string | Rich text content that makes up the instructions of the
 $primaryAction | FormControl | The form control that forms the primary action of the form, often a submit button
 $secondaryAction | FormControl | The form control that forms the secondary action of the form, often a cancel or back button
 
-## FormControl
+##FormControl
 
 ```php
 <?php
@@ -172,11 +172,11 @@ $control->setAutocomplete(false);
 
 A single form control and its associated values, such as label and help text.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\FormControl`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -195,7 +195,7 @@ $mandatory | boolean | Whether this control must be completed prior to successfu
 $className | string | Additional CSS class name data associated with this control
 $placeholder | string | The content of the placeholder attribute of the form control's HTML element
 
-## FormControlOption
+##FormControlOption
 
 ```php
 <?php
@@ -217,18 +217,18 @@ foreach ($topLevelCategories as $topLevelCategory) {
 
 A single option for a form control, such as a select or radio button group.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\FormControlOption`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
 $value | string | The content of the value attribute of the form control's HTML element
 $text | string | The label for this option
 
-## Link
+##Link
 
 ```php
 <?php
@@ -250,11 +250,11 @@ $azLink->setDisabled($count > 0);
 
 A link element, including the link destination and label text. 
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Link`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -265,7 +265,7 @@ $active | boolean | The link has been selected
 $disabled | boolean | The link should be displayed as disabled in the user interface
 
 
-## Listing
+##Listing
 
 ```php
 <?php
@@ -287,11 +287,11 @@ $listing->setAZLinkList(
 
 A generic list page.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Listing`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -303,7 +303,7 @@ $azLinkList | array | Array of A to Z navigation links for filtering the content
 $lists | array | Array of lists to display on this page
 
 
-## ListItem
+##ListItem
 
 ```php
 <?php
@@ -317,11 +317,11 @@ $list->setItems($records);
 
 An array of records or articles. 
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\ListItem`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -329,7 +329,7 @@ $title | string | The title of the list
 $items | array | Array of article or link objects that make up this list
 $type | string | The type of list, for example "record" or "article"
 
-## Meta
+##Meta
 
 ```php
 <?php
@@ -344,11 +344,11 @@ $meta->setType($type);
 
 A snippet of content related to an article, for example the published date.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Meta`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -356,7 +356,7 @@ $value | string | The value of the metadata defined
 $title | string | The label for the metadata defined
 $type | string | The type of the value, for example "string" or "date"
 
-## Modular
+##Modular
 
 ```php
 <?php
@@ -371,11 +371,11 @@ $modular->setSupplements($this->getSupplements($homepage));
 
 Generic modular page for use with Jadu CMS Homepage content type.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Modular`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------
@@ -385,7 +385,7 @@ $supplements | array | Array of supplements associated with this article
 $navigation | array | Array of navigation links 
 $documents | array | Array of document records associated with this page
 
-## Page
+##Page
 
 ```php
 <?php
@@ -401,11 +401,11 @@ $page->setBodyClass('councillor-article');
 
 A generic page, including elements such as metadata and breadcrumb.
 
-### Classname
+###Classname
 
 `Photon\CmsEngine\Model\Element\Page`
 
-### Attributes
+###Attributes
 
 Attribute | Type | Description
 -----------|--------|---------------------------

@@ -1,4 +1,4 @@
-# Troubleshooting
+#Troubleshooting
 
 **The site is complaining that the theme doesn't exist**
 

@@ -1,4 +1,4 @@
-# Routes
+#Routes
 
 > Routes are defined in the theme `routing.yml` config file.
 
@@ -34,7 +34,7 @@ Each route has an internal name. For example `homepage`, `atoz_list` and `atoz_a
 
 Further information on routing is available in the Symfony documentation - [Routing](https://symfony.com/doc/2.8/routing.html).
 
-## Generating URLs
+##Generating URLs
 
 ```php
 <?php
@@ -58,7 +58,7 @@ Instead of hardcoding URLs into templates, the `path` Twig function can be used 
 Further information on generating URLs is provided in the Symfony documentation - [Generating URLs](https://symfony.com/doc/2.8/routing.html#generating-urls)
 
 
-## Redirecting
+##Redirecting
 
 ```php
 <?php
@@ -84,3 +84,5 @@ return $this->redirect('http://symfony.com/doc');
 A number of redirect options are provided via Symfony.
 
 Further information on redirecting is provided in the Symfony documentation - [Redirecting](https://symfony.com/doc/2.8/controller.html#redirecting).
+
+

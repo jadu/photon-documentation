@@ -1,4 +1,4 @@
-# Default theme
+#Default theme
 
 The default theme implements all functionality provided with Jadu CMS, and provides a base from which to extend when creating a custom theme.
 
@@ -7,7 +7,7 @@ The default theme is maintained, and any updates available will be added either:
 * when you next use Composer to update your dependencies
 * when your site is patched with an updated Jadu CMS release
 
-## Page classes
+##Page classes
 
 The default theme uses [Block Element Modifier](http://getbem.com/) (BEM)naming conventions for its class names. 
 
@@ -56,14 +56,6 @@ The partials in the default theme are organised according to atomic design princ
 
 Further information on atomic design is available in the [Atomic design blog post](http://bradfrost.com/blog/post/atomic-web-design/).
 
-##Non-HTML response routes
-
-For the following routes, output comes directly from the controller and is not rendered in a template:
-
-* meeting_download
-* content_rss
-* file_download
-* logout
 
 ##Hard coded text
 

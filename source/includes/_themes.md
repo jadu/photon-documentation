@@ -1,4 +1,4 @@
-# Themes
+#Themes
 
 Each theme within Photon is defined as a Symfony bundle.
 
@@ -18,7 +18,7 @@ Typically a theme will contain:
 
 Further information on the Bundle system is available in the Symfony documentation - [The Bundle System](https://symfony.com/doc/2.8/bundles.html).
 
-## Registering a theme
+##Registering a theme
 
 > Themes can be registered with the CMS in the `bundles.xml` config file.
 

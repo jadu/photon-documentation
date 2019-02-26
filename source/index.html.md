@@ -12,6 +12,7 @@ includes:
   - routes
   - models
   - default
+  - defaultroutes
   - acceptance
   - differences
   - custom
