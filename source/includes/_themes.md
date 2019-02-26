@@ -25,12 +25,12 @@ Further information on the Bundle system is available in the Symfony documentati
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <bundles xmlns:config="http://www.jadu.co.uk/schema/config">
-  ...
+  <!-- ... -->
+  
   <frontend config:type="array">
-      ...
-      <item key="my-project">
-        MyProjectTheme\MyProjectThemeBundle
-      </item>
+      <!-- ... -->
+      
+      <item key="my-project">MyProjectTheme\MyProjectThemeBundle</item>
   </frontend>
 </bundles>
 ```
