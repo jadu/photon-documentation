@@ -47,7 +47,7 @@ AlphaTheme
             
 ```
 
-A bundle is in essence a folder of files laid out in a consistent way. 
+A bundle is in essence a folder of files laid out in a consistent way.
 
 It **must** contain:
 
@@ -63,6 +63,7 @@ For **Galaxies theme bundles**, the following addtions are also required:
 * A demo route controller eg. `Page/UtilitiesContent/ThemeDemoController.php`
 * A preview image eg. `Resources/public/images/preview.png`
 
+An example theme bundle is available on GitHub: [ExampleTheme](https://github.com/jadu/photon-example-theme/tree/master/src/ExampleTheme)
 
 ##Creating a theme definition
 

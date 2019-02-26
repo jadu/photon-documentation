@@ -9,6 +9,8 @@ The default theme is maintained, and any updates available will be added either:
 
 ## Page classes
 
+The default theme uses [Block Element Modifier](http://getbem.com/) (BEM)naming conventions for its class names. 
+
 Uniquely classes are set on each page of the default theme. For reference, these are:
 
 Page | Class name
@@ -47,6 +49,12 @@ News list | news-list
 Accessibility settings | accessibility-form
 Search results | search-list
 Offline page | offline-article
+
+##Partials
+
+The partials in the default theme are organised according to atomic design principles. 
+
+Further information on atomic design is available in the [Atomic design blog post](http://bradfrost.com/blog/post/atomic-web-design/).
 
 ##Non-HTML response routes
 

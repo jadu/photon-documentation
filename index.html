@@ -305,6 +305,9 @@
                     <a href="#page-classes" class="toc-h2 toc-link" data-title="Page classes">Page classes</a>
                   </li>
                   <li>
+                    <a href="#partials" class="toc-h2 toc-link" data-title="Partials">Partials</a>
+                  </li>
+                  <li>
                     <a href="#non-html-response-routes" class="toc-h2 toc-link" data-title="Non-HTML response routes">Non-HTML response routes</a>
                   </li>
                   <li>
@@ -1362,6 +1365,8 @@ The wildcard and argument names must match exactly.
 <li>when your site is patched with an updated Jadu CMS release</li>
 </ul>
 <h2 id='page-classes'>Page classes</h2>
+<p>The default theme uses <a href="http://getbem.com/">Block Element Modifier</a> (BEM)naming conventions for its class names. </p>
+
 <p>Uniquely classes are set on each page of the default theme. For reference, these are:</p>
 
 <table><thead>
@@ -1507,6 +1512,10 @@ The wildcard and argument names must match exactly.
 <td>offline-article</td>
 </tr>
 </tbody></table>
+<h2 id='partials'>Partials</h2>
+<p>The partials in the default theme are organised according to atomic design principles. </p>
+
+<p>Further information on atomic design is available in the <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic design blog post</a>.</p>
 <h2 id='non-html-response-routes'>Non-HTML response routes</h2>
 <p>For the following routes, output comes directly from the controller and is not rendered in a template:</p>
 
@@ -2218,7 +2227,7 @@ The wildcard and argument names must match exactly.
         |- AlphaTheme.php
 
 </code></pre>
-<p>A bundle is in essence a folder of files laid out in a consistent way. </p>
+<p>A bundle is in essence a folder of files laid out in a consistent way.</p>
 
 <p>It <strong>must</strong> contain:</p>
 
@@ -2237,6 +2246,8 @@ The wildcard and argument names must match exactly.
 <li>A demo route controller eg. <code>Page/UtilitiesContent/ThemeDemoController.php</code></li>
 <li>A preview image eg. <code>Resources/public/images/preview.png</code></li>
 </ul>
+
+<p>An example theme bundle is available on GitHub: <a href="https://github.com/jadu/photon-example-theme/tree/master/src/ExampleTheme">ExampleTheme</a></p>
 <h2 id='creating-a-theme-definition'>Creating a theme definition</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Spacecraft\DemoProject\Theme</span><span class="p">;</span>
@@ -2457,6 +2468,10 @@ When creating the service, the parent <code>photon.controller.widget</code> can 
 <p><strong>The site is complaining that the theme doesn&#39;t exist</strong></p>
 
 <p>This is commonly down to either the theme service not being defined within the theme bundle <code>services.yml</code>, or the DependencyInjection folder and it&#39;s related files being missing from the theme bundle.</p>
+
+<p><strong>My template file isn&#39;t overriding the original template file</strong></p>
+
+<p>Generally this is down to differences in the path to the file. Double check that the files names match exactly, as this is case sensitive. Check that the directory path to the two templates is an exact match.</p>
 
       </div>
       <div class="dark-box">
