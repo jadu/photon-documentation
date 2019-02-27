@@ -12,7 +12,6 @@ includes:
   - routes
   - models
   - default
-  - defaultroutes
   - differences
   - custom
   - troubleshooting
