@@ -328,3 +328,15 @@ When creating the service, the parent <code>photon.controller.widget</code> can 
 Supplements can be added in Photon by creating a manager class, administration interface file and associated class.
 
 The new supplement class must be registered with the CMS in the database table `JaduPageSupplements`. The supplement manager class must be registered in `page_supplements.xml`.
+
+##Linking to theme assets
+
+```twig
+`{{ asset('images/info.png') }}`
+```
+
+> This would generate a link to an image called `info.png` within the directory `Resources/public/images/`
+
+Theme assets should be placed in a directory named `public` in the `Resources` directory of the bundle.
+
+Theme assets can then be embedded in templates by calling the `asset()` function.
