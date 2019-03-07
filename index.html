@@ -515,6 +515,9 @@
                   <li>
                     <a href="#customising-supplements" class="toc-h2 toc-link" data-title="Customising supplements">Customising supplements</a>
                   </li>
+                  <li>
+                    <a href="#linking-to-theme-assets" class="toc-h2 toc-link" data-title="Linking to theme assets">Linking to theme assets</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1714,7 +1717,7 @@ The wildcard and argument names must match exactly.
 <h3 id='route-name-5'>Route name</h3>
 <p><code>document_category</code></p>
 <h3 id='url-pattern-5'>URL pattern</h3>
-<p><code>/info/{categoryId}/{categorySlug}</code></p>
+<p><code>/{categorySlug}</code></p>
 <h3 id='layout-5'>Layout</h3>
 <p><code>Modular</code></p>
 <h3 id='module-5'>Module</h3>
@@ -2029,7 +2032,7 @@ The wildcard and argument names must match exactly.
 <h3 id='route-name-16'>Route name</h3>
 <p><code>document_page</code></p>
 <h3 id='url-pattern-16'>URL pattern</h3>
-<p><code>/info/{categoryId}/{categorySlug}/{documentId}/{documentSlug}/{pageNumber}</code> </p>
+<p><code>/{categorySlug}/{documentSlug}/{pageNumber}</code> </p>
 <h3 id='layout-16'>Layout</h3>
 <p><code>Article</code></p>
 <h3 id='module-16'>Module</h3>
@@ -2918,6 +2921,15 @@ When creating the service, the parent <code>photon.controller.widget</code> can 
 <p>Supplements can be added in Photon by creating a manager class, administration interface file and associated class.</p>
 
 <p>The new supplement class must be registered with the CMS in the database table <code>JaduPageSupplements</code>. The supplement manager class must be registered in <code>page_supplements.xml</code>.</p>
+<h2 id='linking-to-theme-assets'>Linking to theme assets</h2><pre class="highlight twig tab-twig"><code>`<span class="cp">{{</span> <span class="nv">asset</span><span class="p">(</span><span class="s1">'images/info.png'</span><span class="p">)</span> <span class="cp">}}</span>`
+</code></pre>
+<blockquote>
+<p>This would generate a link to an image called <code>info.png</code> within the directory <code>Resources/public/images/</code></p>
+</blockquote>
+
+<p>Theme assets should be placed in a directory named <code>public</code> in the <code>Resources</code> directory of the bundle.</p>
+
+<p>Theme assets can then be embedded in templates by calling the <code>asset()</code> function.</p>
 <h1 id='troubleshooting'>Troubleshooting</h1>
 <p><strong>The site is complaining that the theme doesn&#39;t exist</strong></p>
 
