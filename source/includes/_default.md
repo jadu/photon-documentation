@@ -286,7 +286,7 @@ Landing page of a category, including navigation to subcategories and documents 
 
 ###URL pattern
 
-`/info/{categoryId}/{categorySlug}`
+`/{categorySlug}`
 
 ###Layout
 
@@ -733,7 +733,7 @@ A single page of a document with navigation to all other pages in that document.
 
 ###URL pattern
 
-`/info/{categoryId}/{categorySlug}/{documentId}/{documentSlug}/{pageNumber}` 
+`/{categorySlug}/{documentSlug}/{pageNumber}` 
 
 ###Layout
 
