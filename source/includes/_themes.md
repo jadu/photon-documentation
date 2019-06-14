@@ -45,9 +45,9 @@ Themes must be registered with the CMS so that they are loaded by the Symfony ke
 
 ## Limiting themes for Galaxies sites
 
-When developing a theme for use within a Galaxies site, you may want that theme bundles resources to be only available for a single galaxy (e.g. a custom theme route).
+When developing a theme for use within a Galaxies site, it may be necessary for theme bundle resources to be only available for a single galaxy (e.g. a custom theme route).
 
-This is possible by adding an element `galaxy<GALAXY_DATABASE_NAME>` to your `bundles.xml` configuration, which will limit the theme bundles loaded by the Symfony kernel for that Galaxies site.
+This is possible by adding an XML element `galaxy<GALAXY_DATABASE_NAME>` to your `bundles.xml` configuration, which will limit the theme bundles loaded by the Symfony kernel for that Galaxies site.
 
 
 > For example, to ensure galaxy with database 'ms_jadudb_1' only loads 'MyGalaxyThemeBundle'.
