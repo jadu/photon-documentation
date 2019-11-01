@@ -340,3 +340,50 @@ The new supplement class must be registered with the CMS in the database table `
 Theme assets should be placed in a directory named `public` in the `Resources` directory of the bundle.
 
 Theme assets can then be embedded in templates by calling the `asset()` function.
+
+##Customising date format
+
+Default date format in Photon is `jS F Y`. This format can be changed by adding a `date_format` value to the config.yml file.
+
+- Main site:
+`{JADU_HOME}/config/frontend/config.yml`
+
+```yaml
+photon_core:
+    theme: base
+    fixture_set: base
+    date_format: Y-m-d
+```
+
+- Galaxies sites:
+Can be configured per site in `{JADU_HOME}/config/galaxyms_jadudb_{SITE-ID}/config.yml`
+
+```yaml
+photon_core:
+    date_format: Y-m-d
+```
+
+`{JADU_HOME}/config/galaxyms_jadudb_{SITE-ID}/config_prod.yml`:
+```yaml
+imports:
+    - { resource: config.yml }
+```
+
+- Blogs:
+
+All blogs follow the date format defined in the database `JaduBlogs.dateFormat`, which is set to `d/m/Y` by default.
+If no value is set in the database, the default `jS F Y` is used unless a value is defined in `{JADU_HOME}/config/blog/config.yml`:
+
+```yaml
+photon_core:
+  theme: blogbase
+  fixture_set: blogbase
+  date_format: Y-m-d
+```
+
+`{JADU_HOME}/config/blog/config_prod.yml`:
+
+```yaml
+imports:
+    - { resource: config.yml }
+```

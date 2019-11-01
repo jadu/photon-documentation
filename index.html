@@ -227,6 +227,9 @@
                   <li>
                     <a href="#registering-a-theme" class="toc-h2 toc-link" data-title="Registering a theme">Registering a theme</a>
                   </li>
+                  <li>
+                    <a href="#limiting-themes-for-galaxies-sites" class="toc-h2 toc-link" data-title="Limiting themes for Galaxies sites">Limiting themes for Galaxies sites</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -518,6 +521,9 @@
                   <li>
                     <a href="#linking-to-theme-assets" class="toc-h2 toc-link" data-title="Linking to theme assets">Linking to theme assets</a>
                   </li>
+                  <li>
+                    <a href="#customising-date-format" class="toc-h2 toc-link" data-title="Customising date format">Customising date format</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -572,26 +578,28 @@
 <p>Further information on the Bundle system is available in the Symfony documentation - <a href="https://symfony.com/doc/2.8/bundles.html">The Bundle System</a>.</p>
 <h2 id='registering-a-theme'>Registering a theme</h2>
 <blockquote>
-<p>Themes can be registered with the CMS in the <code>bundles.xml</code> config file.</p>
+<p>A command is provide to easily register Galaxies site themes with the CMS.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>php cli.php cms:theme-register /absolute/path/to/theme
+</code></pre>
+<p>Themes must be registered with the CMS so that they are loaded by the Symfony kernel when it is booted. This can be done via running the <code>cms:theme-register</code> command.</p>
+<h2 id='limiting-themes-for-galaxies-sites'>Limiting themes for Galaxies sites</h2>
+<p>When developing a theme for use within a Galaxies site, you may want to limit the loaded theme bundles to prevent unwanted resources being available for that Galaxies site (e.g. a custom theme route).</p>
+
+<p>This is possible by adding an XML element <code>galaxy&lt;GALAXY_DATABASE_NAME&gt;</code> to your <code>bundles.xml</code> configuration, which will limit the theme bundles loaded by the Symfony kernel for that Galaxies site.</p>
+
+<blockquote>
+<p>For example, to ensure galaxy with database &#39;ms_jadudb_1&#39; only loads &#39;MyGalaxyThemeBundle&#39;.</p>
 </blockquote>
 <pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
 <span class="nt">&lt;bundles</span> <span class="na">xmlns:config=</span><span class="s">"http://www.jadu.co.uk/schema/config"</span><span class="nt">&gt;</span>
   <span class="c">&lt;!-- ... --&gt;</span>
 
-  <span class="nt">&lt;frontend</span> <span class="na">config:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-      <span class="c">&lt;!-- ... --&gt;</span>
-
-      <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">"my-project"</span><span class="nt">&gt;</span>MyProjectTheme\MyProjectThemeBundle<span class="nt">&lt;/item&gt;</span>
-  <span class="nt">&lt;/frontend&gt;</span>
+  <span class="nt">&lt;galaxyms_jadudb_1</span> <span class="na">config:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">key=</span><span class="s">"my-galaxy-theme"</span><span class="nt">&gt;</span>MyGalaxyTheme\MyGalaxyThemeBundle<span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;/galaxyms_jadudb_1&gt;</span>
 <span class="nt">&lt;/bundles&gt;</span>
-</code></pre>
-<blockquote>
-<p>A command is provide to easily register Galaxies site themes with the CMS.</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>php cli.php cms:theme-register /path/to/theme
-</code></pre>
-<p>Themes must be registered with the CMS so that they are loaded by the Symfony kernel when it is booted. Themes can either be registered by adding them to the <code>bundles.xml</code> config file, or running the <code>cms:theme-register</code> command.</p>
-<h1 id='controllers'>Controllers</h1><h2 id='page-controllers'>Page controllers</h2>
+</code></pre><h1 id='controllers'>Controllers</h1><h2 id='page-controllers'>Page controllers</h2>
 <blockquote>
 <p>Pages are registered within the theme <code>services.yml</code> configuration file. </p>
 </blockquote>
@@ -2930,7 +2938,46 @@ When creating the service, the parent <code>photon.controller.widget</code> can 
 <p>Theme assets should be placed in a directory named <code>public</code> in the <code>Resources</code> directory of the bundle.</p>
 
 <p>Theme assets can then be embedded in templates by calling the <code>asset()</code> function.</p>
-<h1 id='troubleshooting'>Troubleshooting</h1>
+<h2 id='customising-date-format'>Customising date format</h2>
+<p>Default date format in Photon is <code>jS F Y</code>. This format can be changed by adding a <code>date_format</code> value to the config.yml file.</p>
+
+<ul>
+<li>Main site:
+<code>{JADU_HOME}/config/frontend/config.yml</code></li>
+</ul>
+<pre class="highlight yaml tab-yaml"><code><span class="na">photon_core</span><span class="pi">:</span>
+    <span class="na">theme</span><span class="pi">:</span> <span class="s">base</span>
+    <span class="na">fixture_set</span><span class="pi">:</span> <span class="s">base</span>
+    <span class="na">date_format</span><span class="pi">:</span> <span class="s">Y-m-d</span>
+</code></pre>
+<ul>
+<li>Galaxies sites:
+Can be configured per site in <code>{JADU_HOME}/config/galaxyms_jadudb_{SITE-ID}/config.yml</code></li>
+</ul>
+<pre class="highlight yaml tab-yaml"><code><span class="na">photon_core</span><span class="pi">:</span>
+    <span class="na">date_format</span><span class="pi">:</span> <span class="s">Y-m-d</span>
+</code></pre>
+<p><code>{JADU_HOME}/config/galaxyms_jadudb_{SITE-ID}/config_prod.yml</code>:
+<code>yaml
+imports:
+    - { resource: config.yml }
+</code></p>
+
+<ul>
+<li>Blogs:</li>
+</ul>
+
+<p>All blogs follow the date format defined in the database <code>JaduBlogs.dateFormat</code>, which is set to <code>d/m/Y</code> by default.
+If no value is set in the database, the default <code>jS F Y</code> is used unless a value is defined in <code>{JADU_HOME}/config/blog/config.yml</code>:</p>
+<pre class="highlight yaml tab-yaml"><code><span class="na">photon_core</span><span class="pi">:</span>
+  <span class="na">theme</span><span class="pi">:</span> <span class="s">blogbase</span>
+  <span class="na">fixture_set</span><span class="pi">:</span> <span class="s">blogbase</span>
+  <span class="na">date_format</span><span class="pi">:</span> <span class="s">Y-m-d</span>
+</code></pre>
+<p><code>{JADU_HOME}/config/blog/config_prod.yml</code>:</p>
+<pre class="highlight yaml tab-yaml"><code><span class="na">imports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="pi">{</span> <span class="nv">resource</span><span class="pi">:</span> <span class="nv">config.yml</span> <span class="pi">}</span>
+</code></pre><h1 id='troubleshooting'>Troubleshooting</h1>
 <p><strong>The site is complaining that the theme doesn&#39;t exist</strong></p>
 
 <p>This is commonly down to either the theme service not being defined within the theme bundle <code>services.yml</code>, or the DependencyInjection folder and it&#39;s related files being missing from the theme bundle.</p>
