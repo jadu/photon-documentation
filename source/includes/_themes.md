@@ -30,11 +30,11 @@ Themes must be registered with the CMS so that they are loaded by the Symfony ke
 
 ## Limiting changes to specific Galaxies sites
 
-When developing a theme for use within a Galaxies site, you may want to prevent changes made taking effect on any other sites (e.g. a custom theme route).
+When building your Galaxies site, you may want to prevent some functionality from taking effect on any other sites. All Galaxies Theme bundles are loaded in globally, regardless of which site is being requested.
 
-This can be achieved by adding an XML element `galaxy<GALAXY_DATABASE_NAME>` to your `bundles.xml` configuration. This will  tell Jadu to only load the bundle(s) listed for the site with the given database name.
+The `bundles.xml` configuration file allows you to define additional bundles to be loaded for specific Galaxies sites based on the site's database name. It is recommended that any customisations to the functionality of a single site (for example custom routing) are created in a bundle separate to the site's theme and then registered in `bundles.xml`.
 
-**Please note:** This configuration section should not contain PhotonTheme bundles - these are loaded globally on **all** requests. Separate bundles should be created for any Galaxies Sites that require customisations, such as specific routing.
+To register an additional bundle for a specific site, add an XML element `galaxy<GALAXY_DATABASE_NAME>` to your `bundles.xml` configuration.
 
 > For example, to ensure galaxy with database 'ms_jadudb_1' only loads 'MyGalaxyBundle'.
 
