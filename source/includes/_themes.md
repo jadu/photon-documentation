@@ -28,14 +28,15 @@ php cli.php cms:theme-register /absolute/path/to/theme
 
 Themes must be registered with the CMS so that they are loaded by the Symfony kernel when it is booted. This can be done via running the `cms:theme-register` command.
 
-## Limiting themes for Galaxies sites
+## Limiting changes to specific Galaxies sites
 
-When developing a theme for use within a Galaxies site, you may want to limit the loaded theme bundles to prevent unwanted resources being available for that Galaxies site (e.g. a custom theme route).
+When building your Galaxies site, you may want to prevent some functionality from taking effect on any other sites. All Galaxies Theme bundles are loaded in globally, regardless of which site is being requested.
 
-This is possible by adding an XML element `galaxy<GALAXY_DATABASE_NAME>` to your `bundles.xml` configuration, which will limit the theme bundles loaded by the Symfony kernel for that Galaxies site.
+The `bundles.xml` configuration file allows you to define additional bundles to be loaded for specific Galaxies sites based on the site's database name. It is recommended that any customisations to the functionality of a single site (for example custom routing) are created in a bundle separate to the site's theme and then registered in `bundles.xml`.
 
+To register an additional bundle for a specific site, add an XML element `galaxy<GALAXY_DATABASE_NAME>` to your `bundles.xml` configuration.
 
-> For example, to ensure galaxy with database 'ms_jadudb_1' only loads 'MyGalaxyThemeBundle'.
+> For example, to ensure galaxy with database 'ms_jadudb_1' only loads 'MyGalaxyBundle'.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -43,6 +44,7 @@ This is possible by adding an XML element `galaxy<GALAXY_DATABASE_NAME>` to your
   <!-- ... -->
   
   <galaxyms_jadudb_1 config:type="array">
-      <item key="my-galaxy-theme">MyGalaxyTheme\MyGalaxyThemeBundle</item>
+      <item key="my-galaxy">MyGalaxyTheme\MyGalaxyBundle</item>
   </galaxyms_jadudb_1>
 </bundles>
+```
